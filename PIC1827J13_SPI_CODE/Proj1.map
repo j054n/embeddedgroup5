@@ -1,5 +1,5 @@
 MPLINK 4.37, Linker
-Linker Map File - Created Sun Oct 10 22:45:12 2010
+Linker Map File - Created Mon Oct 11 18:14:40 2010
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -16,70 +16,70 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
          .code_messages.o       code   0x000f08    program   0x0004f6
                      PROG       code   0x0013fe    program   0x00024e
        .code_interrupts.o       code   0x00164c    program   0x00020a
-                   STRING       code   0x001856    program   0x0000bc
-  .code_user_interrupts.o       code   0x001912    program   0x0000a6
-               _cinit_scn       code   0x0019b8    program   0x00009e
-             .code_main.o       code   0x001a56    program   0x000070
-             .code_putc.o       code   0x001ac6    program   0x000066
-           .code_printf.o       code   0x001b2c    program   0x000064
-      .code_uart_thread.o       code   0x001b90    program   0x00005c
-    .code_timer0_thread.o       code   0x001bec    program   0x00004c
-         .code_spi1open.o       code   0x001c38    program   0x000048
-         .code_spi1writ.o       code   0x001c80    program   0x00003a
-    .code_timer1_thread.o       code   0x001cba    program   0x000030
-          .code_t1write.o       code   0x001cea    program   0x000030
-           .code_t1read.o       code   0x001d1a    program   0x000030
-          .code_t0write.o       code   0x001d4a    program   0x000030
-          .code_my_uart.o       code   0x001d7a    program   0x00002e
-                    CTYPE       code   0x001da8    program   0x000024
-             .stringtable    romdata   0x001dcc    program   0x000023
-    .romdata__user_putc.o    romdata   0x001def    program   0x000000
-      .romdata_spi1writ.o    romdata   0x001def    program   0x000000
-    .idata__user_putc.o_i    romdata   0x001def    program   0x000000
-          .romdata_putc.o    romdata   0x001def    program   0x000000
-       .idata_t0write.o_i    romdata   0x001def    program   0x000000
-       .romdata_t0write.o    romdata   0x001def    program   0x000000
-       .idata_t1write.o_i    romdata   0x001def    program   0x000000
-          .idata_putc.o_i    romdata   0x001def    program   0x000000
-       .romdata_t1write.o    romdata   0x001def    program   0x000000
-      .idata_vfprintf.o_i    romdata   0x001def    program   0x000000
-        .idata___init.o_i    romdata   0x001def    program   0x000000
-        .romdata___init.o    romdata   0x001def    program   0x000000
-        .romdata_stdout.o    romdata   0x001def    program   0x000000
-        .romdata_printf.o    romdata   0x001def    program   0x000000
-        .idata_printf.o_i    romdata   0x001def    program   0x000000
-       .idata_c018i_e.o_i    romdata   0x001def    program   0x000000
-       .romdata_c018i_e.o    romdata   0x001def    program   0x000000
-          .idata_main.o_i    romdata   0x001def    program   0x000000
-          .romdata_main.o    romdata   0x001def    program   0x000000
-      .idata_messages.o_i    romdata   0x001def    program   0x000000
-      .romdata_messages.o    romdata   0x001def    program   0x000000
-    .idata_interrupts.o_i    romdata   0x001def    program   0x000000
-    .romdata_interrupts.o    romdata   0x001def    program   0x000000
-.idata_user_interrupts.o_i    romdata   0x001def    program   0x000000
-.romdata_user_interrupts.o    romdata   0x001def    program   0x000000
-       .idata_my_uart.o_i    romdata   0x001def    program   0x000000
-       .romdata_my_uart.o    romdata   0x001def    program   0x000000
-   .idata_uart_thread.o_i    romdata   0x001def    program   0x000000
-      .idata_spi1writ.o_i    romdata   0x001def    program   0x000000
-        .romdata_t1read.o    romdata   0x001def    program   0x000000
-        .idata_t1read.o_i    romdata   0x001def    program   0x000000
-      .romdata_spi1open.o    romdata   0x001def    program   0x000000
-      .idata_spi1open.o_i    romdata   0x001def    program   0x000000
-        .romdata_my_i2c.o    romdata   0x001def    program   0x000000
-        .idata_my_i2c.o_i    romdata   0x001def    program   0x000000
- .romdata_timer0_thread.o    romdata   0x001def    program   0x000000
- .idata_timer0_thread.o_i    romdata   0x001def    program   0x000000
- .romdata_timer1_thread.o    romdata   0x001def    program   0x000000
- .idata_timer1_thread.o_i    romdata   0x001def    program   0x000000
-   .romdata_uart_thread.o    romdata   0x001def    program   0x000000
-           .code_stdout.o       code   0x001df0    program   0x000000
-              D1KTCYXCODE       code   0x001df0    program   0x000020
-          .code_c018i_e.o       code   0x001df0    program   0x000000
-                    .code       code   0x001e10    program   0x000020
-                    STDIO       code   0x001e30    program   0x00001c
-             _startup_scn       code   0x001e4c    program   0x00001a
-      .romdata_vfprintf.o    romdata   0x001e66    program   0x000011
+             .code_main.o       code   0x001856    program   0x0000ea
+                   STRING       code   0x001940    program   0x0000bc
+  .code_user_interrupts.o       code   0x0019fc    program   0x0000a6
+               _cinit_scn       code   0x001aa2    program   0x00009e
+             .code_putc.o       code   0x001b40    program   0x000066
+           .code_printf.o       code   0x001ba6    program   0x000064
+      .code_uart_thread.o       code   0x001c0a    program   0x00005c
+    .code_timer0_thread.o       code   0x001c66    program   0x00004c
+         .code_spi1open.o       code   0x001cb2    program   0x000048
+         .code_spi1writ.o       code   0x001cfa    program   0x00003a
+    .code_timer1_thread.o       code   0x001d34    program   0x000030
+          .code_t1write.o       code   0x001d64    program   0x000030
+           .code_t1read.o       code   0x001d94    program   0x000030
+          .code_t0write.o       code   0x001dc4    program   0x000030
+          .code_my_uart.o       code   0x001df4    program   0x00002e
+                    CTYPE       code   0x001e22    program   0x000024
+             .stringtable    romdata   0x001e46    program   0x000023
+    .romdata__user_putc.o    romdata   0x001e69    program   0x000000
+      .romdata_spi1writ.o    romdata   0x001e69    program   0x000000
+    .idata__user_putc.o_i    romdata   0x001e69    program   0x000000
+          .romdata_putc.o    romdata   0x001e69    program   0x000000
+       .idata_t0write.o_i    romdata   0x001e69    program   0x000000
+       .romdata_t0write.o    romdata   0x001e69    program   0x000000
+       .idata_t1write.o_i    romdata   0x001e69    program   0x000000
+          .idata_putc.o_i    romdata   0x001e69    program   0x000000
+       .romdata_t1write.o    romdata   0x001e69    program   0x000000
+      .idata_vfprintf.o_i    romdata   0x001e69    program   0x000000
+        .idata___init.o_i    romdata   0x001e69    program   0x000000
+        .romdata___init.o    romdata   0x001e69    program   0x000000
+        .romdata_stdout.o    romdata   0x001e69    program   0x000000
+        .romdata_printf.o    romdata   0x001e69    program   0x000000
+        .idata_printf.o_i    romdata   0x001e69    program   0x000000
+       .idata_c018i_e.o_i    romdata   0x001e69    program   0x000000
+       .romdata_c018i_e.o    romdata   0x001e69    program   0x000000
+          .idata_main.o_i    romdata   0x001e69    program   0x000000
+          .romdata_main.o    romdata   0x001e69    program   0x000000
+      .idata_messages.o_i    romdata   0x001e69    program   0x000000
+      .romdata_messages.o    romdata   0x001e69    program   0x000000
+    .idata_interrupts.o_i    romdata   0x001e69    program   0x000000
+    .romdata_interrupts.o    romdata   0x001e69    program   0x000000
+.idata_user_interrupts.o_i    romdata   0x001e69    program   0x000000
+.romdata_user_interrupts.o    romdata   0x001e69    program   0x000000
+       .idata_my_uart.o_i    romdata   0x001e69    program   0x000000
+       .romdata_my_uart.o    romdata   0x001e69    program   0x000000
+   .idata_uart_thread.o_i    romdata   0x001e69    program   0x000000
+      .idata_spi1writ.o_i    romdata   0x001e69    program   0x000000
+        .romdata_t1read.o    romdata   0x001e69    program   0x000000
+        .idata_t1read.o_i    romdata   0x001e69    program   0x000000
+      .romdata_spi1open.o    romdata   0x001e69    program   0x000000
+      .idata_spi1open.o_i    romdata   0x001e69    program   0x000000
+        .romdata_my_i2c.o    romdata   0x001e69    program   0x000000
+        .idata_my_i2c.o_i    romdata   0x001e69    program   0x000000
+ .romdata_timer0_thread.o    romdata   0x001e69    program   0x000000
+ .idata_timer0_thread.o_i    romdata   0x001e69    program   0x000000
+ .romdata_timer1_thread.o    romdata   0x001e69    program   0x000000
+ .idata_timer1_thread.o_i    romdata   0x001e69    program   0x000000
+   .romdata_uart_thread.o    romdata   0x001e69    program   0x000000
+           .code_stdout.o       code   0x001e6a    program   0x000000
+              D1KTCYXCODE       code   0x001e6a    program   0x000020
+          .code_c018i_e.o       code   0x001e6a    program   0x000000
+                    .code       code   0x001e8a    program   0x000020
+                    STDIO       code   0x001eaa    program   0x00001c
+             _startup_scn       code   0x001ec6    program   0x00001a
+      .romdata_vfprintf.o    romdata   0x001ee0    program   0x000011
                 msgqueue4      udata   0x000000       data   0x000037
          .udata_c018i_e.o      udata   0x000037       data   0x00000a
                  .tmpdata      udata   0x000041       data   0x000007
@@ -148,9 +148,9 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000011      
-                            0x000018    0x001dee      
-                            0x001df0    0x001e76      
-            7792 out of 131074 program addresses used, program memory utilization is 5%
+                            0x000018    0x001e68      
+                            0x001e6a    0x001ef0      
+            7914 out of 131074 program addresses used, program memory utilization is 6%
 
 
 
@@ -162,46 +162,46 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                  D1616SOK   0x00144a    program     static C:\MCC18\src\extended\math\div16s.asm
                 D1616SPOS   0x00145e    program     static C:\MCC18\src\extended\math\div16s.asm
                   D1616SX   0x001484    program     static C:\MCC18\src\extended\math\div16s.asm
-                    D1K_1   0x001dfe    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x001dfc    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                    D1K_1   0x001e78    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x001e76    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
                   DA1616S   0x001430    program     static C:\MCC18\src\extended\math\div16s.asm
-              Delay1KTCYx   0x001df0    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
-     FromMainHigh_recvmsg   0x0012a2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-     FromMainHigh_sendmsg   0x001274    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-      FromMainLow_recvmsg   0x001242    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-      FromMainLow_sendmsg   0x001214    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-     InterruptHandlerHigh   0x0016d2    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-      InterruptHandlerLow   0x00178c    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-      InterruptVectorHigh   0x000008    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-       InterruptVectorLow   0x000018    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                 OpenSPI1   0x001c38    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
+              Delay1KTCYx   0x001e6a    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+     FromMainHigh_recvmsg   0x0012a2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+     FromMainHigh_sendmsg   0x001274    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+      FromMainLow_recvmsg   0x001242    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+      FromMainLow_sendmsg   0x001214    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+     InterruptHandlerHigh   0x0016d2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+      InterruptHandlerLow   0x00178c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+      InterruptVectorHigh   0x000008    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+       InterruptVectorLow   0x000018    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                 OpenSPI1   0x001cb2    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
                   RESTORE   0x00159c    program     static C:\MCC18\src\extended\math\div32u.asm
                   RESTORE   0x0014f8    program     static C:\MCC18\src\extended\math\div16u.asm
                   RESTORE   0x001476    program     static C:\MCC18\src\extended\math\div16s.asm
               RETQUOTIENT   0x00146e    program     static C:\MCC18\src\extended\math\div16s.asm
               RETQUOTIENT   0x0014f0    program     static C:\MCC18\src\extended\math\div16u.asm
               RETQUOTIENT   0x00158c    program     static C:\MCC18\src\extended\math\div32u.asm
-               ReadTimer1   0x001d1a    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+               ReadTimer1   0x001d94    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
                   SETSIGN   0x00141e    program     static C:\MCC18\src\extended\math\div16s.asm
                  SETUPSTK   0x001506    program     static C:\MCC18\src\extended\math\div32u.asm
                  SETUPSTK   0x00148e    program     static C:\MCC18\src\extended\math\div16u.asm
                  SETUPSTK   0x0013fe    program     static C:\MCC18\src\extended\math\div16s.asm
-              SleepIfOkay   0x001356    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-       ToMainHigh_recvmsg   0x0011e2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-       ToMainHigh_sendmsg   0x0011b4    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-        ToMainLow_recvmsg   0x001182    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-        ToMainLow_sendmsg   0x001154    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                WriteSPI1   0x001c80    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
-              WriteTimer0   0x001d4a    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-              WriteTimer1   0x001cea    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-                   _2jEnd   0x0018fc    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-              _4jContinue   0x00188a    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x001894    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-        _D1KTCYXCODE_0012   0x001e02    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x001e08    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+              SleepIfOkay   0x001356    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+       ToMainHigh_recvmsg   0x0011e2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+       ToMainHigh_sendmsg   0x0011b4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+        ToMainLow_recvmsg   0x001182    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+        ToMainLow_sendmsg   0x001154    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                WriteSPI1   0x001cfa    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
+              WriteTimer0   0x001dc4    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+              WriteTimer1   0x001d64    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+                   _2jEnd   0x0019e6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+              _4jContinue   0x001974    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x00197e    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+        _D1KTCYXCODE_0012   0x001e7c    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x001e82    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x001e64    program     static                          
-       ___return_lbl00002   0x001a54    program     static                          
+       ___return_lbl00001   0x001ede    program     static                          
+       ___return_lbl00002   0x001b3e    program     static                          
        ___return_lbl00012   0x00001c    program     static                          
        ___return_lbl00013   0x00000c    program     static                          
        ___return_lbl00019   0x00130e    program     static                          
@@ -237,81 +237,81 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                    __pa_7   0x000760    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_8   0x00076c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_9   0x00077e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-               __string_0   0x001ddc    program     static D:\Embedded\PIC_MAIN_CODE\timer0_thread.c
-               __string_0   0x001dcc    program     static D:\Embedded\PIC_MAIN_CODE\uart_thread.c
-            __zero_memory   0x001e10    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                _do_cinit   0x0019b8    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+               __string_0   0x001e56    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer0_thread.c
+               __string_0   0x001e46    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\uart_thread.c
+            __zero_memory   0x001e8a    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                _do_cinit   0x001aa2    program     extern C:\MCC18\src\extended\startup\c018i_e.c
             _early16uexit   0x0014b0    program     extern C:\MCC18\src\extended\math\div16u.asm
             _early32uexit   0x001528    program     extern C:\MCC18\src\extended\math\div32u.asm
                    _entry   0x000000    program     extern C:\MCC18\src\extended\startup\c018i_e.c
                    _false   0x00156c    program     static C:\MCC18\src\extended\math\div32u.asm
-                 _startup   0x001e4c    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-              _usart_putc   0x001e30    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                 _startup   0x001ec6    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+              _usart_putc   0x001eaa    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
                _user_putc   0x000006    program     extern C:\MCC18\src\extended\stdclib\_user_putc.c
-    block_on_To_msgqueues   0x0013b2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                check_msg   0x001310    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                compare_l   0x001e26    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                copy_loop   0x001a2a    program     static                          
-            copy_one_byte   0x001a30    program     static                          
+    block_on_To_msgqueues   0x0013b2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                check_msg   0x001310    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                compare_l   0x001ea0    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                copy_loop   0x001b14    program     static                          
+            copy_one_byte   0x001b1a    program     static                          
                 divmod16u   0x0014b2    program     static C:\MCC18\src\extended\math\div16u.asm
                 divmod32u   0x00152a    program     static C:\MCC18\src\extended\math\div32u.asm
-                     done   0x001a54    program     static                          
-             done_copying   0x001a3e    program     static                          
-        enable_interrupts   0x00164c    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
+                     done   0x001b3e    program     static                          
+             done_copying   0x001b28    program     static                          
+        enable_interrupts   0x00164c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
                   endloop   0x0014d8    program     static C:\MCC18\src\extended\math\div16u.asm
-         enter_sleep_mode   0x00130a    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-             handle_start   0x00094a    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-     i2c_configure_master   0x000842    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-      i2c_configure_slave   0x000ede    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_int_handler   0x000a04    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_master_recv   0x000866    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_master_send   0x000854    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-              in_high_int   0x001654    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-               in_low_int   0x001694    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                  in_main   0x0016ac    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                  initSPI   0x001a56    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                 init_i2c   0x000e7a    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-               init_queue   0x000f08    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-              init_queues   0x0012d4    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-      init_timer1_lthread   0x001cba    program     extern D:\Embedded\PIC_MAIN_CODE\timer1_thread.c
-           init_uart_recv   0x001d7c    program     extern D:\Embedded\PIC_MAIN_CODE\my_uart.c
-                  isdigit   0x001da8    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                     jEnd   0x0018c6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x0018fe    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x00189a    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x0018e6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                    jLoop   0x0018bc    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x00187e    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   jMatch   0x001dc8    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x001dca    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+         enter_sleep_mode   0x00130a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+             handle_start   0x00094a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+     i2c_configure_master   0x000842    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+      i2c_configure_slave   0x000ede    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_int_handler   0x000a04    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_master_recv   0x000866    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_master_send   0x000854    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+              in_high_int   0x001654    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+               in_low_int   0x001694    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  in_main   0x0016ac    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  initSPI   0x001856    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                 init_i2c   0x000e7a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+               init_queue   0x000f08    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+              init_queues   0x0012d4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+      init_timer1_lthread   0x001d34    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer1_thread.c
+           init_uart_recv   0x001df6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
+                  isdigit   0x001e22    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                     jEnd   0x0019b0    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x0019e8    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x001984    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x0019d0    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                    jLoop   0x0019a6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x001968    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   jMatch   0x001e42    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x001e44    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
                      loop   0x0014bc    program     static C:\MCC18\src\extended\math\div16u.asm
-                     loop   0x001e40    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x001e5a    program     static                          
+                     loop   0x001eba    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x001ed4    program     static                          
                      loop   0x001538    program     static C:\MCC18\src\extended\math\div32u.asm
-                   loop_h   0x001e1e    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_l   0x001e28    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-           low_int_active   0x001674    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                     main   0x001a6a    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                   memcpy   0x001856    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
-                 printSPI   0x001a68    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                   printf   0x001b2c    program     extern C:\MCC18\src\extended\stdclib\printf.c
-                     putc   0x001ac6    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                 recv_msg   0x00104e    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                 s_digits   0x001e66    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+                   loop_h   0x001e98    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_l   0x001ea2    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+           low_int_active   0x001674    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                     main   0x0018e0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                   memcpy   0x001940    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+                 printSPI   0x001874    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                   printf   0x001ba6    program     extern C:\MCC18\src\extended\stdclib\printf.c
+                     putc   0x001b40    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                 recv_msg   0x00104e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                 s_digits   0x001ee0    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
             s_put_n_chars   0x00002c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-                 send_msg   0x000f66    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-    start_i2c_slave_reply   0x000878    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-                   strlen   0x0018ac    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x0018c8    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     test   0x0019d2    program     static                          
-       timer0_int_handler   0x001912    program     extern D:\Embedded\PIC_MAIN_CODE\user_interrupts.c
-           timer0_lthread   0x001bec    program     extern D:\Embedded\PIC_MAIN_CODE\timer0_thread.c
-       timer1_int_handler   0x00197a    program     extern D:\Embedded\PIC_MAIN_CODE\user_interrupts.c
-           timer1_lthread   0x001cd8    program     extern D:\Embedded\PIC_MAIN_CODE\timer1_thread.c
-             uart_lthread   0x001b90    program     extern D:\Embedded\PIC_MAIN_CODE\uart_thread.c
-    uart_recv_int_handler   0x001d7a    program     extern D:\Embedded\PIC_MAIN_CODE\my_uart.c
+                 send_msg   0x000f66    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+    start_i2c_slave_reply   0x000878    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+                   strlen   0x001996    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x0019b2    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     test   0x001abc    program     static                          
+       timer0_int_handler   0x0019fc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c
+           timer0_lthread   0x001c66    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer0_thread.c
+       timer1_int_handler   0x001a64    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c
+           timer1_lthread   0x001d52    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer1_thread.c
+             uart_lthread   0x001c0a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\uart_thread.c
+    uart_recv_int_handler   0x001df4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
                  vfprintf   0x00005e    program     extern C:\MCC18\src\extended\stdclib\vfprintf.c
-               zero_block   0x001e1e    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+               zero_block   0x001e98    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADCON0   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -456,8 +456,8 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                      FSR2   0x000fd9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     FSR2H   0x000fda       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     FSR2L   0x000fd9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-          FromMainHigh_MQ   0x000000       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-           FromMainLow_MQ   0x000060       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
+          FromMainHigh_MQ   0x000000       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+           FromMainLow_MQ   0x000060       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
                   HLVDCON   0x000f85       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               HLVDCONbits   0x000f85       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     INDF0   0x000fef       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -485,7 +485,7 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                  LATBbits   0x000f8a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      LATC   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  LATCbits   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
- MQ_Main_Willing_to_block   0x000036       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
+ MQ_Main_Willing_to_block   0x000036       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
                    ODCON1   0x000f42       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ODCON1bits   0x000f42       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ODCON2   0x000f41       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -734,8 +734,8 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                    TXSTA2   0x000fa8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                TXSTA2bits   0x000fa8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 TXSTAbits   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-            ToMainHigh_MQ   0x000096       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-             ToMainLow_MQ   0x000e00       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
+            ToMainHigh_MQ   0x000096       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+             ToMainLow_MQ   0x000e00       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
                    WDTCON   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                WDTCONbits   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      WREG   0x000fe8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -744,17 +744,17 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                 __RETVAL2   0x00004a       data     extern C:\MCC18\src\extended\math\cmath18.asm
                 __RETVAL3   0x00004b       data     extern C:\MCC18\src\extended\math\cmath18.asm
                   __tmp_0   0x000041       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\main.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
                 curr_byte   0x00003a       data     static C:\MCC18\src\extended\startup\c018i_e.c
                curr_entry   0x00003c       data     static C:\MCC18\src\extended\startup\c018i_e.c
                  data_ptr   0x00003e       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                   ic_ptr   0x00004e       data     static D:\Embedded\PIC_MAIN_CODE\my_i2c.c
+                   ic_ptr   0x00004e       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
                      prom   0x000037       data     static C:\MCC18\src\extended\startup\c018i_e.c
                    stdout   0x000050       data     extern C:\MCC18\src\extended\stdclib\stdout.c
-                   uc_ptr   0x00004c       data     static D:\Embedded\PIC_MAIN_CODE\my_uart.c
+                   uc_ptr   0x00004c       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
 
 
 
@@ -764,10 +764,10 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                    _entry   0x000000    program     extern C:\MCC18\src\extended\startup\c018i_e.c
        ___return_lbl00000   0x000004    program     static                          
                _user_putc   0x000006    program     extern C:\MCC18\src\extended\stdclib\_user_putc.c
-      InterruptVectorHigh   0x000008    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
+      InterruptVectorHigh   0x000008    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
        ___return_lbl00013   0x00000c    program     static                          
                    __init   0x00000e    program     extern C:\MCC18\src\extended\stdclib\__init.c
-       InterruptVectorLow   0x000018    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
+       InterruptVectorLow   0x000018    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
        ___return_lbl00012   0x00001c    program     static                          
             s_put_n_chars   0x00002c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                  vfprintf   0x00005e    program     extern C:\MCC18\src\extended\stdclib\vfprintf.c
@@ -795,31 +795,31 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
                   __pa_21   0x000824    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                   __pa_22   0x00082e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                   __pa_23   0x00083c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-     i2c_configure_master   0x000842    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_master_send   0x000854    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_master_recv   0x000866    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-    start_i2c_slave_reply   0x000878    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-             handle_start   0x00094a    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-          i2c_int_handler   0x000a04    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-                 init_i2c   0x000e7a    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-      i2c_configure_slave   0x000ede    program     extern D:\Embedded\PIC_MAIN_CODE\my_i2c.c
-               init_queue   0x000f08    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                 send_msg   0x000f66    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-                 recv_msg   0x00104e    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-        ToMainLow_sendmsg   0x001154    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-        ToMainLow_recvmsg   0x001182    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-       ToMainHigh_sendmsg   0x0011b4    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-       ToMainHigh_recvmsg   0x0011e2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-      FromMainLow_sendmsg   0x001214    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-      FromMainLow_recvmsg   0x001242    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-     FromMainHigh_sendmsg   0x001274    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-     FromMainHigh_recvmsg   0x0012a2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-              init_queues   0x0012d4    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-         enter_sleep_mode   0x00130a    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
+     i2c_configure_master   0x000842    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_master_send   0x000854    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_master_recv   0x000866    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+    start_i2c_slave_reply   0x000878    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+             handle_start   0x00094a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+          i2c_int_handler   0x000a04    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+                 init_i2c   0x000e7a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+      i2c_configure_slave   0x000ede    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
+               init_queue   0x000f08    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                 send_msg   0x000f66    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                 recv_msg   0x00104e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+        ToMainLow_sendmsg   0x001154    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+        ToMainLow_recvmsg   0x001182    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+       ToMainHigh_sendmsg   0x0011b4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+       ToMainHigh_recvmsg   0x0011e2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+      FromMainLow_sendmsg   0x001214    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+      FromMainLow_recvmsg   0x001242    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+     FromMainHigh_sendmsg   0x001274    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+     FromMainHigh_recvmsg   0x0012a2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+              init_queues   0x0012d4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+         enter_sleep_mode   0x00130a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
        ___return_lbl00019   0x00130e    program     static                          
-                check_msg   0x001310    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-              SleepIfOkay   0x001356    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
-    block_on_To_msgqueues   0x0013b2    program     extern D:\Embedded\PIC_MAIN_CODE\messages.c
+                check_msg   0x001310    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+              SleepIfOkay   0x001356    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+    block_on_To_msgqueues   0x0013b2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
                  SETUPSTK   0x0013fe    program     static C:\MCC18\src\extended\math\div16s.asm
                  __div16s   0x001416    program     extern C:\MCC18\src\extended\math\div16s.asm
                  __mod16s   0x00141c    program     extern C:\MCC18\src\extended\math\div16s.asm
@@ -851,93 +851,93 @@ Linker Map File - Created Sun Oct 10 22:45:12 2010
               RETQUOTIENT   0x00158c    program     static C:\MCC18\src\extended\math\div32u.asm
                   RESTORE   0x00159c    program     static C:\MCC18\src\extended\math\div32u.asm
                   __mul32   0x0015aa    program     extern C:\MCC18\src\extended\math\mul32.asm
-        enable_interrupts   0x00164c    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-              in_high_int   0x001654    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-           low_int_active   0x001674    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-               in_low_int   0x001694    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                  in_main   0x0016ac    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-     InterruptHandlerHigh   0x0016d2    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-      InterruptHandlerLow   0x00178c    program     extern D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                   memcpy   0x001856    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x00187e    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-              _4jContinue   0x00188a    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x001894    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                     jEnd   0x00189a    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   strlen   0x0018ac    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x0018bc    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x0018c6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x0018c8    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                    jLoop   0x0018e6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                   _2jEnd   0x0018fc    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x0018fe    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-       timer0_int_handler   0x001912    program     extern D:\Embedded\PIC_MAIN_CODE\user_interrupts.c
-       timer1_int_handler   0x00197a    program     extern D:\Embedded\PIC_MAIN_CODE\user_interrupts.c
-                _do_cinit   0x0019b8    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     test   0x0019d2    program     static                          
-                copy_loop   0x001a2a    program     static                          
-            copy_one_byte   0x001a30    program     static                          
-             done_copying   0x001a3e    program     static                          
-       ___return_lbl00002   0x001a54    program     static                          
-                     done   0x001a54    program     static                          
-                  initSPI   0x001a56    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                 printSPI   0x001a68    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                     main   0x001a6a    program     extern D:\Embedded\PIC_MAIN_CODE\main.c
-                     putc   0x001ac6    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                   printf   0x001b2c    program     extern C:\MCC18\src\extended\stdclib\printf.c
-             uart_lthread   0x001b90    program     extern D:\Embedded\PIC_MAIN_CODE\uart_thread.c
-           timer0_lthread   0x001bec    program     extern D:\Embedded\PIC_MAIN_CODE\timer0_thread.c
-                 OpenSPI1   0x001c38    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
-                WriteSPI1   0x001c80    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
-      init_timer1_lthread   0x001cba    program     extern D:\Embedded\PIC_MAIN_CODE\timer1_thread.c
-           timer1_lthread   0x001cd8    program     extern D:\Embedded\PIC_MAIN_CODE\timer1_thread.c
-              WriteTimer1   0x001cea    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-               ReadTimer1   0x001d1a    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
-              WriteTimer0   0x001d4a    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-    uart_recv_int_handler   0x001d7a    program     extern D:\Embedded\PIC_MAIN_CODE\my_uart.c
-           init_uart_recv   0x001d7c    program     extern D:\Embedded\PIC_MAIN_CODE\my_uart.c
-                  isdigit   0x001da8    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                   jMatch   0x001dc8    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x001dca    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-               __string_0   0x001dcc    program     static D:\Embedded\PIC_MAIN_CODE\uart_thread.c
-               __string_0   0x001ddc    program     static D:\Embedded\PIC_MAIN_CODE\timer0_thread.c
-              Delay1KTCYx   0x001df0    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x001dfc    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                    D1K_1   0x001dfe    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0012   0x001e02    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x001e08    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-            __zero_memory   0x001e10    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               zero_block   0x001e1e    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_h   0x001e1e    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                compare_l   0x001e26    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_l   0x001e28    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-              _usart_putc   0x001e30    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x001e40    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                 _startup   0x001e4c    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     loop   0x001e5a    program     static                          
-       ___return_lbl00001   0x001e64    program     static                          
-                 s_digits   0x001e66    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-          FromMainHigh_MQ   0x000000       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
- MQ_Main_Willing_to_block   0x000036       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
+        enable_interrupts   0x00164c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+              in_high_int   0x001654    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+           low_int_active   0x001674    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+               in_low_int   0x001694    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  in_main   0x0016ac    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+     InterruptHandlerHigh   0x0016d2    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+      InterruptHandlerLow   0x00178c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  initSPI   0x001856    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                 printSPI   0x001874    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                     main   0x0018e0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                   memcpy   0x001940    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x001968    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+              _4jContinue   0x001974    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x00197e    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                     jEnd   0x001984    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   strlen   0x001996    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x0019a6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x0019b0    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x0019b2    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                    jLoop   0x0019d0    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                   _2jEnd   0x0019e6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x0019e8    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+       timer0_int_handler   0x0019fc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c
+       timer1_int_handler   0x001a64    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c
+                _do_cinit   0x001aa2    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     test   0x001abc    program     static                          
+                copy_loop   0x001b14    program     static                          
+            copy_one_byte   0x001b1a    program     static                          
+             done_copying   0x001b28    program     static                          
+       ___return_lbl00002   0x001b3e    program     static                          
+                     done   0x001b3e    program     static                          
+                     putc   0x001b40    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                   printf   0x001ba6    program     extern C:\MCC18\src\extended\stdclib\printf.c
+             uart_lthread   0x001c0a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\uart_thread.c
+           timer0_lthread   0x001c66    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer0_thread.c
+                 OpenSPI1   0x001cb2    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
+                WriteSPI1   0x001cfa    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
+      init_timer1_lthread   0x001d34    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer1_thread.c
+           timer1_lthread   0x001d52    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer1_thread.c
+              WriteTimer1   0x001d64    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+               ReadTimer1   0x001d94    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+              WriteTimer0   0x001dc4    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+    uart_recv_int_handler   0x001df4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
+           init_uart_recv   0x001df6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
+                  isdigit   0x001e22    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                   jMatch   0x001e42    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x001e44    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+               __string_0   0x001e46    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\uart_thread.c
+               __string_0   0x001e56    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\timer0_thread.c
+              Delay1KTCYx   0x001e6a    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x001e76    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                    D1K_1   0x001e78    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0012   0x001e7c    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x001e82    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+            __zero_memory   0x001e8a    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               zero_block   0x001e98    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_h   0x001e98    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                compare_l   0x001ea0    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_l   0x001ea2    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+              _usart_putc   0x001eaa    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x001eba    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                 _startup   0x001ec6    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     loop   0x001ed4    program     static                          
+       ___return_lbl00001   0x001ede    program     static                          
+                 s_digits   0x001ee0    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+          FromMainHigh_MQ   0x000000       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+ MQ_Main_Willing_to_block   0x000036       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
                      prom   0x000037       data     static C:\MCC18\src\extended\startup\c018i_e.c
                 curr_byte   0x00003a       data     static C:\MCC18\src\extended\startup\c018i_e.c
                curr_entry   0x00003c       data     static C:\MCC18\src\extended\startup\c018i_e.c
                  data_ptr   0x00003e       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\main.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\interrupts.c
-                  __tmp_0   0x000041       data     static D:\Embedded\PIC_MAIN_CODE\my_i2c.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\main.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\interrupts.c
+                  __tmp_0   0x000041       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
                   __tmp_0   0x000041       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
                 __RETVAL0   0x000048       data     extern C:\MCC18\src\extended\math\cmath18.asm
                 __RETVAL1   0x000049       data     extern C:\MCC18\src\extended\math\cmath18.asm
                 __RETVAL2   0x00004a       data     extern C:\MCC18\src\extended\math\cmath18.asm
                 __RETVAL3   0x00004b       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                   uc_ptr   0x00004c       data     static D:\Embedded\PIC_MAIN_CODE\my_uart.c
-                   ic_ptr   0x00004e       data     static D:\Embedded\PIC_MAIN_CODE\my_i2c.c
+                   uc_ptr   0x00004c       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_uart.c
+                   ic_ptr   0x00004e       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\my_i2c.c
                    stdout   0x000050       data     extern C:\MCC18\src\extended\stdclib\stdout.c
             DelayCounter1   0x000052       data     extern C:\MCC18\src\extended\delays\delayd1.asm
-           FromMainLow_MQ   0x000060       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-            ToMainHigh_MQ   0x000096       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
-             ToMainLow_MQ   0x000e00       data     static D:\Embedded\PIC_MAIN_CODE\messages.c
+           FromMainLow_MQ   0x000060       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+            ToMainHigh_MQ   0x000096       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
+             ToMainLow_MQ   0x000e00       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\messages.c
               ADCTRIGbits   0x000eb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   ADCTRIG   0x000eb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                PMDIS0bits   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
