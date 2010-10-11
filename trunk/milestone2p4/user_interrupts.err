@@ -1,0 +1,3 @@
+Warning[2058] D:\Embedded\milestone2p4\user_interrupts.c 19 : call of function without prototype
+Warning[2058] D:\Embedded\milestone2p4\user_interrupts.c 26 : call of function without prototype
+Warning[2054] D:\Embedded\milestone2p4\user_interrupts.c 40 : suspicious pointer conversion
