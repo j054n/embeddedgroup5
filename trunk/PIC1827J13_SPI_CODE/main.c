@@ -15,17 +15,43 @@
 #include "timer0_thread.h"
 #include <spi.h>
 //#pragma config WDT = OFF
-
+#define CMD 0x42
+#define OCMD 0x40
+#define GPIOA 0x12
+#define GPIOB 0x13
+#define IOCON 0x0A
+#define IODIRA 0x00
 void initSPI(void)
 {
 //	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
 //	OpenSPI2(SPI_FOSC_16, MODE_00, SMPMID);
 	TRISC=0x0;
+	LATC=LATC|0b01000000;
+	LATB=0b00000000; //enable MCP reset
 	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
-
+	
+	
+	LATB=0b00100000; //disable MCP reset
 }
-void printSPI(void)
+void printSPI()
 {
+	LATB=0b00100000;
+	WriteSPI1(OCMD);
+	WriteSPI1(IOCON);
+	WriteSPI1(0x00);
+	LATB=0b00110000;
+	
+	LATB=0b00100000;
+	WriteSPI1(CMD);
+	WriteSPI1(IODIRA);
+	WriteSPI1(0x00);
+	LATB=0b00110000;
+	
+	LATB=0b00100000;
+	WriteSPI1(CMD);
+	WriteSPI1(GPIOA);
+	WriteSPI1(0x00);
+	LATB=0b00110000;
 //WriteSPI1(0x41);//control code+address 000 + read
 //	WriteSPI1(0x09);//GPIO A, control register
 
@@ -51,14 +77,18 @@ void printSPI(void)
 //   (3) it uses two timers to interrupt at different rates and drive 2 LEDs (on portb)
 void main (void)
 {int counter=0;
-TRISB = 0x0;
+TRISB = 0b00000000;
 initSPI();
 
 while(1)
 {
 //LATB = 0xff;
-LATB=0x01;
+LATB=0b00100000; //turn on chip select for LCD and turn off reset
+//printSPI();
+LATB=0b00110000; //turn off chip select for LCD and turn off reset
 //	WriteSPI1(0b00001111);
+
+//test code
 if(counter%2==0)
 {
 	WriteSPI1(0xff);
