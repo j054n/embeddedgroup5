@@ -11,7 +11,7 @@
 #include "my_uart.h"
 #include "my_i2c.h"
 #include "uart_thread.h"
-#include "timer1_thread.h"
+
 #include "timer0_thread.h"
 #include <spi.h>
 //#pragma config WDT = OFF
@@ -76,7 +76,8 @@ void printSPI()
 //   (2) it "prints" what it reads from the UART to portb (where LEDs are connected)
 //   (3) it uses two timers to interrupt at different rates and drive 2 LEDs (on portb)
 void main (void)
-{int counter=0;
+{
+unsigned int counter=0, adcVal=0;
 TRISB = 0b00000000;
 initSPI();
 
@@ -91,14 +92,16 @@ LATB=0b00110000; //turn off chip select for LCD and turn off reset
 //test code
 if(counter%2==0)
 {
-	WriteSPI1(0xff);
+	WriteSPI1(0x55);
 counter++;
 }
 else
 {
-	WriteSPI1(0x00);
+	WriteSPI1(0x77);
 counter--;
 }
+//readADC(&adcVal);
+
 	//putcSPI1(0xff);
 //	SSPBUF=0xff;
 //	WriteSPI2(0x0f);
