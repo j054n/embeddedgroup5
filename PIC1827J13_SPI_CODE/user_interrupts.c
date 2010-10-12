@@ -10,11 +10,11 @@
 
 void initADC()
 {
-	OpenADC(ADC_FOSC_8 & ADC_RIGHT_JUST & ADC_0_TAD,
-		ADC_CH0 & ADC_CH1 &
-		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0xfffe);
+/*	OpenADC(ADC_FOSC_8 & ADC_RIGHT_JUST & ADC_0_TAD,
+		ADC_CH0 & ADC_CH1 & ADC_CH12 & ADC_CH9  & ADC_CH10 &
+		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0b1111010001111100);
 	// Use SetChanADC(ADC_CH1) to look at sensor channel
-	SetChanADC(ADC_CH0);
+	SetChanADC(ADC_CH0);*/
 //	Delay10TCYx( 50 );
 }
 void readADC(int *value) //function reads from the ADC and returns a value 0x0 to 0x03FF
@@ -22,7 +22,19 @@ void readADC(int *value) //function reads from the ADC and returns a value 0x0 t
 	ConvertADC(); // Start conversion
 	while( BusyADC() ); // Wait for ADC conversion
 	(*value) = ReadADC(); // Read result and put in temp
-//	Delay1KTCYx(1);  // wait a bit...
+	Delay1KTCYx(1);  // wait a bit...
+}
+void readADC2(int *value) //function reads from the ADC and returns a value 0x0 to 0x03FF
+{
+	OpenADC(ADC_FOSC_16 & ADC_RIGHT_JUST & ADC_0_TAD,
+		ADC_CH10 &  ADC_CH9&
+		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0b1111010001111100);
+	SetChanADC(ADC_CH10);
+	ConvertADC(); // Start conversion
+	while( BusyADC() ); // Wait for ADC conversion
+	(*value) = ReadADC(); // Read result and put in temp
+	Delay1KTCYx(1);  // wait a bit...
+
 }
 // A function called by the interrupt handler
 // This one does the action I wanted for this program on a timer0 interrupt
