@@ -25,7 +25,7 @@ void initSPI(void)
 {
 //	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
 //	OpenSPI2(SPI_FOSC_16, MODE_00, SMPMID);
-	TRISC=0x0;
+	TRISC=0b00010000;
 	LATC=LATC|0b01000000;
 	LATB=0b00000000; //enable MCP reset
 	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
@@ -78,15 +78,17 @@ void printSPI()
 void main (void)
 {
 unsigned int counter=0, adcVal=0;
-TRISB = 0b00000000;
+TRISB = 0b00001010;
+TRISA = 0x0;
+TRISC=0b00010000;
 initSPI();
 
 while(1)
 {
 //LATB = 0xff;
-LATB=0b00100000; //turn on chip select for LCD and turn off reset
+LATB=LATB&0b11101111; //turn on chip select for LCD and turn off reset
 //printSPI();
-LATB=0b00110000; //turn off chip select for LCD and turn off reset
+LATB=LATB|0b00110000; //turn off chip select for LCD and turn off reset
 //	WriteSPI1(0b00001111);
 
 //test code
@@ -100,8 +102,18 @@ else
 	WriteSPI1(0x77);
 counter--;
 }
-//readADC(&adcVal);
 
+LATB=LATB|0b00000100;//touchscreen voltage
+readADC2(&adcVal);
+//adcVal=0x011;
+if(adcVal>0x010)
+{
+	LATC=LATC|0x07;
+}
+else 
+{
+	LATC=LATC&0xf8;
+}
 	//putcSPI1(0xff);
 //	SSPBUF=0xff;
 //	WriteSPI2(0x0f);
