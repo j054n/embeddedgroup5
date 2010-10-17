@@ -14,7 +14,7 @@
 #include "timer1_thread.h"
 #include "timer0_thread.h"
 
-//#pragma config WDT = OFF
+#pragma config WDT = OFF
 
 
 // This program 

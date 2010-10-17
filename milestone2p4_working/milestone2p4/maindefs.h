@@ -1,7 +1,7 @@
 #ifndef __maindefs
 #define __maindefs
 
-#include <p18lf27j13.h>
+#include <p18f2680.h>
 
 // Message type definitions
 #define MSGT_TIMER0 10
