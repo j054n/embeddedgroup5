@@ -1,8 +1,8 @@
-Warning[2066] D:\Embedded\milestone2p4\main.c 102 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 123 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 134 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 136 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 154 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 170 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 183 : type qualifier mismatch in assignment
-Warning[2066] D:\Embedded\milestone2p4\main.c 198 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 102 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 123 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 134 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 136 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 154 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 170 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 183 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\milestone2p4_working\milestone2p4\main.c 198 : type qualifier mismatch in assignment
