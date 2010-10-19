@@ -9,6 +9,8 @@
 #include "i2c.h"
 #include "VTio.h"
 
+#define setLED(n)  XGpio_mWriteReg(XPAR_LEDS_8BIT_BASEADDR,1,n);
+
 void i2c_status_handler(void *dptr,XStatus s_event)
 {
 	I2C_Comm *cptr = (I2C_Comm *) dptr;
@@ -17,13 +19,17 @@ void i2c_status_handler(void *dptr,XStatus s_event)
 	int i;
 	const	int	MAXLEN = 10;
 	int	msg_buffer[MAXLEN];
+	char str[20];
 
 	if (s_event == XII_MASTER_WRITE_EVENT) {
 		status = XIic_SlaveRecv(&(cptr->instance),cptr->iic_recv_msg,
 				sizeof(Xuint8)*IIC_MSGLEN);
 		if (status != XST_SUCCESS) {
+			VTprintLCD("i2c error       ",2);
 		}
 	} else if (s_event == XII_BUS_NOT_BUSY_EVENT) {
+		//sprintf(str,"Status: %X",status);
+		//VTprintLCD(str,2);
 	}
 	// send a message to the i2c thread
 	msg_buffer[0] = MSGTYPE_I2C_STATUS;
@@ -68,11 +74,14 @@ XStatus init_i2c(I2C_Comm *cptr,int device_id,int int_id,int i2c_addr,
 {
 	XStatus status;
 	int	actual_address;
+	char str[20];
 
 	// initialize the driver
 	status = XIic_Initialize(&(cptr->instance),device_id);
 	if (status != XST_SUCCESS) {
 		xil_printf("INIT IIC Failed\n");
+		sprintf(str,"INIT IIC Failed!\n");
+		VTprintLCD(str,2);
 		return(status);
 	}
 
@@ -89,6 +98,8 @@ XStatus init_i2c(I2C_Comm *cptr,int device_id,int int_id,int i2c_addr,
 	}
 	if (status != XST_SUCCESS) {
 		xil_printf("Set Address Error %d\n",status);
+		sprintf(str,"Set Address Error %d\n",status);
+		VTprintLCD(str,2);
 		return(status);
 	}
 
@@ -106,6 +117,8 @@ XStatus init_i2c(I2C_Comm *cptr,int device_id,int int_id,int i2c_addr,
 		&(cptr->instance));
 	if (status != XST_SUCCESS) {
 		xil_printf("INT_REG error\n");
+		sprintf(str,"INT REG Failed!\n");
+		VTprintLCD(str,2);
 		return(status);
 	}
 
@@ -118,6 +131,8 @@ XStatus init_i2c(I2C_Comm *cptr,int device_id,int int_id,int i2c_addr,
 	XIic_Start(&(cptr->instance));
 	if (status != XST_SUCCESS) {
 		xil_printf("IIC Start Error\n");
+		sprintf(str,"IIC Start Failed!\n");
+		VTprintLCD(str,2);
 		return(status);
 	}
 
@@ -140,6 +155,7 @@ void *i2c_thread(void *dptr)
 	int	length;
 	XStatus status;
 	int internal_message;
+	char str[20];
 
 	while (1) {
 	
@@ -173,7 +189,6 @@ void *i2c_thread(void *dptr)
 			}
 		}
 		
-
 		// wait on confirmation that the message has been sent
 		// (or determine that an error has occurred)
 		while (status == XST_SUCCESS) {
@@ -183,6 +198,7 @@ void *i2c_thread(void *dptr)
 			// either we get the message type we want and succeed
 			// or we keep going [we just dump the other status
 			// messages w/o processing them]
+			setLED(status_buffer[0]);
 			if (status_buffer[0] == MSGTYPE_I2C_SEND_COMPLETE &&
 					internal_message == MSGTYPE_I2C_SEND_COMPLETE) {
 				// make sure the message was fully sent
@@ -195,13 +211,15 @@ void *i2c_thread(void *dptr)
 			if (status_buffer[0] == MSGTYPE_I2C_RECV_COMPLETE &&
 					internal_message == MSGTYPE_I2C_RECV_COMPLETE) {
 				// make sure the message was fully sent
-				if (status_buffer[1] == 0) {
+				if (status_buffer[1] == 12) {
 					break; // leave the loop
 				} else {
-					status = status_buffer[1];
+					status = XST_FAILURE;
 				}
 			}
-			
+			if (status_buffer[0] == MSGTYPE_I2C_STATUS) {
+				status = status_buffer[1];
+			}
 		}
 		// send a status message to the outgoing status queue
 		msgsnd(cptr->out_status_queue_id,(void *) &status,

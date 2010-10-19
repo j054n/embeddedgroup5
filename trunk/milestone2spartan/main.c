@@ -118,7 +118,8 @@ void *lcd_thread(void *dptr)
 		unsigned int val1i = val1;
 		unsigned char val2 = iic_msg[1];
 		unsigned int val2i = val2;
-		sprintf(str,"Val:  %2X%02X",val1i, val2i);
+		sprintf(str,"Val:  %02X%02X",val1i, val2i);
+		if(val1i != 0xFF && val2i != 0xFF)
 				VTprintLCD(str,1);
 				val1 = val1 << 1;
 				val1 = val1 | (val2 >> 7);
@@ -138,7 +139,7 @@ void *lcd_thread(void *dptr)
 				iic_send_msg[1] = INSTEON_ADDR;
 				iic_send_msg[2] = val1;
 				//iic_send_msg[3] = iic_msg[2];
-				msgsnd(cptr->msg_send_queue_id,iic_send_msg,3*sizeof(unsigned char),0);
+				//msgsnd(cptr->msg_send_queue_id,iic_send_msg,3*sizeof(unsigned char),0);
 	}
 }
 
@@ -278,6 +279,8 @@ void *user_main()
 		0x45,i_am_master);
 	if (status != XST_SUCCESS) {
 		xil_printf("Init I2C Failed\n");
+		sprintf(str,"Init I2C Failed!\n");
+		VTprintLCD(str,2);
 		return;
 	}
 	
@@ -293,7 +296,7 @@ void *user_main()
 	buttons_thread_comm.button_device = &buttons_comm;
 
 
-   controller_thread_comm.send_msg_q_id = i2c_comm.incoming_msg_queue_id;
+    controller_thread_comm.send_msg_q_id = i2c_comm.incoming_msg_queue_id;
 
 	////////////////////////////////////////
 	// Code for examining the priority of this thread
@@ -407,7 +410,17 @@ void *user_main()
 	for (;;) {
 		length = msgrcv(i2c_comm.out_status_queue_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),0,0);
-		sprintf(str,"I2C status %d",msg_buffer[0]);
-		//VTprintLCD(str,2);
+		if(msg_buffer[0] == XII_SLAVE_NO_ACK_EVENT) {
+			sprintf(str,"I2C disconnected");
+			VTprintLCD(str,2);
+		}
+		else if(msg_buffer[0] == XST_IIC_BUS_BUSY) { //PIC is holding IIC low...
+			sprintf(str,"Reset PIC");
+			VTprintLCD(str,2);
+		}
+		else {
+			sprintf(str,"I2C status %x",msg_buffer[0]);
+			VTprintLCD(str,2);
+		}
 	}
 }
