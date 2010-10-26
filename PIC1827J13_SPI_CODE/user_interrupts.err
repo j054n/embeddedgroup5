@@ -1,3 +1,3 @@
-Warning[2058] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c 25 : call of function without prototype
-Warning[2058] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c 36 : call of function without prototype
-Warning[2054] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC1827J13_SPI_CODE\user_interrupts.c 51 : suspicious pointer conversion
+Warning[2058] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD_WRITE\user_interrupts.c 19 : call of function without prototype
+Warning[2058] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD_WRITE\user_interrupts.c 30 : call of function without prototype
+Warning[2054] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD_WRITE\user_interrupts.c 45 : suspicious pointer conversion
