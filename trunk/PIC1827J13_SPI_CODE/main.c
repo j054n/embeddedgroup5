@@ -7,308 +7,122 @@
 #include "user_interrupts.h"
 #include "interrupts.h"
 #include <adc.h>
+#include <delays.h>
 #include "messages.h"
 #include "my_uart.h"
 #include "my_i2c.h"
 #include "uart_thread.h"
+#include "my_spi.h"
+#include "my_lcd.h"
+#include "touch_defs.h"
 
 #include "timer0_thread.h"
-#include <spi.h>
+
 //#pragma config WDT = OFF
-#define CMD 0x42
-#define OCMD 0x40
-#define GPIOA 0x12
-#define GPIOB 0x13
-#define IOCON 0x0A
-#define IODIRA 0x00
-void initSPI(void)
-{
-//	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
-//	OpenSPI2(SPI_FOSC_16, MODE_00, SMPMID);
-	TRISC=0b00010000;
-	LATC=LATC|0b01000000;
-	LATB=0b00000000; //enable MCP reset
-	OpenSPI1(SPI_FOSC_16, MODE_00, SMPMID);
-	
-	
-	LATB=0b00100000; //disable MCP reset
-}
-void printSPI()
-{
-	LATB=0b00100000;
-	WriteSPI1(OCMD);
-	WriteSPI1(IOCON);
-	WriteSPI1(0x00);
-	LATB=0b00110000;
-	
-	LATB=0b00100000;
-	WriteSPI1(CMD);
-	WriteSPI1(IODIRA);
-	WriteSPI1(0x00);
-	LATB=0b00110000;
-	
-	LATB=0b00100000;
-	WriteSPI1(CMD);
-	WriteSPI1(GPIOA);
-	WriteSPI1(0x00);
-	LATB=0b00110000;
-//WriteSPI1(0x41);//control code+address 000 + read
-//	WriteSPI1(0x09);//GPIO A, control register
 
-//	WriteSPI1(0b00100001);//cs1
-//	WriteSPI2(0x09);//GPIO A, control register
-//	WriteSPI2(0b00100001);//cs1
-//	WriteSPI(0x09);//GPIO A, control register
-//	WriteSPI(0b00100001);//cs1
+#define MIWICS LATBbits.LATB4
 
-//	SSPBUF=0xFF;
-//	WriteSPI1(0b00010001);
-//	WriteSPI1(0x19);
-//	WriteSPI1(0b01110111);
-//	WriteSPI1(0x41);//DATA
-//	CloseSPI1();
-//	CloseSPI2();
-//	CloseSPI();
-}
 
-// This program 
-//   (1) prints to the UART and it reads from the UART
-//   (2) it "prints" what it reads from the UART to portb (where LEDs are connected)
-//   (3) it uses two timers to interrupt at different rates and drive 2 LEDs (on portb)
+
+
 void main (void)
 {
-unsigned int counter=0, adcVal=0;
-TRISB = 0b00001010;
+
+unsigned int counter=0,curval=0, adcVal=0;
+unsigned char data;
+TRISB = 0b00000011;
 TRISA = 0x0;
 TRISC=0b00010000;
-initSPI();
+//LATCbits.LATC0=1;
+//LATCbits.LATC1=1;
+//LATCbits.LATC2=1;
+//while(1){}
 
+initSPIHeader();
+glcdInit();
+//printf("s");
 while(1)
 {
-//LATB = 0xff;
-LATB=LATB&0b11101111; //turn on chip select for LCD and turn off reset
-//printSPI();
-LATB=LATB|0b00110000; //turn off chip select for LCD and turn off reset
-//	WriteSPI1(0b00001111);
 
-//test code
-if(counter%2==0)
-{
-	WriteSPI1(0x55);
+
+curval=counter%4;
 counter++;
+/*if(curval==0)
+{
+	LATCbits.LATC1=1;
+	writePixelByte(0xff,CS1);
 }
 else
 {
-	WriteSPI1(0x77);
-counter--;
-}
+	writePixelByte(0x0f,CS1);
+}*/
 
-LATB=LATB|0b00000100;//touchscreen voltage
-readADC2(&adcVal);
-//adcVal=0x011;
-if(adcVal>0x010)
+if(curval==0)
 {
-	LATC=LATC|0x07;
+	data=0b01010101;
+	printSPIHeader(OLATA, data);
 }
-else 
+else if(curval==1)
 {
-	LATC=LATC&0xf8;
+	data=0b10101010;
+	printSPIHeader(OLATA, data);
 }
-	//putcSPI1(0xff);
-//	SSPBUF=0xff;
-//	WriteSPI2(0x0f);
-//	SSPBUF=0x0f;
+else if(curval==2)
+{
+	data=0b01010101;
+	printSPIHeader(OLATB, data);
 }
-//CloseSPI1();
-//	CloseSPI2();
-	CloseSPI1();
-/*	char c;
-	int adcVal;
-	signed char	length;
-	unsigned char	msgtype;
-	unsigned char last_reg_recvd, action;
-	uart_comm uc;
-	i2c_comm ic;
-	unsigned char msgbuffer[MSGLEN+1];
-	unsigned char i;
-	uart_thread_struct	uthread_data; // info for uart_lthread
-	timer1_thread_struct t1thread_data; // info for timer1_lthread
-	timer0_thread_struct t0thread_data; // info for timer0_lthread
-	
-//	initADC();
-	initSPI();
-	// set to run really, really fast...
-	OSCCON = 0x6C; // 4 MHz
-	OSCTUNEbits.PLLEN = 1; // 4x the clock speed in the previous line
+else
+{
+	data=0b10101010;
+	printSPIHeader(OLATB, data);
+	counter=0;
+}
 
-	// initialize my uart recv handling code
-//	init_uart_recv(&uc);
+X_PLUS=1;//touchscreen voltage
+X_MINUS=1;
+Y_PLUS=0;
+//Y_MINUS=1;
+//LATB=LATB|0xf;
+readADC2(&adcVal); //detect a touch
 
-	// initialize the i2c code
-//	init_i2c(&ic);
+if(adcVal>0x300) //touch threshold
+	{
 
-	// init the timer1 lthread
-	init_timer1_lthread(&t1thread_data);
-
-	// initialize message queues before enabling any interrupts
-	init_queues();
-
-	// set direction for PORTB to output
-	TRISB = 0x0;
-	LATB = 0x0;
-
-	// set up PORTA for input
-/*
-	PORTA = 0x0;	// clear the port
-	LATA = 0x0;		// clear the output latch
-	ADCON1 = 0x0F;	// turn off the A2D function on these pins
-	// Only for 40-pin version of this chip CMCON = 0x07;	// turn the comparator off
-	TRISA = 0x0F;	// set RA3-RA0 to inputs
-*/
-
-	// initialize Timers
-//	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_128);
-//	OpenTimer1( TIMER_INT_ON & T1_PS_1_8 & T1_16BIT_RW & T1_SOURCE_INT & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF);
-	
-	// Peripheral interrupts can have their priority set to high or low
-	// enable high-priority interrupts and low-priority interrupts
-/*	enable_interrupts();
-
-	// Decide on the priority of the enabled peripheral interrupts
-	// 0 is low, 1 is high
-	// Timer1 interrupt
-	IPR1bits.TMR1IP = 0;
-	// USART RX interrupt
-	IPR1bits.RCIP = 0;
-	// I2C interrupt
-//	IPR1bits.SSPIP = 1;
-
-	// configure the hardware i2c device as a slave
-//	i2c_configure_slave(0x8A);
-
-	// must specifically enable the I2C interrupts
-//	PIE1bits.SSPIE = 1;
-
-	// configure the hardware 
-//device
- // 	OpenUSART( USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT   & 
-//		USART_CONT_RX & USART_BRGH_LOW, 0x19);
-
-/* Junk to force an I2C interrupt in the simulator
-PIR1bits.SSPIF = 1;
-_asm
-goto 0x08
-_endasm;
-*/
-
-/*	printf("Hello\r\n");
-	// loop forever
-	// This loop is responsible for "handing off" messages to the subroutines
-	// that should get them.  Although the subroutines are not threads, but
-	// they can be equated with the tasks in your task diagram if you 
-	// structure them properly.
-  	while (1) {
-		// Call a routine that blocks until either on the incoming
-		// messages queues has a message (this may put the processor into
-		// an idle mode
-
-	printSPI();
-		block_on_To_msgqueues();
-
-		// At this point, one or both of the queues has a message.  It 
-		// makes sense to check the high-priority messages first -- in fact,
-		// you may only want to check the low-priority messages when there
-		// is not a high priority message.  That is a design decision and
-		// I haven't done it here.
-		length = ToMainHigh_recvmsg(MSGLEN,&msgtype,(void *) msgbuffer);
-		if (length < 0) {
-			// no message, check the error code to see if it is concern
-			if (length != MSGQUEUE_EMPTY) {
-				printf("Error: Bad high priority receive, code = %x\r\n",
-					length);
-			}
-		} else {
-			switch (msgtype) {
-				case MSGT_TIMER0: {
-					timer0_lthread(&t0thread_data,msgtype,length,msgbuffer);
-					break;
-				};
-				case MSGT_I2C_DATA:
-				case MSGT_I2C_DBG: {
-					printf("I2C Interrupt received %x: ",msgtype);
-					for (i=0;i<length;i++) {
-						printf(" %x",msgbuffer[i]);
-					}
-					//LATBbits.LATB0 = !LATBbits.LATB0;
-					LATB = msgbuffer[2];
-					//LATB = msgtype;
-					//LATB=0x01;
-					//printf("\r\n");
-					// keep track of the first byte received for later use
-					//last_reg_recvd = msgbuffer[0];
-					//action=msgbuffer[7];
-					//msgbuffer[0]=0xff;
-					//msgbuffer[1]=0xff;
-					//msgbuffer[2]=0xff;
-					//msgbuffer[3]=0xff;
-					//start_i2c_slave_reply(4,msgbuffer);
-					break;
-				};
-				case MSGT_I2C_RQST: {
-					printf("I2C Slave Req\r\n");
-					
-					length=2;
-					msgbuffer[0]=(adcVal>>8)&0xff;
-					msgbuffer[1]=adcVal&0xff;
-					
-
-					//DO SPI WRITE
-					
-
-					///	msgbuffer[0]=0x55;
-					//			msgbuffer[1]=0x55;
-								//printf("XXX: type: %x ADC: %x MsgB1: %x MsgB2: %x\r\n",msgtype,value,msgbuffer[0],msgbuffer[1]);
-								//break;
-					//		}
-					//}
-//					start_i2c_slave_reply(length,msgbuffer);
-					break;
-				};
-				default: {
-					printf("Error: Unexpected msg in queue, type = %x\r\n",
-						msgtype);
-					break;
-				};
-			};
-		//	readADC(&adcVal);
+		X_PLUS=1;//touchscreen voltage
+		X_MINUS=0;
+		readADC2(&adcVal); //read a touch Y location
+		if(adcVal <0x0f0)
+		{
+			LATCbits.LATC0=1;
+			LATCbits.LATC1=0;
+			LATCbits.LATC2=0;
 		}
-
-		// Check the low priority queue
-		length = ToMainLow_recvmsg(MSGLEN,&msgtype,(void *) msgbuffer);
-		if (length < 0) {
-			// no message, check the error code to see if it is concern
-			if (length != MSGQUEUE_EMPTY) {
-				printf("Error: Bad low priority receive, code = %x\r\n",
-					length);
-			}
-		} else {
-			switch (msgtype) {
-				case MSGT_TIMER1: {
-					timer1_lthread(&t1thread_data,msgtype,length,msgbuffer);
-					break;
-				};
-				case MSGT_OVERRUN:
-		///		case MSGT_UART_DATA: {
-		//			uart_lthread(&uthread_data,msgtype,length,msgbuffer);
-		//			break;
-		//		};
-				default: {
-					printf("Error: Unexpected msg in queue, type = %x\r\n",
-						msgtype);
-					break;
-				};
-			};
+		else if(adcVal<0x1f0)
+		{
+			LATCbits.LATC0=0;
+			LATCbits.LATC1=1;
+			LATCbits.LATC2=0;
 		}
- 	 }
-*/
+		else if(adcVal<0x2f0)
+		{
+			LATCbits.LATC0=1;
+			LATCbits.LATC1=1;
+			LATCbits.LATC2=0;
+		}
+		else 
+		{
+			LATCbits.LATC0=0;
+			LATCbits.LATC1=0;
+			LATCbits.LATC2=1;
+		}
+	}else
+	{
+		LATCbits.LATC0=0;
+		LATCbits.LATC1=0;
+		LATCbits.LATC2=0;
+	}
+
+}
+
 }
