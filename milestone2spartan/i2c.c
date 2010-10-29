@@ -198,7 +198,7 @@ void *i2c_thread(void *dptr)
 			// either we get the message type we want and succeed
 			// or we keep going [we just dump the other status
 			// messages w/o processing them]
-			//setLED(status_buffer[0]);
+			setLED(status_buffer[0]);
 			if (status_buffer[0] == MSGTYPE_I2C_SEND_COMPLETE &&
 					internal_message == MSGTYPE_I2C_SEND_COMPLETE) {
 				// make sure the message was fully sent

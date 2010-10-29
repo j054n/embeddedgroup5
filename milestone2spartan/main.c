@@ -11,11 +11,9 @@
 #include "i2c.h"
 #include "VTio.h"
 
-#define USER_DATA_MSGLEN 1
 
 #define BUTTON_Q_1 0x51
 #define LCD_Q_1 0x52
-#define LCD_Q_2 0x58
 #define I2C_STATUS_Q 0x53
 #define I2C_ISTATUS_Q 0x54
 #define I2C_RECV_Q 0x55
@@ -26,13 +24,9 @@
 #define BUTTON_MSG 0x01
 #define TIMER_MSG 0x02
 
-#define setLED(n)  XGpio_mWriteReg(XPAR_LEDS_8BIT_BASEADDR,1,n);
-#define CONVERGE 10
-
 // entry point into the program
 int main(void)
 {
-	VTinit();
 	// starting the kernel
 	xilkernel_main(); // This routine starts the kernel and leaves main()
 	return 0;
@@ -57,19 +51,11 @@ void *button_thread(void *dptr)
 	Buttons_Thread_Comm *cptr = (Buttons_Thread_Comm *) dptr;
 	unsigned	int	msg_buffer[MAXLEN];
 	int	length, i2c_length;
-	unsigned char	user_msg_buffer[MAXLEN];
+	unsigned char	i2c_msg_buffer[MAXLEN];
 	unsigned	int	button_val;
 	unsigned char button_char;
 	int	done;
-	int flag;
-	int user;
-	char str[20];
 	XStatus	status;
-	
-	flag = 0;
-	
-	sprintf(str,"Select User");
-	VTprintLCD(str,1);
 
 	for (;;) {
 		length = msgrcv(cptr->recv_msg_q_id,
@@ -82,56 +68,15 @@ void *button_thread(void *dptr)
 		button_char = button_val >> 6;
 		
 
-		// only send a message if a button is actually pressed
+		// only send a message is a button is actually pressed
 		if (button_char != 0) {
 			// Assemble the i2c message
 			// message type
-			/*i2c_msg_buffer[0] = I2C_SEND_MSG;
+			i2c_msg_buffer[0] = I2C_SEND_MSG;
 			i2c_msg_buffer[1] = SENSOR_BRD_ADDR;
 			i2c_msg_buffer[2] = button_char;
 			i2c_length = 3*sizeof(unsigned char);
-			msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0); //send message to I2C handler*/
-			if(!flag) {
-				if(button_char == 1) { user = 1; }//user 1 active
-				else if(button_char == 2) { user = 2; }//user 2 active
-				else if(button_char == 4) { user = 3; }//user 3 active
-				else if(button_char == 8) { user = 4; }//user 4 active
-				sprintf(str, "User%d:Activity?", user);
-				VTprintLCD(str,1);
-				flag++;
-			}
-			else {
-				if(button_char == 1) { //activity 1 active
-					sprintf(str, "User%d:Activity:1", user);
-					user_msg_buffer[0] = 	user==1 ? 100 :
-											user==2 ? 80 :
-											user==3 ? 60 :
-											user==4 ? 50 : 0;
-				}
-				else if(button_char == 2) { //activity 2 active
-					sprintf(str, "User%d:Activity:2", user);
-					user_msg_buffer[0] = 	user==1 ? 75 :
-											user==2 ? 50 :
-											user==3 ? 35 :
-											user==4 ? 20 : 0;
-				}
-				else if(button_char == 4) { //activity 3 active
-					sprintf(str, "User%d:Activity:3", user);
-					user_msg_buffer[0] = 	user==1 ? 50 :
-											user==2 ? 35 :
-											user==3 ? 20 :
-											user==4 ? 10 : 0;
-				}
-				else if(button_char == 8) { //return to user select
-					flag--; 
-					sprintf(str,"Select User");
-					VTprintLCD(str,1);
-				}
-				if(button_char != 8) {
-					VTprintLCD(str,1);
-					msgsnd(cptr->send_msg_q_id,user_msg_buffer,sizeof(unsigned char),0);
-				}
-			}
+			msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0);
 		}
 	}
 }
@@ -141,35 +86,23 @@ void *button_thread(void *dptr)
 //  - It waits for a message and then prints that message
 ///////////////////////////////////////////
 typedef struct __LCD_Thread_Comm {
-	int	iic_recv_queue_id;
-	int user_recv_queue_id;
+	int	msg_recv_queue_id;
 	int msg_send_queue_id;
 } LCD_Thread_Comm;
 void *lcd_thread(void *dptr)
 {
 	LCD_Thread_Comm *cptr = (LCD_Thread_Comm *) dptr;
 	int	length;
-	int length2;
 	int	count;
 	unsigned char iic_msg[MAX_IIC_MSGLEN];
-	unsigned char user_data[USER_DATA_MSGLEN];
 	char str[20];
 	unsigned char iic_send_msg[MAX_IIC_MSGLEN];
-	int avg1, avg2, avg3;
-	int diff;
-	int insteon_val;
 
 	count=0;
-	avg1=0;
-	avg2=0;
-	avg3=0;
-	insteon_val=0xFF;
 
 	for (;;) {
-		length = msgrcv(cptr->iic_recv_queue_id,(void *) iic_msg,
+		length = msgrcv(cptr->msg_recv_queue_id,(void *) iic_msg,
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
-		length2 = msgrcv(cptr->user_recv_queue_id,(void *) user_data,
-			sizeof(Xuint8)*USER_DATA_MSGLEN,0,0);
 /*
 		switch (iic_msg[0]) {
 			case I2C_SEND_MSG: {
@@ -181,54 +114,32 @@ void *lcd_thread(void *dptr)
 				break;
 			}
 		}*/
-		unsigned int target = user_data[0] / 100 * 0x3FF;
 		unsigned char val1 = iic_msg[0];
 		unsigned int val1i = val1;
 		unsigned char val2 = iic_msg[1];
 		unsigned int val2i = val2;
-		unsigned char val3 = iic_msg[2];
-		unsigned int val3i = val3;
-		unsigned char val4 = iic_msg[3];
-		unsigned int val4i = val4;
-		//val1 = val1 << 1;
-		//val1 = val1 | (val2 >> 7);
-		if(val1i != 0xFF && val2i != 0xFF && val3i != 0xFF && val4i != 0xFF) {
-			val1i = (val2i + (val1i << 8));
-			val3i = (val4i + (val3i << 8));
-			diff = val1i - avg1;
-			avg1 += diff / CONVERGE;
-			diff = val3i - avg2;
-			avg2 += diff / CONVERGE;
-			
-			avg3 = (avg1 + avg2) / 2;
-			
-			if(avg3 < target) {
-				if(avg3 < target-120) {insteon_val = insteon_val>30 ? insteon_val-30 : 0;}
-				else if(avg3 < target-80)  {insteon_val = insteon_val>20 ? insteon_val-20 : 0;}
-				else if(avg3 < target-40)  {insteon_val = insteon_val>10 ? insteon_val-10 : 0;}
-				else if(avg3 < target-20)  {insteon_val = insteon_val>5  ? insteon_val- 5 : 0;}
-				else if(avg3 < target-8)   {insteon_val = insteon_val>2  ? insteon_val- 2 : 0;}
-			}
-			else if(avg3 > target) {
-				if(avg3 > target-120) {insteon_val = insteon_val<225 ? insteon_val+30 : 0xFF;}
-				else if(avg3 > target-80)  {insteon_val = insteon_val<235 ? insteon_val+20 : 0xFF;}
-				else if(avg3 > target-40)  {insteon_val = insteon_val<245 ? insteon_val+10 : 0xFF;}
-				else if(avg3 > target-20)  {insteon_val = insteon_val<250 ? insteon_val+ 5 : 0xFF;}
-				else if(avg3 > target-8)   {insteon_val = insteon_val<253 ? insteon_val+ 2 : 0xFF;}
-			}
-			
-			//sprintf(str,"Val:  %04X",val1i);
-			//VTprintLCD(str,1);
-			
-			iic_send_msg[0] = I2C_SEND_MSG;
-			iic_send_msg[1] = INSTEON_ADDR;
-			iic_send_msg[2] = insteon_val;
-			
-			setLED(insteon_val);
-			
-		}
-		//iic_send_msg[3] = iic_msg[2];
-		msgsnd(cptr->msg_send_queue_id,iic_send_msg,3*sizeof(unsigned char),0);
+		sprintf(str,"Val:  %02X%02X",val1i, val2i);
+		if(val1i != 0xFF && val2i != 0xFF)
+				VTprintLCD(str,1);
+				val1 = val1 << 1;
+				val1 = val1 | (val2 >> 7);
+				val1i = val2i + (val1i << 8);
+				
+				if (val1i > 0x2D0)
+					val1 = 0;
+				else if (val1i > 0x200)
+					val1 = 1;
+				else if (val1i > 0x100)
+					val1 = 3;
+				else
+					val1 = 7;
+				
+				
+				iic_send_msg[0] = I2C_SEND_MSG;
+				iic_send_msg[1] = INSTEON_ADDR;
+				iic_send_msg[2] = val1;
+				//iic_send_msg[3] = iic_msg[2];
+				//msgsnd(cptr->msg_send_queue_id,iic_send_msg,3*sizeof(unsigned char),0);
 	}
 }
 
@@ -262,9 +173,10 @@ void *controller_thread(void *dptr)
 			
 			switch(msg_buffer[0]) {
 				case TIMER_MSG: {
+
 					i2c_msg_buffer[0] = I2C_RECV_MSG;
 					i2c_msg_buffer[1] = SENSOR_BRD_ADDR;
-					i2c_msg_buffer[2] = 0x04;						//size of message expected back
+					i2c_msg_buffer[2] = 0x02;						//size of message expected back
 					i2c_length = 3*sizeof(unsigned char);
 
 					msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0);
@@ -324,8 +236,7 @@ void *user_main()
 	////////////////////////////////////////
 	// setup a msg queue for the LCD thread to receive messages on
 	////////////////////////////////////////
-	lcd_thread_comm.iic_recv_queue_id = msgget(LCD_Q_1,IPC_CREAT);
-	lcd_thread_comm.user_recv_queue_id = msgget(LCD_Q_2,IPC_CREAT);
+	lcd_thread_comm.msg_recv_queue_id = msgget(LCD_Q_1,IPC_CREAT);
 
 	controller_thread_comm.recv_msg_q_id = msgget(CONTROLLER_Q_1, IPC_CREAT);
 	
@@ -344,7 +255,7 @@ void *user_main()
 
 	//Setup timer 3 to send messages to controller thread for period polling of sensors
 	status = Start_Timer(&timer_data,XPAR_XPS_TIMER_3_DEVICE_ID,
-		XPAR_XPS_INTC_0_XPS_TIMER_3_INTERRUPT_INTR,0,50000000,2000,
+		XPAR_XPS_INTC_0_XPS_TIMER_3_INTERRUPT_INTR,0,50000000,500,
 		controller_thread_comm.recv_msg_q_id,TIMER_MSG);
 	
 	////////////////////////////////////////
@@ -353,7 +264,7 @@ void *user_main()
 	i2c_comm.incoming_msg_queue_id = 
 		msgget(I2C_INCOMING_Q,IPC_CREAT);
 	i2c_comm.outgoing_msg_queue_id = 
-		lcd_thread_comm.iic_recv_queue_id;
+		lcd_thread_comm.msg_recv_queue_id;
 	i2c_comm.out_status_queue_id = 
 		msgget(I2C_STATUS_Q,IPC_CREAT);
 	i2c_comm.internal_status_queue_id = 
@@ -381,7 +292,7 @@ void *user_main()
 	////////////////////////////////////////
 	buttons_thread_comm.recv_msg_q_id = buttons_comm.send_msg_q_id;
 	buttons_thread_comm.send_msg_q_id = 
-		lcd_thread_comm.user_recv_queue_id;
+		i2c_comm.incoming_msg_queue_id;
 	buttons_thread_comm.button_device = &buttons_comm;
 
 
@@ -485,6 +396,12 @@ void *user_main()
 	////////////////////////////////////////
 
 	////////////////////////////////////////
+	// On LCD indicate if master or slave
+	////////////////////////////////////////
+	VTprintLCD("I am the Master ",1);
+	VTprintLCD("                ",2);
+
+	////////////////////////////////////////
 	// Wait on status messages from the i2c
 	// For the master, we note when msgs are
 	// send, on the slave, we recieve the msgs
@@ -493,9 +410,17 @@ void *user_main()
 	for (;;) {
 		length = msgrcv(i2c_comm.out_status_queue_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),0,0);
-		if(msg_buffer[0] == XII_SLAVE_NO_ACK_EVENT) sprintf(str,"I2C disconnected");
-		else if(msg_buffer[0] == XST_IIC_BUS_BUSY) sprintf(str,"Reset PIC"); //PIC is holding IIC low...
-		else sprintf(str,"I2C status %x",msg_buffer[0]);
-		VTprintLCD(str,2);
+		if(msg_buffer[0] == XII_SLAVE_NO_ACK_EVENT) {
+			sprintf(str,"I2C disconnected");
+			VTprintLCD(str,2);
+		}
+		else if(msg_buffer[0] == XST_IIC_BUS_BUSY) { //PIC is holding IIC low...
+			sprintf(str,"Reset PIC");
+			VTprintLCD(str,2);
+		}
+		else {
+			sprintf(str,"I2C status %x",msg_buffer[0]);
+			VTprintLCD(str,2);
+		}
 	}
 }
