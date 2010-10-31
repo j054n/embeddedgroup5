@@ -48,7 +48,6 @@ file_020=.
 file_021=.
 file_022=.
 file_023=.
-file_024=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -74,7 +73,6 @@ file_020=no
 file_021=no
 file_022=no
 file_023=no
-file_024=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -99,8 +97,7 @@ file_019=no
 file_020=no
 file_021=no
 file_022=no
-file_023=no
-file_024=yes
+file_023=yes
 [FILE_INFO]
 file_000=main.c
 file_001=messages.c
@@ -122,11 +119,10 @@ file_016=uart_thread.h
 file_017=timer1_thread.h
 file_018=timer0_thread.h
 file_019=my_i2c.h
-file_020=lcd_defs.h
-file_021=touch_defs.h
-file_022=my_lcd.h
-file_023=my_spi.h
-file_024=lcd_defs
+file_020=touch_defs.h
+file_021=my_lcd.h
+file_022=my_spi.h
+file_023=lcd_defs
 [SUITE_INFO]
 suite_guid={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
 suite_state=extended-mode
