@@ -38,26 +38,28 @@ TRISC=0b00010000;
 //LATCbits.LATC2=1;
 //while(1){}
 
-initSPIHeader();
+//initSPIHeader();
 glcdInit();
+//while(1)
 //printf("s");
-while(1)
+while(1){}
+/*while(1)
 {
 
 
 curval=counter%4;
 counter++;
-/*if(curval==0)
+if(curval==0)
 {
-	LATCbits.LATC1=1;
-	writePixelByte(0xff,CS1);
+
+	writePixelByte(0xf5,CS1);
 }
 else
 {
-	writePixelByte(0x0f,CS1);
-}*/
+	writePixelByte(0x0,CS2);
+}
 
-if(curval==0)
+/*if(curval==0)
 {
 	data=0b01010101;
 	printSPIHeader(OLATA, data);
@@ -123,6 +125,6 @@ if(adcVal>0x300) //touch threshold
 		LATCbits.LATC2=0;
 	}
 
-}
+}*/
 
 }
