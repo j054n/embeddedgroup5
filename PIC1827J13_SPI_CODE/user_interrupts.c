@@ -5,8 +5,9 @@
 #include <timers.h>
 #include "user_interrupts.h"
 #include "messages.h"
-
+#include "my_touch.h"
 #include <adc.h>
+#include <delays.h>
 
 void initADC()
 {
@@ -18,17 +19,21 @@ void readADC(int *value) //function reads from the ADC and returns a value 0x0 t
 	(*value) = ReadADC(); // Read result and put in temp
 	Delay1KTCYx(1);  // wait a bit...
 }
-void readADC2(int *value) //function reads from the ADC and returns a value 0x0 to 0x03FF
+void readADC_CH(int *value, unsigned char ADC_CH) //function reads from the ADC and returns a value 0x0 to 0x03FF
 {
 	OpenADC(ADC_FOSC_16 & ADC_RIGHT_JUST & ADC_0_TAD,
-		ADC_CH10 &  
+		ADC_CH &  
 		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0b1111111111111100);
-	SetChanADC(ADC_CH10);
+	SetChanADC(ADC_CH);
 	ConvertADC(); // Start conversion
 	while( BusyADC() ); // Wait for ADC conversion
 	(*value) = ReadADC(); // Read result and put in temp
 	Delay1KTCYx(1);  // wait a bit...
 
+}
+void readADC2(int *value)
+{
+	readADC_CH(value,ADC_CH10);
 }
 // A function called by the interrupt handler
 // This one does the action I wanted for this program on a timer0 interrupt
@@ -36,7 +41,37 @@ void timer0_int_handler()
 {
 	unsigned int val;
 	int	length, msgtype;
-
+	if(LOC_FLAG>0){
+		switch(getYLoc()){
+		case 1:
+				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA1,(void *) &val);
+		break;
+		case 2:
+				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA2,(void *) &val);
+		break;
+		case 3:
+				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA3,(void *) &val);
+		break;
+		case 4:
+				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA4,(void *) &val);
+		break;
+		default:
+				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_TOUCH,(void *) &val);
+		break;
+		}
+	}	else
+	{
+		ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_NOTOUCH,(void *) &val);
+	}
+ 	if(isTouched())
+	{
+		LOC_FLAG=1;
+	}
+	else
+	{
+		LOC_FLAG=0;
+		
+	}
 	// toggle an LED
     //LATBbits.LATB0 = !LATBbits.LATB0; 
 	// reset the timer
@@ -52,9 +87,9 @@ void timer0_int_handler()
 // This one does the action I wanted for this program on a timer1 interrupt
 void timer1_int_handler()
 {
-	unsigned int result;
+	unsigned int result,val;
 	//updates the ADC values
-//	readADC(&adcVal);
+
 	// read the timer and then send an empty message to main()
 	result = ReadTimer1();
 	ToMainLow_sendmsg(0,MSGT_TIMER1,(void *) 0);
