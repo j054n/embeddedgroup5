@@ -35,7 +35,7 @@
 #define OLATA 0x0A
 #define READ 0b00001100
 #define STAT_READ 0b00000100
-#define LCDCS LATBbits.LATB5
+#define LCDCS LATBbits.LATB4
 #define STARTLINE 0b11000000
 #define GPPUB 0x16
 #define GPPUA 0x06
