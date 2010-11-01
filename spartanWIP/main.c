@@ -27,7 +27,7 @@
 #define TIMER_MSG 0x02
 
 #define setLED(n)  XGpio_mWriteReg(XPAR_LEDS_8BIT_BASEADDR,1,n);
-#define CONVERGE 10
+#define CONVERGE 5
 
 // entry point into the program
 int main(void)
@@ -57,12 +57,12 @@ void *button_thread(void *dptr)
 	Buttons_Thread_Comm *cptr = (Buttons_Thread_Comm *) dptr;
 	unsigned	int	msg_buffer[MAXLEN];
 	int	length, i2c_length;
-	unsigned char	user_msg_buffer[MAXLEN];
+	unsigned int	user_msg_buffer[MAXLEN];
 	unsigned	int	button_val;
 	unsigned char button_char;
 	int	done;
-	int flag;
-	int user;
+	unsigned int flag;
+	unsigned int user;
 	char str[20];
 	XStatus	status;
 	
@@ -91,7 +91,7 @@ void *button_thread(void *dptr)
 			i2c_msg_buffer[2] = button_char;
 			i2c_length = 3*sizeof(unsigned char);
 			msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0); //send message to I2C handler*/
-			if(!flag) {
+			/*if(!flag) {
 				if(button_char == 1) { user = 1; }//user 1 active
 				else if(button_char == 2) { user = 2; }//user 2 active
 				else if(button_char == 4) { user = 3; }//user 3 active
@@ -106,21 +106,21 @@ void *button_thread(void *dptr)
 					user_msg_buffer[0] = 	user==1 ? 100 :
 											user==2 ? 80 :
 											user==3 ? 60 :
-											user==4 ? 50 : 0;
+											user==4 ? 40 : 0;
 				}
 				else if(button_char == 2) { //activity 2 active
 					sprintf(str, "User%d:Activity:2", user);
 					user_msg_buffer[0] = 	user==1 ? 75 :
-											user==2 ? 50 :
-											user==3 ? 35 :
-											user==4 ? 20 : 0;
+											user==2 ? 60 :
+											user==3 ? 45 :
+											user==4 ? 30 : 0;
 				}
 				else if(button_char == 4) { //activity 3 active
 					sprintf(str, "User%d:Activity:3", user);
 					user_msg_buffer[0] = 	user==1 ? 50 :
-											user==2 ? 35 :
-											user==3 ? 20 :
-											user==4 ? 10 : 0;
+											user==2 ? 40 :
+											user==3 ? 30 :
+											user==4 ? 20 : 0;
 				}
 				else if(button_char == 8) { //return to user select
 					flag--; 
@@ -129,9 +129,9 @@ void *button_thread(void *dptr)
 				}
 				if(button_char != 8) {
 					VTprintLCD(str,1);
-					msgsnd(cptr->send_msg_q_id,user_msg_buffer,sizeof(unsigned char),0);
+					msgsnd(cptr->send_msg_q_id,user_msg_buffer,sizeof(unsigned int),0);
 				}
-			}
+			}*/
 		}
 	}
 }
@@ -149,27 +149,33 @@ void *lcd_thread(void *dptr)
 {
 	LCD_Thread_Comm *cptr = (LCD_Thread_Comm *) dptr;
 	int	length;
-	int length2;
+	//int length2;
 	int	count;
 	unsigned char iic_msg[MAX_IIC_MSGLEN];
-	unsigned char user_data[USER_DATA_MSGLEN];
+	//unsigned int user_data[USER_DATA_MSGLEN];
 	char str[20];
 	unsigned char iic_send_msg[MAX_IIC_MSGLEN];
 	int avg1, avg2, avg3;
-	int diff;
-	int insteon_val;
+	int diff, current;
+	unsigned int insteon_val;
+	unsigned int target;
+	unsigned int user[12] = {100,75,50,80,60,40,60,45,30,40,30,20};
 
 	count=0;
 	avg1=0;
 	avg2=0;
 	avg3=0;
+	current=0;
 	insteon_val=0xFF;
+	target=0x3FF;
+	//setLED(0x55);
 
 	for (;;) {
+		//setLED(0x55);
 		length = msgrcv(cptr->iic_recv_queue_id,(void *) iic_msg,
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
-		length2 = msgrcv(cptr->user_recv_queue_id,(void *) user_data,
-			sizeof(Xuint8)*USER_DATA_MSGLEN,0,0);
+		//length2 = msgrcv(cptr->user_recv_queue_id,(void *) user_data,
+		//	sizeof(unsigned int)*USER_DATA_MSGLEN,0,IPC_NOWAIT);
 /*
 		switch (iic_msg[0]) {
 			case I2C_SEND_MSG: {
@@ -181,7 +187,14 @@ void *lcd_thread(void *dptr)
 				break;
 			}
 		}*/
-		unsigned int target = user_data[0] / 100 * 0x3FF;
+		//if(length2 >= 0) { target = (user_data[0] * 0x3FF) / 100; }
+		//if(length2 >= 0) { target = user_data[0]; }
+		if(iic_msg[4] != current) { 
+			target = (user[iic_msg[4]] * 0x3FF)/100;
+			current = iic_msg[4];
+		}
+		
+		//setLED(target);
 		unsigned char val1 = iic_msg[0];
 		unsigned int val1i = val1;
 		unsigned char val2 = iic_msg[1];
@@ -192,36 +205,38 @@ void *lcd_thread(void *dptr)
 		unsigned int val4i = val4;
 		//val1 = val1 << 1;
 		//val1 = val1 | (val2 >> 7);
-		if(val1i != 0xFF && val2i != 0xFF && val3i != 0xFF && val4i != 0xFF) {
+		if(val1i != 0xFF && val3i != 0xFF) {
 			val1i = (val2i + (val1i << 8));
 			val3i = (val4i + (val3i << 8));
-			diff = val1i - avg1;
-			avg1 += diff / CONVERGE;
-			diff = val3i - avg2;
-			avg2 += diff / CONVERGE;
-			
-			avg3 = (avg1 + avg2) / 2;
+			avg3 = (val1i + val3i) / 2;
+			//diff = avg1 - avg3;
+			//avg3 += diff / CONVERGE;
+			//avg1 += diff / CONVERGE;
+			//diff = val3i - avg2;
+			//avg2 += diff / CONVERGE;
+			//avg3 = avg1;
+			//avg3 = (avg1 + avg2) / 2;
 			
 			if(avg3 < target) {
-				if(avg3 < target-120) {insteon_val = insteon_val>30 ? insteon_val-30 : 0;}
-				else if(avg3 < target-80)  {insteon_val = insteon_val>20 ? insteon_val-20 : 0;}
-				else if(avg3 < target-40)  {insteon_val = insteon_val>10 ? insteon_val-10 : 0;}
-				else if(avg3 < target-20)  {insteon_val = insteon_val>5  ? insteon_val- 5 : 0;}
-				else if(avg3 < target-8)   {insteon_val = insteon_val>2  ? insteon_val- 2 : 0;}
+				if(avg3 < target-120) {insteon_val = insteon_val<225 ? insteon_val+30 : 0xFF;}
+				else if(avg3 < target-80)  {insteon_val = insteon_val<235 ? insteon_val+20 : 0xFF;}
+				else if(avg3 < target-40)  {insteon_val = insteon_val<245 ? insteon_val+10 : 0xFF;}
+				else if(avg3 < target-20)  {insteon_val = insteon_val<250 ? insteon_val+ 5 : 0xFF;}
+				else if(avg3 < target-8)   {insteon_val = insteon_val<253 ? insteon_val+ 2 : 0xFF;}
 			}
 			else if(avg3 > target) {
-				if(avg3 > target-120) {insteon_val = insteon_val<225 ? insteon_val+30 : 0xFF;}
-				else if(avg3 > target-80)  {insteon_val = insteon_val<235 ? insteon_val+20 : 0xFF;}
-				else if(avg3 > target-40)  {insteon_val = insteon_val<245 ? insteon_val+10 : 0xFF;}
-				else if(avg3 > target-20)  {insteon_val = insteon_val<250 ? insteon_val+ 5 : 0xFF;}
-				else if(avg3 > target-8)   {insteon_val = insteon_val<253 ? insteon_val+ 2 : 0xFF;}
+				if(avg3 > target+120) {insteon_val = insteon_val>30 ? insteon_val-30 : 0;}
+				else if(avg3 > target+80)  {insteon_val = insteon_val>20 ? insteon_val-20 : 0;}
+				else if(avg3 > target+40)  {insteon_val = insteon_val>10 ? insteon_val-10 : 0;}
+				else if(avg3 > target+20)  {insteon_val = insteon_val>5  ? insteon_val- 5 : 0;}
+				else if(avg3 > target+8)   {insteon_val = insteon_val>2  ? insteon_val- 2 : 0;}
 			}
 			
-			//sprintf(str,"Val:  %04X",val1i);
-			//VTprintLCD(str,1);
+			sprintf(str,"Val:  %03X/%03X",avg3,target);
+			VTprintLCD(str,1);
 			
 			iic_send_msg[0] = I2C_SEND_MSG;
-			iic_send_msg[1] = INSTEON_ADDR;
+			iic_send_msg[1] = SENSOR_BRD_ADDR;
 			iic_send_msg[2] = insteon_val;
 			
 			setLED(insteon_val);
@@ -264,7 +279,7 @@ void *controller_thread(void *dptr)
 				case TIMER_MSG: {
 					i2c_msg_buffer[0] = I2C_RECV_MSG;
 					i2c_msg_buffer[1] = SENSOR_BRD_ADDR;
-					i2c_msg_buffer[2] = 0x04;						//size of message expected back
+					i2c_msg_buffer[2] = 5;						//size of message expected back
 					i2c_length = 3*sizeof(unsigned char);
 
 					msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0);
@@ -344,7 +359,7 @@ void *user_main()
 
 	//Setup timer 3 to send messages to controller thread for period polling of sensors
 	status = Start_Timer(&timer_data,XPAR_XPS_TIMER_3_DEVICE_ID,
-		XPAR_XPS_INTC_0_XPS_TIMER_3_INTERRUPT_INTR,0,50000000,2000,
+		XPAR_XPS_INTC_0_XPS_TIMER_3_INTERRUPT_INTR,0,50000000,500,
 		controller_thread_comm.recv_msg_q_id,TIMER_MSG);
 	
 	////////////////////////////////////////
@@ -461,7 +476,7 @@ void *user_main()
 	if (status != XST_SUCCESS) {
 		return;
 	}
-///////////
+	///////////
 	// Code for setting up the I2C Thread
 	// Only create this thread for the master.
 	////////////////////////////////////////
