@@ -96,6 +96,10 @@ void main(void)
 #include <delays.h>
 #include <adc.h>
 
+#define DEBUG_LED1 			LATCbits.LATC0
+#define DEBUG_LED2			LATCbits.LATC1
+#define DEBUG_LED3			LATCbits.LATC2
+
 void initADC(void)
 {
 	OpenADC(ADC_FOSC_8 & ADC_RIGHT_JUST & ADC_0_TAD,
@@ -114,6 +118,19 @@ void readADC(int *value)
 	Delay1KTCYx(1);  // wait a bit...
 }
 
+void readADC_CH(int *value, unsigned char ADC_CH) //function reads from the ADC and returns a value 0x0 to 0x03FF
+{
+	OpenADC(ADC_FOSC_16 & ADC_RIGHT_JUST & ADC_0_TAD,
+		ADC_CH &  
+		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0b1111111111111100);
+	SetChanADC(ADC_CH);
+	ConvertADC(); // Start conversion
+	while( BusyADC() ); // Wait for ADC conversion
+	(*value) = ReadADC(); // Read result and put in temp
+	Delay1KTCYx(1);  // wait a bit...
+
+}
+
 void stopADC()
 {
 	CloseADC(); // Disable A/D converter
@@ -121,27 +138,26 @@ void stopADC()
 
 void main(void)
 {
-	int value;
+	int value0, value1;
 	int display, prevdisplay;
 
 	// Set internal oscillator to 4Mhz
 	OSCCON = 0x6C;
 	
 	LATA = 0x00;
-	TRISA = 0x01;
+	TRISA = 0x03;
 
-	// Set PORT B as digital outputs for the LEDs
 	LATB = 0x00;
 	TRISB = 0xff;
 
 	// Set PORT C as input and output.
 	LATC = 0x00;	
-	TRISC = 0xFE;  // Set PORT C to read from all except RC4
+	TRISC = 0xFC;  // Set PORT C to read from all except RC4
 				   // Write out on RC4
 //printf("1\n");
 
 	// Initialize the A/D
-	initADC();
+	//initADC();
 
 	// Flash the LEDs
 	LATC = 0x01;
@@ -161,10 +177,17 @@ void main(void)
 		//display+=((PORTC&0x08)<<1);
 
 		//Read A/D
-		readADC(&value);
+		readADC_CH(&value0, ADC_CH0);
 
-		if(value<0x200) LATC = 0x00;
-		else LATC = 0x01;	
+		readADC_CH(&value1, ADC_CH1);
+
+
+		if (value0 > 0x200) DEBUG_LED1 = 0;
+		else DEBUG_LED1 = 1;
+
+		if (value1 > 0x200) DEBUG_LED2 = 0;
+		else DEBUG_LED2 = 1;
+
 
 		//LATC = 0x01;
 			
@@ -197,3 +220,4 @@ void main(void)
 	}
 
 }
+
