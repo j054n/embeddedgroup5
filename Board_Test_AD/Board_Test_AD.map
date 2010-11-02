@@ -1,44 +1,44 @@
 MPLINK 4.37, Linker
-Linker Map File - Created Mon Oct 11 22:59:23 2010
+Linker Map File - Created Mon Nov 01 21:57:16 2010
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x000006    program   0x000002
-             .code_main.o       code   0x000008    program   0x000108
-          .code_adcopen.o       code   0x000110    program   0x0000a2
-               _cinit_scn       code   0x0001b2    program   0x00009e
-             D10KTCYXCODE       code   0x000250    program   0x00002e
-         .code_adcsetch.o       code   0x00027e    program   0x00002e
-              D1KTCYXCODE       code   0x0002ac    program   0x000020
-                    .code       code   0x0002cc    program   0x000020
-             _startup_scn       code   0x0002ec    program   0x00001c
-              D10TCYXCODE       code   0x000308    program   0x000016
-          .code_adcread.o       code   0x00031e    program   0x000012
-          .code_adcbusy.o       code   0x000330    program   0x00000a
-         .code_adcclose.o       code   0x00033a    program   0x000006
-          .code_adcconv.o       code   0x000340    program   0x000004
-           .code___init.o       code   0x000344    program   0x000002
-      .idata_adcsetch.o_i    romdata   0x000346    program   0x000000
-       .romdata_adcread.o    romdata   0x000346    program   0x000000
-       .idata_adcread.o_i    romdata   0x000346    program   0x000000
-      .romdata_adcsetch.o    romdata   0x000346    program   0x000000
-        .idata___init.o_i    romdata   0x000346    program   0x000000
-        .romdata___init.o    romdata   0x000346    program   0x000000
-       .romdata_adcopen.o    romdata   0x000346    program   0x000000
-       .idata_adcopen.o_i    romdata   0x000346    program   0x000000
-       .romdata_adcconv.o    romdata   0x000346    program   0x000000
-       .idata_adcconv.o_i    romdata   0x000346    program   0x000000
-      .romdata_adcclose.o    romdata   0x000346    program   0x000000
-      .idata_adcclose.o_i    romdata   0x000346    program   0x000000
-       .romdata_adcbusy.o    romdata   0x000346    program   0x000000
-       .idata_adcbusy.o_i    romdata   0x000346    program   0x000000
-          .romdata_main.o    romdata   0x000346    program   0x000000
-          .idata_main.o_i    romdata   0x000346    program   0x000000
-            .code_c018i.o       code   0x000346    program   0x000000
-         .romdata_c018i.o    romdata   0x000346    program   0x000000
-         .idata_c018i.o_i    romdata   0x000346    program   0x000000
+             .code_main.o       code   0x000008    program   0x0001b8
+          .code_adcopen.o       code   0x0001c0    program   0x0000a2
+               _cinit_scn       code   0x000262    program   0x00009e
+             D10KTCYXCODE       code   0x000300    program   0x00002e
+         .code_adcsetch.o       code   0x00032e    program   0x00002e
+              D1KTCYXCODE       code   0x00035c    program   0x000020
+                    .code       code   0x00037c    program   0x000020
+             _startup_scn       code   0x00039c    program   0x00001c
+              D10TCYXCODE       code   0x0003b8    program   0x000016
+          .code_adcread.o       code   0x0003ce    program   0x000012
+          .code_adcbusy.o       code   0x0003e0    program   0x00000a
+         .code_adcclose.o       code   0x0003ea    program   0x000006
+          .code_adcconv.o       code   0x0003f0    program   0x000004
+           .code___init.o       code   0x0003f4    program   0x000002
+      .idata_adcsetch.o_i    romdata   0x0003f6    program   0x000000
+       .romdata_adcread.o    romdata   0x0003f6    program   0x000000
+       .idata_adcread.o_i    romdata   0x0003f6    program   0x000000
+      .romdata_adcsetch.o    romdata   0x0003f6    program   0x000000
+        .idata___init.o_i    romdata   0x0003f6    program   0x000000
+        .romdata___init.o    romdata   0x0003f6    program   0x000000
+       .romdata_adcopen.o    romdata   0x0003f6    program   0x000000
+       .idata_adcopen.o_i    romdata   0x0003f6    program   0x000000
+       .romdata_adcconv.o    romdata   0x0003f6    program   0x000000
+       .idata_adcconv.o_i    romdata   0x0003f6    program   0x000000
+      .romdata_adcclose.o    romdata   0x0003f6    program   0x000000
+      .idata_adcclose.o_i    romdata   0x0003f6    program   0x000000
+       .romdata_adcbusy.o    romdata   0x0003f6    program   0x000000
+       .idata_adcbusy.o_i    romdata   0x0003f6    program   0x000000
+          .romdata_main.o    romdata   0x0003f6    program   0x000000
+          .idata_main.o_i    romdata   0x0003f6    program   0x000000
+            .code_c018i.o       code   0x0003f6    program   0x000000
+         .romdata_c018i.o    romdata   0x0003f6    program   0x000000
+         .idata_c018i.o_i    romdata   0x0003f6    program   0x000000
                  .tmpdata      udata   0x000000       data   0x000004
                 MATH_DATA      udata   0x000004       data   0x000002
                 DELAYDAT2      udata   0x000006       data   0x000001
@@ -79,59 +79,60 @@ Linker Map File - Created Mon Oct 11 22:59:23 2010
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000345      
-            838 out of 131074 program addresses used, program memory utilization is 0%
+                            0x000000    0x0003f5      
+            1014 out of 131074 program addresses used, program memory utilization is 0%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                  BusyADC   0x000330    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
-                 CloseADC   0x00033a    program     extern C:\MCC18\src\pmc_common\ADC\adcclose.c
-               ConvertADC   0x000340    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                   D10K_1   0x00025c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000268    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x00025a    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                    D10_1   0x000318    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-                     D10x   0x000310    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-                    D1K_1   0x0002b8    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x0002b6    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-             Delay10KTCYx   0x000250    program     extern C:\MCC18\src\traditional\delays\d10ktcyx.asm
-              Delay10TCYx   0x000308    program     extern C:\MCC18\src\traditional\delays\d10tcyx.asm
-              Delay1KTCYx   0x0002ac    program     extern C:\MCC18\src\traditional\delays\d1ktcyx.asm
-                  OpenADC   0x000110    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-                  ReadADC   0x00031e    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-               SetChanADC   0x00027e    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
-       _D10KTCYXCODE_0010   0x000260    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x00026c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-        _D10TCYXCODE_000A   0x000312    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x000314    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x000316    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D1KTCYXCODE_0010   0x0002bc    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x0002c2    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+                  BusyADC   0x0003e0    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
+                 CloseADC   0x0003ea    program     extern C:\MCC18\src\pmc_common\ADC\adcclose.c
+               ConvertADC   0x0003f0    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                   D10K_1   0x00030c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000318    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00030a    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                    D10_1   0x0003c8    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+                     D10x   0x0003c0    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+                    D1K_1   0x000368    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x000366    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+             Delay10KTCYx   0x000300    program     extern C:\MCC18\src\traditional\delays\d10ktcyx.asm
+              Delay10TCYx   0x0003b8    program     extern C:\MCC18\src\traditional\delays\d10tcyx.asm
+              Delay1KTCYx   0x00035c    program     extern C:\MCC18\src\traditional\delays\d1ktcyx.asm
+                  OpenADC   0x0001c0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+                  ReadADC   0x0003ce    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+               SetChanADC   0x00032e    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+       _D10KTCYXCODE_0010   0x000310    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x00031c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+        _D10TCYXCODE_000A   0x0003c2    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x0003c4    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x0003c6    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D1KTCYXCODE_0010   0x00036c    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000372    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000306    program     static                          
-       ___return_lbl00002   0x00024e    program     static                          
-                   __init   0x000344    program     extern C:\MCC18\src\traditional\stdclib\__init.c
-            __zero_memory   0x0002cc    program     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                _do_cinit   0x0001b2    program     extern C:\MCC18\src\traditional\startup\c018i.c
+       ___return_lbl00001   0x0003b6    program     static                          
+       ___return_lbl00002   0x0002fe    program     static                          
+                   __init   0x0003f4    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+            __zero_memory   0x00037c    program     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                _do_cinit   0x000262    program     extern C:\MCC18\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                 _startup   0x0002ec    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                compare_l   0x0002e2    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                copy_loop   0x000224    program     static                          
-            copy_one_byte   0x00022a    program     static                          
-                     done   0x00024e    program     static                          
-             done_copying   0x000238    program     static                          
-                  initADC   0x000008    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                     loop   0x0002fc    program     static                          
-                   loop_h   0x0002da    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                   loop_l   0x0002e4    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                     main   0x000088    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                  readADC   0x00003c    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                  stopADC   0x000084    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                     test   0x0001cc    program     static                          
-               zero_block   0x0002da    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                 _startup   0x00039c    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                compare_l   0x000392    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                copy_loop   0x0002d4    program     static                          
+            copy_one_byte   0x0002da    program     static                          
+                     done   0x0002fe    program     static                          
+             done_copying   0x0002e8    program     static                          
+                  initADC   0x000008    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                     loop   0x0003ac    program     static                          
+                   loop_h   0x00038a    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                   loop_l   0x000394    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                     main   0x000100    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                  readADC   0x00003c    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+               readADC_CH   0x000084    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                  stopADC   0x0000fc    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                     test   0x00027c    program     static                          
+               zero_block   0x00038a    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
                    ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
@@ -558,7 +559,7 @@ Linker Map File - Created Mon Oct 11 22:59:23 2010
                      WREG   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
                 __FPFLAGS   0x000005       data     extern C:\MCC18\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000005       data     extern C:\MCC18\src\traditional\math\cmath18.asm
-                  __tmp_0   0x000000       data     static C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
+                  __tmp_0   0x000000       data     static C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
@@ -574,50 +575,51 @@ Linker Map File - Created Mon Oct 11 22:59:23 2010
                 ---------  ---------  ---------  --------- ---------                
                    _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
-                  initADC   0x000008    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                  readADC   0x00003c    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                  stopADC   0x000084    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                     main   0x000088    program     extern C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
-                  OpenADC   0x000110    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-                _do_cinit   0x0001b2    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                     test   0x0001cc    program     static                          
-                copy_loop   0x000224    program     static                          
-            copy_one_byte   0x00022a    program     static                          
-             done_copying   0x000238    program     static                          
-       ___return_lbl00002   0x00024e    program     static                          
-                     done   0x00024e    program     static                          
-             Delay10KTCYx   0x000250    program     extern C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x00025a    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x00025c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x000260    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000268    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x00026c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
-               SetChanADC   0x00027e    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
-              Delay1KTCYx   0x0002ac    program     extern C:\MCC18\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x0002b6    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-                    D1K_1   0x0002b8    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x0002bc    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x0002c2    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
-            __zero_memory   0x0002cc    program     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                   loop_h   0x0002da    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-               zero_block   0x0002da    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                compare_l   0x0002e2    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                   loop_l   0x0002e4    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
-                 _startup   0x0002ec    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                     loop   0x0002fc    program     static                          
-       ___return_lbl00001   0x000306    program     static                          
-              Delay10TCYx   0x000308    program     extern C:\MCC18\src\traditional\delays\d10tcyx.asm
-                     D10x   0x000310    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000A   0x000312    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x000314    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x000316    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-                    D10_1   0x000318    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
-                  ReadADC   0x00031e    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-                  BusyADC   0x000330    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
-                 CloseADC   0x00033a    program     extern C:\MCC18\src\pmc_common\ADC\adcclose.c
-               ConvertADC   0x000340    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                   __init   0x000344    program     extern C:\MCC18\src\traditional\stdclib\__init.c
-                  __tmp_0   0x000000       data     static C:\Users\Ty\Documents\S1\embedded\Board_Test_AD\main.c
+                  initADC   0x000008    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                  readADC   0x00003c    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+               readADC_CH   0x000084    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                  stopADC   0x0000fc    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                     main   0x000100    program     extern C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
+                  OpenADC   0x0001c0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+                _do_cinit   0x000262    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     test   0x00027c    program     static                          
+                copy_loop   0x0002d4    program     static                          
+            copy_one_byte   0x0002da    program     static                          
+             done_copying   0x0002e8    program     static                          
+                     done   0x0002fe    program     static                          
+       ___return_lbl00002   0x0002fe    program     static                          
+             Delay10KTCYx   0x000300    program     extern C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x00030a    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x00030c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x000310    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000318    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x00031c    program     static C:\MCC18\src\traditional\delays\d10ktcyx.asm
+               SetChanADC   0x00032e    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+              Delay1KTCYx   0x00035c    program     extern C:\MCC18\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x000366    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x000368    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x00036c    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000372    program     static C:\MCC18\src\traditional\delays\d1ktcyx.asm
+            __zero_memory   0x00037c    program     extern C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                   loop_h   0x00038a    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+               zero_block   0x00038a    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                compare_l   0x000392    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                   loop_l   0x000394    program     static C:\MCC18\src\traditional\proc\p18LF27J13.asm
+                 _startup   0x00039c    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     loop   0x0003ac    program     static                          
+       ___return_lbl00001   0x0003b6    program     static                          
+              Delay10TCYx   0x0003b8    program     extern C:\MCC18\src\traditional\delays\d10tcyx.asm
+                     D10x   0x0003c0    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x0003c2    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x0003c4    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x0003c6    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+                    D10_1   0x0003c8    program     static C:\MCC18\src\traditional\delays\d10tcyx.asm
+                  ReadADC   0x0003ce    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+                  BusyADC   0x0003e0    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
+                 CloseADC   0x0003ea    program     extern C:\MCC18\src\pmc_common\ADC\adcclose.c
+               ConvertADC   0x0003f0    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                   __init   0x0003f4    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+                  __tmp_0   0x000000       data     static C:\Documents and Settings\ECE4534\Desktop\embeddedgroup5\Board_Test_AD\main.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
