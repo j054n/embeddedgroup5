@@ -1,7 +1,10 @@
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 123 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 134 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 136 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 154 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 226 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 238 : type qualifier mismatch in assignment
-Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 253 : type qualifier mismatch in assignment
+Warning[2073] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 38 : null-terminated initializer string too long
+Warning[2073] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 38 : null-terminated initializer string too long
+Warning[2073] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 38 : null-terminated initializer string too long
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 124 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 135 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 137 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 155 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 227 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 239 : type qualifier mismatch in assignment
+Warning[2066] C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c 254 : type qualifier mismatch in assignment
