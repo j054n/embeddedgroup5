@@ -35,6 +35,7 @@ signed char	length, adlength;
 unsigned char	msgtype;
 unsigned char last_reg_recvd, action;
 unsigned char adbuffer[2];
+unsigned char nameList[][3]={"MARK JONES", "APPLE", "PAUL PLASSMAN"};
 uart_comm uc;
 i2c_comm ic;
 unsigned char msgbuffer[MSGLEN+1];
