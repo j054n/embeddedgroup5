@@ -41,7 +41,7 @@
 #define GPPUA 0x06
 #define LARGE_FONT 0x1
 #define SMALL_FONT 0x2
-
+extern unsigned char LCD_INVERT;
 void glcdStrobe(unsigned char cs);
 void glcdInit(void);
 void initSPIHeader(void);
@@ -55,7 +55,7 @@ void writePixelByte(unsigned char bytePage, unsigned char cs);
 void writePixel(unsigned char x, unsigned char y, unsigned char state);
 void drawSquare(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void drawChar(char toDraw, unsigned char size,unsigned char cs);
-void drawString(char str[], unsigned char size, unsigned char line);
+void drawString(char str[],  unsigned char line);
 unsigned char readLCD(void);
 unsigned char spird(void);
 

@@ -1,6 +1,7 @@
 #include "maindefs.h"
 #include "interrupts.h"
 #include "user_interrupts.h"
+
 #include "messages.h"
 
 //----------------------------------------------------------------------------
@@ -79,13 +80,14 @@ void InterruptHandlerHigh ()
 	// We need to check the interrupt flag of each enabled high-priority interrupt to
 	// see which device generated this interrupt.  Then we can call the correct handler.
 
-	// check to see if we have an I2C interrupt
-	if (PIR1bits.SSPIF) {
+	// check to see if we have a SPI interrupt
+/*	if (PIR1bits.SSPIF) {
 		// clear the interrupt flag
 		PIR1bits.SSPIF = 0;
 		// call the handler
-		i2c_int_handler();
-	}
+//		i2c_int_handler();
+	//	spi_int_handler();
+	}*/
 
 	// check to see if we have an interrupt on timer 0
 	if (INTCONbits.TMR0IF)

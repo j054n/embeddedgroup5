@@ -3,6 +3,7 @@
 #include "my_fonts.h"
 #include <spi.h>
 #include <delays.h>
+unsigned char LCD_INVERT=0;
 void initSPIHeader(void)
 {
 	RESET=0;
@@ -63,6 +64,7 @@ void initSPIHeader(void)
 void printSPIHeader(unsigned char lat, unsigned char data)
 {
 //	Delay1KTCYx(5);
+	
 	LCDCS=0;
 	WriteSPI1(OCMD);
 	WriteSPI1(lat);
@@ -74,7 +76,7 @@ void printSPIHeader(unsigned char lat, unsigned char data)
 void glcdInit(void)
 {
 	int temp=0;
-    char toWrite[]="HELLO WORLD", toWrite2[]="OVERWRITE", toWrite3[]="APPLE SUCKS", toWrite4[]="ADDADFASDFS";
+    //char toWrite[]="HELLO WORLD", toWrite2[]="OVERWRITE", toWrite3[]="APPLE SUCKS", toWrite4[]="ADDADFASDFS";
 	initSPIHeader();
 	Delay1TCY();
 	printSPIHeader(GPIOA,RESET_ON|0x3); //choose both Chip Selects
@@ -97,12 +99,12 @@ void glcdInit(void)
 //	drawChar('H',LARGE_FONT, CS1);
 //	drawChar('E',LARGE_FONT, CS1);
 	
-	drawString(toWrite3,11,1);
+//	drawString(toWrite3,11,1);
 	//setPos(0,1);
-drawString(toWrite,11,2);
+//	drawString(toWrite,11,2);
 	//setPos(0,0);
-	drawString(toWrite2,9,3);
-drawString(toWrite4,11,4);
+//	drawString(toWrite2,9,3);
+//	drawString(toWrite4,11,4);
 //	drawString(
 //	drawSquare(5,5,10,10);
 //	printSPIHeader(OLATB,0b00111111); //turn display ON
@@ -190,8 +192,13 @@ void writePixelByte(unsigned char bp, unsigned char cs)
 	unsigned char cs_r=cs&0b00000011;
 	printSPIHeader(GPIOA,RESET_OFF|RS_ON| cs_r); // write command
 	//Delay10TCYx(5);
-	//printSPIHeader(GPIOB,~bp);	//write data shit0,CS1
-	printSPIHeader(GPIOB,bp);
+	if(LCD_INVERT>0)
+	{
+		printSPIHeader(GPIOB,~bp);	//write data shit0,CS1
+	}else
+	{
+		printSPIHeader(GPIOB,bp);
+	}
    // printSPIHeader(OLATA,bytePage);
 //			LATCbits.LATC0=1;
 	glcdStrobe(cs_r|RESET_OFF|RS_ON);
@@ -199,8 +206,8 @@ void writePixelByte(unsigned char bp, unsigned char cs)
 }
 void setStartLine(unsigned char pos)
 {
-		printSPIHeader(GPIOA,RESET_OFF| 0x3); // 
-		printSPIHeader(GPIOB, 0b11000000|pos);
+		printSPIHeader(GPIOA,RESET_OFF| 0x3); 
+		printSPIHeader(GPIOB, 0b11000000|pos); //lcd start line command+data
 		glcdStrobe(0x3);
 }
 unsigned char readLCD()
@@ -214,17 +221,17 @@ unsigned char readLCD()
 //	printSPIHeader(OLATA,RESET_OFF|RS_ON|RW_ON);  //tell LCD screen to read status
 //	glcdStrobe(0x3);
 	printSPIHeader(GPIOA,RESET_OFF|RS_OFF|RW_ON);  //tell LCD screen to read status
-	glcdStrobe(0x3|RS_OFF|RW_ON);
-	glcdStrobe(0x3|RS_OFF|RW_ON);
+	glcdStrobe(0x3|RS_OFF|RW_ON); //dummy strobe
+	glcdStrobe(0x3|RS_OFF|RW_ON); // real read
 	Delay10TCYx(10);
- //	do{
+
 	LCDCS=0;
 	WriteSPI1(OCMD|0x01); //read
 	WriteSPI1(GPIOB);
 	while(!DataRdySPI1());
 	toSend=ReadSPI1();
 	LCDCS=1;
-//	}while(toSend&0x80);
+
 	printSPIHeader(IODIRB,0x0);	
 	return toSend;
 }
@@ -256,12 +263,13 @@ void drawSquare(unsigned char x1, unsigned char y1, unsigned char x2, unsigned c
 
 
 //line ranges from 1-4
-void drawString(char str[], unsigned char size, unsigned char line)
+void drawString(char *str, unsigned char line)
 {
 
-	unsigned char i=0, cs=CS1;
+	unsigned char i=0, cs=CS1, valid=1;
 	if(line>0 && line <=4) 
 		setPos(0,(line-1)*2);
+	i=0;//breakpoint
 	for (i=0; i<16; i++)
 	{	
 		if(i<8)
@@ -272,7 +280,11 @@ void drawString(char str[], unsigned char size, unsigned char line)
 		{
 			cs=CS2;
 		}
-		if(i<size)
+		if((str[i]<'A'|| (str[i]>'Z' && str[i]<'a')|| str[i]>'z') && str[i]!=' ')
+		{
+			valid=0;
+		}
+		if(valid>0)
 		{
 			drawChar(str[i], LARGE_FONT ,cs);
 		}
@@ -287,7 +299,7 @@ void drawChar(char toDraw, unsigned char size, unsigned char cs)
 	unsigned char i=0, charIndex=0;
 //	unsigned char **font;
 	
-	if(toDraw>='A' && toDraw <='Z')
+	if((toDraw>='A' && toDraw <='Z'))
 	{
 	//	if(size==LARGE_FONT)
 	//	{
@@ -306,7 +318,19 @@ void drawChar(char toDraw, unsigned char size, unsigned char cs)
 			writePixelByte(FONT6x8_capLetter[charIndex][i],cs);
 		}
 		writePixelByte(0x0,cs); //write space
-	}else if(toDraw=' ')
+	}
+	else if(toDraw >= 'a' && toDraw <='z')
+	{
+		charIndex=toDraw-97;
+		//write space
+		writePixelByte(0x0,cs);
+		for( i=0; i<FONT_WIDTH;i++)
+		{		
+			writePixelByte(FONT6x8_letter[charIndex][i],cs);
+		}
+		writePixelByte(0x0,cs); //write space
+	}	
+	else if(toDraw=' ')
 	{
 		for(i=0; i<FONT_WIDTH+2; i++)
 		{

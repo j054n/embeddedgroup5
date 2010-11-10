@@ -40,23 +40,24 @@ void readADC2(int *value)
 void timer0_int_handler()
 {
 	unsigned int val;
+	unsigned char buffer[2];
 	int	length, msgtype;
 	if(LOC_FLAG>0){
 		switch(getYLoc()){
 		case 1:
-				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA1,(void *) &val);
+				ToMainHigh_sendmsg(2,MSGT_LCD_AREA1,(void *) buffer);
 		break;
 		case 2:
-				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA2,(void *) &val);
+				ToMainHigh_sendmsg(2,MSGT_LCD_AREA2,(void *) buffer);
 		break;
 		case 3:
-				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA3,(void *) &val);
+				ToMainHigh_sendmsg(2,MSGT_LCD_AREA3,(void *) buffer);
 		break;
 		case 4:
-				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_AREA4,(void *) &val);
+				ToMainHigh_sendmsg(2,MSGT_LCD_AREA4,(void *) buffer);
 		break;
 		default:
-				ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_TOUCH,(void *) &val);
+				ToMainHigh_sendmsg(2,MSGT_LCD_TOUCH,(void *) buffer);
 		break;
 		}
 	}	else

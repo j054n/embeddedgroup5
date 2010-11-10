@@ -1,8 +1,9 @@
 /* Compile options:  -ml (Large code model) */
 #include "maindefs.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <usart.h>
-#include <i2c.h>
 #include <timers.h>
 #include "user_interrupts.h"
 #include "interrupts.h"
@@ -10,12 +11,12 @@
 #include <delays.h>
 #include "messages.h"
 #include "my_uart.h"
-#include "my_i2c.h"
 #include "uart_thread.h"
 #include "my_spi.h"
 #include "my_lcd.h"
 #include "my_touch.h"
-
+#include "debug_strings.h"
+#include "menus.h"
 #include "timer0_thread.h"
 #include "timer1_thread.h"
 
@@ -31,13 +32,17 @@ void main (void)
 
 unsigned int counter=0,curval=0;
 char c;
+//char toWrite[]={'a','b','c','\0'}, toWrite2[]="OVERW", toWrite3[]="APPLE", toWrite4[]="ADDA";
+
 signed char	length, adlength;
 unsigned char	msgtype;
 unsigned char last_reg_recvd, action;
 unsigned char adbuffer[2];
-unsigned char nameList[][3]={"MARK JONES", "APPLE", "PAUL PLASSMAN"};
+//accounts acctList;
+//unsigned char nameList[4][16]={"MARK JONES", "APPLE", "PAUL PLASSMAN"};
 uart_comm uc;
-i2c_comm ic;
+//i2c_comm ic;
+accounts *acctList;
 unsigned char msgbuffer[MSGLEN+1];
 unsigned char i;
 uart_thread_struct	uthread_data; // info for uart_lthread
@@ -48,17 +53,32 @@ TRISB = 0b00000011;
 TRISA = 0x0;
 TRISC=0b00010000;
 MIWICS=1;
+//acctList.acct1=(char*)malloc(16);
+//acctList.acct2=(char*)malloc(16);
+//acctList.acct3=(char*)malloc(16);
+//acctList.acct4=(char*)malloc(16);
+strcpy(acctList->acctL[0],acctL[0]);
+strcpy(acctList->acctL[1],acctL[1]);
+strcpy(acctList->acctL[2],acctL[2]);
+strcpy(acctList->acctL[3],acctL[3]);
 
+
+
+
+//acctList.acct4="asdfasdfasdf";
 glcdInit();
-
+displayInitScreen();
+displayAccounts(acctList);
+//list=&acctList;
+//acctListSize=4;
 	OSCCON = 0x6C; // 4 MHz
 	OSCTUNEbits.PLLEN = 1; // 4x the clock speed in the previous line
-
+	
 	// initialize my uart recv handling code
 //	init_uart_recv(&uc);
 
 	// initialize the i2c code
-//s	init_i2c(&ic);
+//	init_i2c(&ic);
 
 	// init the timer1 lthread
 	init_timer1_lthread(&t1thread_data);
@@ -79,7 +99,7 @@ glcdInit();
 	// Only for 40-pin version of this chip CMCON = 0x07;	// turn the comparator off
 	TRISA = 0x0F;	// set RA3-RA0 to inputs
 */
-
+//displayInitScreen();
 	// initialize Timers
 	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
 //	OpenTimer1( TIMER_INT_ON & T1_PS_1_8 & T1_16BIT_RW  & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF,0);
@@ -91,24 +111,24 @@ glcdInit();
 	// Decide on the priority of the enabled peripheral interrupts
 	// 0 is low, 1 is high
 	// Timer1 interrupt
-	IPR1bits.TMR1IP = 0;
+//	IPR1bits.TMR1IP = 0;
 	// USART RX interrupt
-	IPR1bits.RCIP = 0;
+//	IPR1bits.RCIP = 0;
 	// I2C interrupt
-	IPR1bits.SSPIP = 1;
+//	IPR1bits.SSPIP = 1;
 
 	// configure the hardware i2c device as a slave
 //	i2c_configure_slave(0x8A);
 
 	// must specifically enable the I2C interrupts
-	PIE1bits.SSPIE = 1;
+//	PIE1bits.SSPIE = 1;
 
 	// configure the hardware USART device
   	/*OpenUSART( USART_TX_INT_OFF & USART_RX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT   & 
 		USART_CONT_RX & USART_BRGH_LOW, 0x19);*/
 while(1)
 {
-
+//displayInitScreen();
 	block_on_To_msgqueues();
 
 		// At this point, one or both of the queues has a message.  It 
@@ -137,7 +157,7 @@ while(1)
 						printf(" %x",msgbuffer[i]);
 					}
 					//LATBbits.LATB0 = !LATBbits.LATB0;
-					LATB = msgbuffer[2];
+				//	LATB = msgbuffer[2];
 					//LATB = msgtype;
 					//LATB=0x01;
 					//printf("\r\n");
@@ -184,45 +204,42 @@ while(1)
 								//break;
 					//		}
 					//}
-					start_i2c_slave_reply(length,msgbuffer);
+//					start_i2c_slave_reply(length,msgbuffer);
 					break;
 				};
 				case MSGT_LCD_AREA1:{
-				DEBUG_LED1=1;
-				DEBUG_LED2=0;
-				DEBUG_LED3=0;
-				};
+				
+//displayInitScreen();
+				selectOption(4);
 				break;
+				};				
 				case MSGT_LCD_AREA2:{
-				DEBUG_LED1=0;
-				DEBUG_LED2=1;
-				DEBUG_LED3=0;
+//displayInitScreen();
+				selectOption(3);
+				break;				
 				};
-				break;
 				case MSGT_LCD_AREA3:{
-				DEBUG_LED1=1;
-				DEBUG_LED2=1;
-				DEBUG_LED3=0;
-				};
+//displayInitScreen();
+				selectOption(2);
 				break;
+				};
+
 				case MSGT_LCD_AREA4:{
-				DEBUG_LED1=0;
-				DEBUG_LED2=0;
-				DEBUG_LED3=1;
-				};
+//displayInitScreen();
+				selectOption(1);
 				break;
+				};
 				case MSGT_LCD_TOUCH:{
-				DEBUG_LED1=0;
-				DEBUG_LED2=0;
-				DEBUG_LED3=0;
-				};
+				//do nothing atm
+				
 				break;
+				};
 				case MSGT_LCD_NOTOUCH:{	
-					DEBUG_LED1=0;
-					DEBUG_LED2=0;
-					DEBUG_LED3=0;
-				};
+//displayInitScreen();
+				selectOption(0);
 				break;
+				};
+				
 				default: {
 					printf("Error: Unexpected msg in queue, type = %x\r\n",
 						msgtype);
