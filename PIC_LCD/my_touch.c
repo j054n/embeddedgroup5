@@ -8,7 +8,7 @@ unsigned char getYLoc(void)
 	X_PLUS=1;//touchscreen voltage
 	X_MINUS=0;
 	readADC_CH(&adcVal,ADC_CH10); //read a touch Y location
-	return (adcVal/0xf0)+1;
+	return (adcVal/0xff)+1;
 		/*if(adcVal <0x0f0)
 		{
 			return 1;

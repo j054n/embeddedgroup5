@@ -5,4 +5,5 @@
 
 #define RESET LATCbits.LATC7
 void initSPI(void);
+void spi_int_handler(void);
 #endif
