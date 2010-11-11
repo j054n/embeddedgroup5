@@ -50,7 +50,7 @@ timer1_thread_struct t1thread_data; // info for timer1_lthread
 timer0_thread_struct t0thread_data; // info for timer0_lthread
 unsigned char data;
 TRISB = 0b00000011;
-TRISA = 0x0;
+TRISA = 0b00100000;
 TRISC=0b00010000;
 MIWICS=1;
 //acctList.acct1=(char*)malloc(16);
@@ -101,7 +101,7 @@ displayAccounts(acctList);
 */
 //displayInitScreen();
 	// initialize Timers
-	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
+	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16);
 //	OpenTimer1( TIMER_INT_ON & T1_PS_1_8 & T1_16BIT_RW  & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF,0);
 	
 	// Peripheral interrupts can have their priority set to high or low
@@ -210,23 +210,23 @@ while(1)
 				case MSGT_LCD_AREA1:{
 				
 //displayInitScreen();
-				selectOption(4);
+				selectOption(1);
 				break;
 				};				
 				case MSGT_LCD_AREA2:{
 //displayInitScreen();
-				selectOption(3);
+				selectOption(2);
 				break;				
 				};
 				case MSGT_LCD_AREA3:{
 //displayInitScreen();
-				selectOption(2);
+				selectOption(3);
 				break;
 				};
 
 				case MSGT_LCD_AREA4:{
 //displayInitScreen();
-				selectOption(1);
+				selectOption(4);
 				break;
 				};
 				case MSGT_LCD_TOUCH:{
