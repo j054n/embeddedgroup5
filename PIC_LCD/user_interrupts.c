@@ -60,19 +60,12 @@ void timer0_int_handler()
 				ToMainHigh_sendmsg(2,MSGT_LCD_TOUCH,(void *) buffer);
 		break;
 		}
+		
 	}	else
 	{
 		ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_NOTOUCH,(void *) &val);
 	}
- 	if(isTouched())
-	{
-		LOC_FLAG=1;
-	}
-	else
-	{
-		LOC_FLAG=0;
-		
-	}
+ 	LOC_FLAG=isTouched();
 	// toggle an LED
     //LATBbits.LATB0 = !LATBbits.LATB0; 
 	// reset the timer
