@@ -5,7 +5,10 @@
 #define Y_MINUS LATBbits.LATB1
 #define X_PLUS LATBbits.LATB2
 #define X_MINUS LATBbits.LATB3
-#define TOUCH_WIDTH 0xf0
+#define LOW_AREA 0x12f
+#define LOW_MID_AREA 0x22f
+#define HIGH_MID_AREA 0x32f
+#define HIGH_AREA 0x3ff
 unsigned char getYLoc(void);
 unsigned char isTouched(void);
 #endif
