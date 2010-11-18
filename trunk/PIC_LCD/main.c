@@ -236,11 +236,21 @@ while(1)
 				break;
 				};
 				case MSGT_LCD_NOTOUCH:{	
-//displayInitScreen();
+				//refresh screen
 				selectOption(0);
 				break;
 				};
-				
+				case MSGT_PHOTO_READ_1:{
+				//send photoresistor val 1
+				break;
+				};
+				case MSGT_PHOTO_READ_2:{
+				//send photoresistor val 2
+				break;
+				};
+				case MSGT_USER_CHOICE:{	
+				break;
+				};
 				default: {
 					printf("Error: Unexpected msg in queue, type = %x\r\n",
 						msgtype);

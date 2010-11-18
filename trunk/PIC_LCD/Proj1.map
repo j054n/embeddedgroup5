@@ -1,5 +1,5 @@
 MPLINK 4.37, Linker
-Linker Map File - Created Wed Nov 17 20:48:53 2010
+Linker Map File - Created Thu Nov 18 17:21:58 2010
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -14,173 +14,173 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
            .code_my_i2c.o       code   0x000872    program   0x000768
            .code_my_lcd.o       code   0x000fda    program   0x000622
          .code_messages.o       code   0x0015fc    program   0x000540
-            .code_menus.o       code   0x001b3c    program   0x00049c
-             .code_main.o       code   0x001fd8    program   0x000324
-                     PROG       code   0x0022fc    program   0x00024e
-  .code_user_interrupts.o       code   0x00254a    program   0x00024a
-       .code_interrupts.o       code   0x002794    program   0x000232
-        .romdata_my_lcd.o    romdata   0x0029c6    program   0x000138
-                   STRING       code   0x002afe    program   0x0000fe
-             .stringtable    romdata   0x002bfc    program   0x0000c7
-       .romdata_adcread.o    romdata   0x002cc3    program   0x000000
-       .idata_adcread.o_i    romdata   0x002cc3    program   0x000000
-        .idata_t0open.o_i    romdata   0x002cc3    program   0x000000
-      .idata_spi1open.o_i    romdata   0x002cc3    program   0x000000
-       .idata_adcopen.o_i    romdata   0x002cc3    program   0x000000
-          .idata_putc.o_i    romdata   0x002cc3    program   0x000000
-       .romdata_adcconv.o    romdata   0x002cc3    program   0x000000
-          .romdata_putc.o    romdata   0x002cc3    program   0x000000
-       .idata_adcconv.o_i    romdata   0x002cc3    program   0x000000
-    .idata__user_putc.o_i    romdata   0x002cc3    program   0x000000
-       .idata_adcbusy.o_i    romdata   0x002cc3    program   0x000000
-    .romdata__user_putc.o    romdata   0x002cc3    program   0x000000
-      .idata_spi1read.o_i    romdata   0x002cc3    program   0x000000
-      .romdata_spi1read.o    romdata   0x002cc3    program   0x000000
-        .idata_t1read.o_i    romdata   0x002cc3    program   0x000000
-      .idata_adcsetch.o_i    romdata   0x002cc3    program   0x000000
-      .idata_spi1writ.o_i    romdata   0x002cc3    program   0x000000
-       .idata_t0write.o_i    romdata   0x002cc3    program   0x000000
-       .romdata_t0write.o    romdata   0x002cc3    program   0x000000
-       .idata_t1write.o_i    romdata   0x002cc3    program   0x000000
-       .romdata_t1write.o    romdata   0x002cc3    program   0x000000
-        .idata___init.o_i    romdata   0x002cc3    program   0x000000
-        .idata_printf.o_i    romdata   0x002cc3    program   0x000000
-      .idata_vfprintf.o_i    romdata   0x002cc3    program   0x000000
-        .romdata_stdout.o    romdata   0x002cc3    program   0x000000
-    .idata_interrupts.o_i    romdata   0x002cc3    program   0x000000
-.romdata_user_interrupts.o    romdata   0x002cc3    program   0x000000
-       .idata_my_uart.o_i    romdata   0x002cc3    program   0x000000
-       .romdata_my_uart.o    romdata   0x002cc3    program   0x000000
-   .idata_uart_thread.o_i    romdata   0x002cc3    program   0x000000
-      .romdata_messages.o    romdata   0x002cc3    program   0x000000
- .idata_timer1_thread.o_i    romdata   0x002cc3    program   0x000000
- .romdata_timer1_thread.o    romdata   0x002cc3    program   0x000000
- .idata_timer0_thread.o_i    romdata   0x002cc3    program   0x000000
-      .idata_messages.o_i    romdata   0x002cc3    program   0x000000
-          .romdata_main.o    romdata   0x002cc3    program   0x000000
-        .idata_my_i2c.o_i    romdata   0x002cc3    program   0x000000
-       .romdata_c018i_e.o    romdata   0x002cc3    program   0x000000
-      .idata_my_touch.o_i    romdata   0x002cc3    program   0x000000
-        .romdata_my_spi.o    romdata   0x002cc3    program   0x000000
-        .idata_my_spi.o_i    romdata   0x002cc3    program   0x000000
-       .idata_c018i_e.o_i    romdata   0x002cc3    program   0x000000
-          .code_c018i_e.o       code   0x002cc4    program   0x000000
-           .code_stdout.o       code   0x002cc4    program   0x000000
-         .code_my_touch.o       code   0x002cc4    program   0x0000a6
-               _cinit_scn       code   0x002d6a    program   0x00009e
-          .code_adcopen.o       code   0x002e08    program   0x00008a
-             .code_putc.o       code   0x002e92    program   0x000066
-           .code_printf.o       code   0x002ef8    program   0x000064
-      .code_uart_thread.o       code   0x002f5c    program   0x00005e
-         .code_spi1open.o       code   0x002fba    program   0x000048
-         .code_spi1writ.o       code   0x003002    program   0x00003a
-           .code_t0open.o       code   0x00303c    program   0x000036
-    .code_timer1_thread.o       code   0x003072    program   0x000030
-          .code_t1write.o       code   0x0030a2    program   0x000030
-           .code_t1read.o       code   0x0030d2    program   0x000030
-          .code_t0write.o       code   0x003102    program   0x000030
-         .code_adcsetch.o       code   0x003132    program   0x000030
-         .code_spi1read.o       code   0x003162    program   0x00002e
-          .code_my_uart.o       code   0x003190    program   0x00002e
-                    CTYPE       code   0x0031be    program   0x000024
-              D1KTCYXCODE       code   0x0031e2    program   0x000020
-                    .code       code   0x003202    program   0x000020
-                    STDIO       code   0x003222    program   0x00001c
-    .code_timer0_thread.o       code   0x00323e    program   0x00001c
-             _startup_scn       code   0x00325a    program   0x00001a
-           .code_my_spi.o       code   0x003274    program   0x000018
-          .code_adcread.o       code   0x00328c    program   0x000018
-              D10TCYXCODE       code   0x0032a4    program   0x000016
-      .romdata_vfprintf.o    romdata   0x0032ba    program   0x000011
-        .romdata_printf.o    romdata   0x0032cb    program   0x000000
-    .romdata_interrupts.o    romdata   0x0032cb    program   0x000000
-      .romdata_my_touch.o    romdata   0x0032cb    program   0x000000
-         .romdata_menus.o    romdata   0x0032cb    program   0x000000
-       .romdata_adcbusy.o    romdata   0x0032cb    program   0x000000
-        .romdata_my_i2c.o    romdata   0x0032cb    program   0x000000
-       .romdata_adcopen.o    romdata   0x0032cb    program   0x000000
-      .romdata_spi1open.o    romdata   0x0032cb    program   0x000000
-        .romdata_t0open.o    romdata   0x0032cb    program   0x000000
- .romdata_timer0_thread.o    romdata   0x0032cb    program   0x000000
-        .romdata_t1read.o    romdata   0x0032cb    program   0x000000
-      .romdata_adcsetch.o    romdata   0x0032cb    program   0x000000
-   .romdata_uart_thread.o    romdata   0x0032cb    program   0x000000
-      .romdata_spi1writ.o    romdata   0x0032cb    program   0x000000
-.idata_user_interrupts.o_i    romdata   0x0032cb    program   0x000001
-        .romdata___init.o    romdata   0x0032cb    program   0x000000
-          .code_adcconv.o       code   0x0032cc    program   0x000004
-           .code___init.o       code   0x0032d0    program   0x000002
-        .idata_stdout.o_i    romdata   0x0032d2    program   0x000002
-        .idata_my_lcd.o_i    romdata   0x0032d4    program   0x000002
-         .idata_menus.o_i    romdata   0x0032d6    program   0x000084
-          .idata_main.o_i    romdata   0x00335a    program   0x000080
+            .code_menus.o       code   0x001b3c    program   0x0004f8
+             .code_main.o       code   0x002034    program   0x00033c
+  .code_user_interrupts.o       code   0x002370    program   0x00025a
+                     PROG       code   0x0025ca    program   0x00024e
+       .code_interrupts.o       code   0x002818    program   0x000232
+        .romdata_my_lcd.o    romdata   0x002a4a    program   0x000138
+                   STRING       code   0x002b82    program   0x0000fe
+             .stringtable    romdata   0x002c80    program   0x0000c7
+      .idata_spi1writ.o_i    romdata   0x002d47    program   0x000000
+        .idata_printf.o_i    romdata   0x002d47    program   0x000000
+        .romdata_my_spi.o    romdata   0x002d47    program   0x000000
+      .idata_my_touch.o_i    romdata   0x002d47    program   0x000000
+        .idata___init.o_i    romdata   0x002d47    program   0x000000
+      .idata_adcsetch.o_i    romdata   0x002d47    program   0x000000
+       .idata_adcbusy.o_i    romdata   0x002d47    program   0x000000
+       .romdata_t1write.o    romdata   0x002d47    program   0x000000
+      .idata_spi1open.o_i    romdata   0x002d47    program   0x000000
+       .idata_t1write.o_i    romdata   0x002d47    program   0x000000
+      .romdata_spi1read.o    romdata   0x002d47    program   0x000000
+       .romdata_adcread.o    romdata   0x002d47    program   0x000000
+       .romdata_adcconv.o    romdata   0x002d47    program   0x000000
+       .romdata_t0write.o    romdata   0x002d47    program   0x000000
+       .idata_adcopen.o_i    romdata   0x002d47    program   0x000000
+       .idata_t0write.o_i    romdata   0x002d47    program   0x000000
+    .idata_interrupts.o_i    romdata   0x002d47    program   0x000000
+        .idata_my_i2c.o_i    romdata   0x002d47    program   0x000000
+.romdata_user_interrupts.o    romdata   0x002d47    program   0x000000
+        .romdata_stdout.o    romdata   0x002d47    program   0x000000
+      .idata_vfprintf.o_i    romdata   0x002d47    program   0x000000
+          .romdata_main.o    romdata   0x002d47    program   0x000000
+ .romdata_timer1_thread.o    romdata   0x002d47    program   0x000000
+       .romdata_c018i_e.o    romdata   0x002d47    program   0x000000
+ .idata_timer1_thread.o_i    romdata   0x002d47    program   0x000000
+          .romdata_putc.o    romdata   0x002d47    program   0x000000
+       .romdata_my_uart.o    romdata   0x002d47    program   0x000000
+      .romdata_messages.o    romdata   0x002d47    program   0x000000
+    .romdata__user_putc.o    romdata   0x002d47    program   0x000000
+          .code_c018i_e.o       code   0x002d48    program   0x000000
+         .code_my_touch.o       code   0x002d48    program   0x0000ba
+               _cinit_scn       code   0x002e02    program   0x00009e
+          .code_adcopen.o       code   0x002ea0    program   0x00008a
+             .code_putc.o       code   0x002f2a    program   0x000066
+           .code_printf.o       code   0x002f90    program   0x000064
+      .code_uart_thread.o       code   0x002ff4    program   0x00005e
+         .code_spi1open.o       code   0x003052    program   0x000048
+         .code_spi1writ.o       code   0x00309a    program   0x00003a
+           .code_t0open.o       code   0x0030d4    program   0x000036
+    .code_timer1_thread.o       code   0x00310a    program   0x000030
+          .code_t1write.o       code   0x00313a    program   0x000030
+           .code_t1read.o       code   0x00316a    program   0x000030
+          .code_t0write.o       code   0x00319a    program   0x000030
+         .code_adcsetch.o       code   0x0031ca    program   0x000030
+         .code_spi1read.o       code   0x0031fa    program   0x00002e
+          .code_my_uart.o       code   0x003228    program   0x00002e
+                    CTYPE       code   0x003256    program   0x000024
+              D1KTCYXCODE       code   0x00327a    program   0x000020
+                    .code       code   0x00329a    program   0x000020
+                    STDIO       code   0x0032ba    program   0x00001c
+    .code_timer0_thread.o       code   0x0032d6    program   0x00001c
+             _startup_scn       code   0x0032f2    program   0x00001a
+           .code_my_spi.o       code   0x00330c    program   0x000018
+          .code_adcread.o       code   0x003324    program   0x000018
+              D10TCYXCODE       code   0x00333c    program   0x000016
+      .romdata_vfprintf.o    romdata   0x003352    program   0x000011
+       .idata_c018i_e.o_i    romdata   0x003363    program   0x000000
+      .idata_messages.o_i    romdata   0x003363    program   0x000000
+    .idata__user_putc.o_i    romdata   0x003363    program   0x000000
+    .romdata_interrupts.o    romdata   0x003363    program   0x000000
+       .idata_my_uart.o_i    romdata   0x003363    program   0x000000
+          .idata_putc.o_i    romdata   0x003363    program   0x000000
+   .idata_uart_thread.o_i    romdata   0x003363    program   0x000000
+   .romdata_uart_thread.o    romdata   0x003363    program   0x000000
+ .idata_timer0_thread.o_i    romdata   0x003363    program   0x000000
+ .romdata_timer0_thread.o    romdata   0x003363    program   0x000000
+        .romdata_my_i2c.o    romdata   0x003363    program   0x000000
+        .romdata_printf.o    romdata   0x003363    program   0x000000
+        .idata_my_spi.o_i    romdata   0x003363    program   0x000000
+        .romdata___init.o    romdata   0x003363    program   0x000000
+        .idata_t1read.o_i    romdata   0x003363    program   0x000000
+        .romdata_t1read.o    romdata   0x003363    program   0x000000
+      .idata_spi1read.o_i    romdata   0x003363    program   0x000000
+       .idata_adcread.o_i    romdata   0x003363    program   0x000000
+      .romdata_adcsetch.o    romdata   0x003363    program   0x000000
+        .romdata_t0open.o    romdata   0x003363    program   0x000000
+        .idata_t0open.o_i    romdata   0x003363    program   0x000000
+      .romdata_spi1writ.o    romdata   0x003363    program   0x000000
+      .romdata_spi1open.o    romdata   0x003363    program   0x000000
+       .romdata_adcopen.o    romdata   0x003363    program   0x000000
+       .idata_adcconv.o_i    romdata   0x003363    program   0x000000
+       .romdata_adcbusy.o    romdata   0x003363    program   0x000000
+         .romdata_menus.o    romdata   0x003363    program   0x000000
+      .romdata_my_touch.o    romdata   0x003363    program   0x000000
+           .code_stdout.o       code   0x003364    program   0x000000
+          .code_adcconv.o       code   0x003364    program   0x000004
+           .code___init.o       code   0x003368    program   0x000002
+.idata_user_interrupts.o_i    romdata   0x00336a    program   0x000002
+        .idata_stdout.o_i    romdata   0x00336c    program   0x000002
+        .idata_my_lcd.o_i    romdata   0x00336e    program   0x000002
+         .idata_menus.o_i    romdata   0x003370    program   0x000085
+          .idata_main.o_i    romdata   0x0033f5    program   0x000080
                 msgqueue4      udata   0x000000       data   0x000037
-          .idata_stdout.o      idata   0x000037       data   0x000002
-          .idata_my_lcd.o      idata   0x000039       data   0x000002
- .idata_user_interrupts.o      idata   0x00003b       data   0x000001
-        .idata_spi1open.o      idata   0x00003c       data   0x000000
-        .udata_spi1open.o      udata   0x00003c       data   0x000000
-         .idata_adcopen.o      idata   0x00003c       data   0x000000
-         .udata_adcopen.o      udata   0x00003c       data   0x000000
-         .idata_adcconv.o      idata   0x00003c       data   0x000000
-         .udata_adcconv.o      udata   0x00003c       data   0x000000
-         .idata_adcbusy.o      idata   0x00003c       data   0x000000
-         .udata_adcbusy.o      udata   0x00003c       data   0x000000
-          .idata___init.o      idata   0x00003c       data   0x000000
-          .udata_printf.o      udata   0x00003c       data   0x000000
-          .idata_printf.o      idata   0x00003c       data   0x000000
-          .udata_stdout.o      udata   0x00003c       data   0x000000
-        .udata_vfprintf.o      udata   0x00003c       data   0x000000
-        .idata_vfprintf.o      idata   0x00003c       data   0x000000
-            .udata_putc.o      udata   0x00003c       data   0x000000
-          .udata___init.o      udata   0x00003c       data   0x000000
-         .idata_t1write.o      idata   0x00003c       data   0x000000
-         .udata_t1write.o      udata   0x00003c       data   0x000000
-         .idata_t0write.o      idata   0x00003c       data   0x000000
-         .udata_t0write.o      udata   0x00003c       data   0x000000
-        .idata_spi1writ.o      idata   0x00003c       data   0x000000
-        .udata_spi1writ.o      udata   0x00003c       data   0x000000
-        .idata_adcsetch.o      idata   0x00003c       data   0x000000
-        .udata_adcsetch.o      udata   0x00003c       data   0x000000
-          .idata_t1read.o      idata   0x00003c       data   0x000000
-          .udata_t1read.o      udata   0x00003c       data   0x000000
-        .idata_spi1read.o      idata   0x00003c       data   0x000000
-        .udata_spi1read.o      udata   0x00003c       data   0x000000
-         .idata_adcread.o      idata   0x00003c       data   0x000000
-         .udata_adcread.o      udata   0x00003c       data   0x000000
-          .idata_t0open.o      idata   0x00003c       data   0x000000
-          .udata_t0open.o      udata   0x00003c       data   0x000000
-         .idata_c018i_e.o      idata   0x00003c       data   0x000000
-            .udata_main.o      udata   0x00003c       data   0x000000
-        .udata_messages.o      udata   0x00003c       data   0x000000
-        .idata_messages.o      idata   0x00003c       data   0x000000
-      .udata_interrupts.o      udata   0x00003c       data   0x000000
-      .idata_interrupts.o      idata   0x00003c       data   0x000000
- .udata_user_interrupts.o      udata   0x00003c       data   0x000000
-         .idata_my_uart.o      idata   0x00003c       data   0x000000
-     .udata_uart_thread.o      udata   0x00003c       data   0x000000
-     .idata_uart_thread.o      idata   0x00003c       data   0x000000
-   .udata_timer1_thread.o      udata   0x00003c       data   0x000000
-   .idata_timer1_thread.o      idata   0x00003c       data   0x000000
-   .udata_timer0_thread.o      udata   0x00003c       data   0x000000
-   .idata_timer0_thread.o      idata   0x00003c       data   0x000000
-          .idata_my_i2c.o      idata   0x00003c       data   0x000000
-          .udata_my_lcd.o      udata   0x00003c       data   0x000000
-          .udata_my_spi.o      udata   0x00003c       data   0x000000
-          .idata_my_spi.o      idata   0x00003c       data   0x000000
-            .idata_putc.o      idata   0x00003c       data   0x000000
-        .udata_my_touch.o      udata   0x00003c       data   0x000000
-        .idata_my_touch.o      idata   0x00003c       data   0x000000
-      .udata__user_putc.o      udata   0x00003c       data   0x000000
-      .idata__user_putc.o      idata   0x00003c       data   0x000000
-           .idata_menus.o      idata   0x000060       data   0x000084
-         .udata_c018i_e.o      udata   0x0000e4       data   0x00000a
-                 .tmpdata      udata   0x0000ee       data   0x000007
-                MATH_DATA      udata   0x0000f5       data   0x000004
-         .udata_my_uart.o      udata   0x0000f9       data   0x000002
-          .udata_my_i2c.o      udata   0x0000fb       data   0x000002
-           .udata_menus.o      udata   0x0000fd       data   0x000002
-                DELAYDAT1      udata   0x0000ff       data   0x000001
+ .idata_user_interrupts.o      idata   0x000037       data   0x000002
+          .idata_stdout.o      idata   0x000039       data   0x000002
+          .idata_my_lcd.o      idata   0x00003b       data   0x000002
+                DELAYDAT1      udata   0x00003d       data   0x000001
+        .idata_spi1open.o      idata   0x00003e       data   0x000000
+        .udata_spi1open.o      udata   0x00003e       data   0x000000
+         .idata_adcopen.o      idata   0x00003e       data   0x000000
+         .udata_adcopen.o      udata   0x00003e       data   0x000000
+         .idata_adcconv.o      idata   0x00003e       data   0x000000
+         .udata_adcconv.o      udata   0x00003e       data   0x000000
+         .idata_adcbusy.o      idata   0x00003e       data   0x000000
+         .udata_adcbusy.o      udata   0x00003e       data   0x000000
+          .idata___init.o      idata   0x00003e       data   0x000000
+          .udata_printf.o      udata   0x00003e       data   0x000000
+          .idata_printf.o      idata   0x00003e       data   0x000000
+          .udata_stdout.o      udata   0x00003e       data   0x000000
+        .udata_vfprintf.o      udata   0x00003e       data   0x000000
+        .idata_vfprintf.o      idata   0x00003e       data   0x000000
+          .udata___init.o      udata   0x00003e       data   0x000000
+         .idata_t1write.o      idata   0x00003e       data   0x000000
+         .udata_t1write.o      udata   0x00003e       data   0x000000
+         .idata_t0write.o      idata   0x00003e       data   0x000000
+         .udata_t0write.o      udata   0x00003e       data   0x000000
+        .idata_spi1writ.o      idata   0x00003e       data   0x000000
+        .udata_spi1writ.o      udata   0x00003e       data   0x000000
+        .idata_adcsetch.o      idata   0x00003e       data   0x000000
+        .udata_adcsetch.o      udata   0x00003e       data   0x000000
+          .idata_t1read.o      idata   0x00003e       data   0x000000
+          .udata_t1read.o      udata   0x00003e       data   0x000000
+        .idata_spi1read.o      idata   0x00003e       data   0x000000
+        .udata_spi1read.o      udata   0x00003e       data   0x000000
+         .idata_adcread.o      idata   0x00003e       data   0x000000
+         .udata_adcread.o      udata   0x00003e       data   0x000000
+          .idata_t0open.o      idata   0x00003e       data   0x000000
+          .udata_t0open.o      udata   0x00003e       data   0x000000
+         .idata_c018i_e.o      idata   0x00003e       data   0x000000
+            .udata_main.o      udata   0x00003e       data   0x000000
+        .udata_messages.o      udata   0x00003e       data   0x000000
+        .idata_messages.o      idata   0x00003e       data   0x000000
+      .udata_interrupts.o      udata   0x00003e       data   0x000000
+      .idata_interrupts.o      idata   0x00003e       data   0x000000
+ .udata_user_interrupts.o      udata   0x00003e       data   0x000000
+         .idata_my_uart.o      idata   0x00003e       data   0x000000
+     .udata_uart_thread.o      udata   0x00003e       data   0x000000
+     .idata_uart_thread.o      idata   0x00003e       data   0x000000
+   .udata_timer1_thread.o      udata   0x00003e       data   0x000000
+   .idata_timer1_thread.o      idata   0x00003e       data   0x000000
+   .udata_timer0_thread.o      udata   0x00003e       data   0x000000
+   .idata_timer0_thread.o      idata   0x00003e       data   0x000000
+          .idata_my_i2c.o      idata   0x00003e       data   0x000000
+          .udata_my_lcd.o      udata   0x00003e       data   0x000000
+          .udata_my_spi.o      udata   0x00003e       data   0x000000
+          .idata_my_spi.o      idata   0x00003e       data   0x000000
+        .udata_my_touch.o      udata   0x00003e       data   0x000000
+        .idata_my_touch.o      idata   0x00003e       data   0x000000
+            .udata_putc.o      udata   0x00003e       data   0x000000
+            .idata_putc.o      idata   0x00003e       data   0x000000
+      .udata__user_putc.o      udata   0x00003e       data   0x000000
+      .idata__user_putc.o      idata   0x00003e       data   0x000000
+           .idata_menus.o      idata   0x000060       data   0x000085
+         .udata_c018i_e.o      udata   0x0000e5       data   0x00000a
+                 .tmpdata      udata   0x0000ef       data   0x000007
+                MATH_DATA      udata   0x0000f6       data   0x000004
+         .udata_my_uart.o      udata   0x0000fa       data   0x000002
+          .udata_my_i2c.o      udata   0x0000fc       data   0x000002
+           .udata_menus.o      udata   0x0000fe       data   0x000002
                 msgqueue3      udata   0x000100       data   0x000036
                 msgqueue2      udata   0x000136       data   0x000036
                 msgqueue1      udata   0x00016c       data   0x000036
@@ -203,9 +203,10 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x002cc2      
-                            0x002cc4    0x0033d9      
-            13273 out of 131074 program addresses used, program memory utilization is 10%
+                            0x000000    0x002d46      
+                            0x002d48    0x003362      
+                            0x003364    0x003474      
+            13427 out of 131074 program addresses used, program memory utilization is 10%
 
 
 
@@ -213,77 +214,77 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
                   BusyADC   0x00000e    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
-               ConvertADC   0x0032cc    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                    D10_1   0x0032b4    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                     D10x   0x0032ac    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                   D1616S   0x00233e    program     static C:\MCC18\src\extended\math\div16s.asm
-                D1616SNEG   0x00234c    program     static C:\MCC18\src\extended\math\div16s.asm
-                 D1616SOK   0x002348    program     static C:\MCC18\src\extended\math\div16s.asm
-                D1616SPOS   0x00235c    program     static C:\MCC18\src\extended\math\div16s.asm
-                  D1616SX   0x002382    program     static C:\MCC18\src\extended\math\div16s.asm
-                    D1K_1   0x0031f0    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x0031ee    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                  DA1616S   0x00232e    program     static C:\MCC18\src\extended\math\div16s.asm
-              Delay10TCYx   0x0032a4    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
-              Delay1KTCYx   0x0031e2    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
-        FONT6x8_capLetter   0x0029c6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
-           FONT6x8_letter   0x002a62    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
+               ConvertADC   0x003364    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                    D10_1   0x00334c    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                     D10x   0x003344    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                   D1616S   0x00260c    program     static C:\MCC18\src\extended\math\div16s.asm
+                D1616SNEG   0x00261a    program     static C:\MCC18\src\extended\math\div16s.asm
+                 D1616SOK   0x002616    program     static C:\MCC18\src\extended\math\div16s.asm
+                D1616SPOS   0x00262a    program     static C:\MCC18\src\extended\math\div16s.asm
+                  D1616SX   0x002650    program     static C:\MCC18\src\extended\math\div16s.asm
+                    D1K_1   0x003288    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x003286    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                  DA1616S   0x0025fc    program     static C:\MCC18\src\extended\math\div16s.asm
+              Delay10TCYx   0x00333c    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
+              Delay1KTCYx   0x00327a    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+        FONT6x8_capLetter   0x002a4a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
+           FONT6x8_letter   0x002ae6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
      FromMainHigh_recvmsg   0x0019cc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
      FromMainHigh_sendmsg   0x00199c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
       FromMainLow_recvmsg   0x001968    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
       FromMainLow_sendmsg   0x001938    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-     InterruptHandlerHigh   0x00284c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-      InterruptHandlerLow   0x0028fc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+     InterruptHandlerHigh   0x0028d0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+      InterruptHandlerLow   0x002980    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
       InterruptVectorHigh   0x000008    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
        InterruptVectorLow   0x000018    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  OpenADC   0x002e08    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-                 OpenSPI1   0x002fba    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
-               OpenTimer0   0x00303c    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
-                  RESTORE   0x002374    program     static C:\MCC18\src\extended\math\div16s.asm
-                  RESTORE   0x0023f6    program     static C:\MCC18\src\extended\math\div16u.asm
-                  RESTORE   0x00249a    program     static C:\MCC18\src\extended\math\div32u.asm
-              RETQUOTIENT   0x0023ee    program     static C:\MCC18\src\extended\math\div16u.asm
-              RETQUOTIENT   0x00248a    program     static C:\MCC18\src\extended\math\div32u.asm
-              RETQUOTIENT   0x00236c    program     static C:\MCC18\src\extended\math\div16s.asm
-                  ReadADC   0x00328c    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-                 ReadSPI1   0x003162    program     extern C:\MCC18\src\pmc_common\SPI\spi1read.c
-               ReadTimer1   0x0030d2    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
-                  SETSIGN   0x00231c    program     static C:\MCC18\src\extended\math\div16s.asm
-                 SETUPSTK   0x00238c    program     static C:\MCC18\src\extended\math\div16u.asm
-                 SETUPSTK   0x0022fc    program     static C:\MCC18\src\extended\math\div16s.asm
-                 SETUPSTK   0x002404    program     static C:\MCC18\src\extended\math\div32u.asm
-               SetChanADC   0x003132    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+                  OpenADC   0x002ea0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+                 OpenSPI1   0x003052    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
+               OpenTimer0   0x0030d4    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
+                  RESTORE   0x002642    program     static C:\MCC18\src\extended\math\div16s.asm
+                  RESTORE   0x0026c4    program     static C:\MCC18\src\extended\math\div16u.asm
+                  RESTORE   0x002768    program     static C:\MCC18\src\extended\math\div32u.asm
+              RETQUOTIENT   0x0026bc    program     static C:\MCC18\src\extended\math\div16u.asm
+              RETQUOTIENT   0x002758    program     static C:\MCC18\src\extended\math\div32u.asm
+              RETQUOTIENT   0x00263a    program     static C:\MCC18\src\extended\math\div16s.asm
+                  ReadADC   0x003324    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+                 ReadSPI1   0x0031fa    program     extern C:\MCC18\src\pmc_common\SPI\spi1read.c
+               ReadTimer1   0x00316a    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+                  SETSIGN   0x0025ea    program     static C:\MCC18\src\extended\math\div16s.asm
+                 SETUPSTK   0x00265a    program     static C:\MCC18\src\extended\math\div16u.asm
+                 SETUPSTK   0x0025ca    program     static C:\MCC18\src\extended\math\div16s.asm
+                 SETUPSTK   0x0026d2    program     static C:\MCC18\src\extended\math\div32u.asm
+               SetChanADC   0x0031ca    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
               SleepIfOkay   0x001a8a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
        ToMainHigh_recvmsg   0x001904    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
        ToMainHigh_sendmsg   0x0018d4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
         ToMainLow_recvmsg   0x0018a0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
         ToMainLow_sendmsg   0x001870    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                WriteSPI1   0x003002    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
-              WriteTimer0   0x003102    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-              WriteTimer1   0x0030a2    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-                   _2jEnd   0x002be6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-              _4jContinue   0x002b32    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x002b3c    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-        _D10TCYXCODE_000A   0x0032ae    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x0032b0    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x0032b2    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D1KTCYXCODE_0012   0x0031f4    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x0031fa    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                WriteSPI1   0x00309a    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
+              WriteTimer0   0x00319a    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+              WriteTimer1   0x00313a    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+                   _2jEnd   0x002c6a    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+              _4jContinue   0x002bb6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x002bc0    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+        _D10TCYXCODE_000A   0x003346    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x003348    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x00334a    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D1KTCYXCODE_0012   0x00328c    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x003292    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x003272    program     static                          
+       ___return_lbl00001   0x00330a    program     static                          
        ___return_lbl00002   0x0010e4    program     static                          
-       ___return_lbl00002   0x002e06    program     static                          
+       ___return_lbl00002   0x002e9e    program     static                          
        ___return_lbl00012   0x00001c    program     static                          
        ___return_lbl00013   0x00000c    program     static                          
        ___return_lbl00019   0x001a3a    program     static                          
-                 __div16s   0x002314    program     extern C:\MCC18\src\extended\math\div16s.asm
-                 __div16u   0x0023a4    program     extern C:\MCC18\src\extended\math\div16u.asm
-                 __div32u   0x00241c    program     extern C:\MCC18\src\extended\math\div32u.asm
-                   __init   0x0032d0    program     extern C:\MCC18\src\extended\stdclib\__init.c
-                 __mod16s   0x00231a    program     extern C:\MCC18\src\extended\math\div16s.asm
-                 __mod16u   0x0023aa    program     extern C:\MCC18\src\extended\math\div16u.asm
-                 __mod32u   0x002422    program     extern C:\MCC18\src\extended\math\div32u.asm
-                  __mul32   0x0024a8    program     extern C:\MCC18\src\extended\math\mul32.asm
+                 __div16s   0x0025e2    program     extern C:\MCC18\src\extended\math\div16s.asm
+                 __div16u   0x002672    program     extern C:\MCC18\src\extended\math\div16u.asm
+                 __div32u   0x0026ea    program     extern C:\MCC18\src\extended\math\div32u.asm
+                   __init   0x003368    program     extern C:\MCC18\src\extended\stdclib\__init.c
+                 __mod16s   0x0025e8    program     extern C:\MCC18\src\extended\math\div16s.asm
+                 __mod16u   0x002678    program     extern C:\MCC18\src\extended\math\div16u.asm
+                 __mod32u   0x0026f0    program     extern C:\MCC18\src\extended\math\div32u.asm
+                  __mul32   0x002776    program     extern C:\MCC18\src\extended\math\mul32.asm
                    __pa_0   0x00071e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_1   0x00072c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                   __pa_10   0x0007ba    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
@@ -308,94 +309,94 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                    __pa_7   0x000790    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_8   0x00079c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_9   0x0007ae    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-               __string_0   0x002cb3    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
-              __string_10   0x002c65    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_11   0x002c55    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_12   0x002c29    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_13   0x002bfc    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-               __string_8   0x002c85    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-               __string_9   0x002c69    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-            __zero_memory   0x003202    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                _do_cinit   0x002d6a    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-            _early16uexit   0x0023ae    program     extern C:\MCC18\src\extended\math\div16u.asm
-            _early32uexit   0x002426    program     extern C:\MCC18\src\extended\math\div32u.asm
+               __string_0   0x002d37    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
+              __string_10   0x002ce9    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_11   0x002cd9    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_12   0x002cad    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_13   0x002c80    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+               __string_8   0x002d09    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+               __string_9   0x002ced    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+            __zero_memory   0x00329a    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                _do_cinit   0x002e02    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+            _early16uexit   0x00267c    program     extern C:\MCC18\src\extended\math\div16u.asm
+            _early32uexit   0x0026f4    program     extern C:\MCC18\src\extended\math\div32u.asm
                    _entry   0x000000    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                   _false   0x00246a    program     static C:\MCC18\src\extended\math\div32u.asm
-                 _startup   0x00325a    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-              _usart_putc   0x003222    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                   _false   0x002738    program     static C:\MCC18\src\extended\math\div32u.asm
+                 _startup   0x0032f2    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+              _usart_putc   0x0032ba    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
                _user_putc   0x000006    program     extern C:\MCC18\src\extended\stdclib\_user_putc.c
     block_on_To_msgqueues   0x001ae6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
                 check_msg   0x001a3c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
               clearScreen   0x001204    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                compare_l   0x003218    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                copy_loop   0x002ddc    program     static                          
-            copy_one_byte   0x002de2    program     static                          
+                compare_l   0x0032b0    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                copy_loop   0x002e74    program     static                          
+            copy_one_byte   0x002e7a    program     static                          
           displayAccounts   0x001b9c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
              displayDebug   0x001df4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
         displayInitScreen   0x001b3c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
            displayOptions   0x001d4a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                divmod16u   0x0023b0    program     static C:\MCC18\src\extended\math\div16u.asm
-                divmod32u   0x002428    program     static C:\MCC18\src\extended\math\div32u.asm
-                     done   0x002e06    program     static                          
-             done_copying   0x002df0    program     static                          
+                divmod16u   0x00267e    program     static C:\MCC18\src\extended\math\div16u.asm
+                divmod32u   0x0026f6    program     static C:\MCC18\src\extended\math\div32u.asm
+                     done   0x002e9e    program     static                          
+             done_copying   0x002e88    program     static                          
                  drawChar   0x0014f6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                drawSquare   0x0013b6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                drawString   0x001400    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-        enable_interrupts   0x002794    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  endloop   0x0023d6    program     static C:\MCC18\src\extended\math\div16u.asm
+        enable_interrupts   0x002818    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  endloop   0x0026a4    program     static C:\MCC18\src\extended\math\div16u.asm
          enter_sleep_mode   0x001a36    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                  getYLoc   0x002cc4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                  getYLoc   0x002d48    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
                  glcdInit   0x00108c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                glcdStrobe   0x00115e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
              handle_start   0x00097a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-             highlightOpt   0x001eb4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+             highlightOpt   0x001edc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
      i2c_configure_master   0x000872    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
       i2c_configure_slave   0x000fb0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
           i2c_int_handler   0x000a3a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
           i2c_master_recv   0x000896    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
           i2c_master_send   0x000884    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-              in_high_int   0x00279c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-               in_low_int   0x0027e0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  in_main   0x002814    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  initADC   0x00254a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                  initSPI   0x003274    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_spi.c
+              in_high_int   0x002820    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+               in_low_int   0x002864    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  in_main   0x002898    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  initADC   0x002370    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                  initSPI   0x00330c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_spi.c
             initSPIHeader   0x000fda    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                  init_i2c   0x000f4c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
                init_queue   0x0015fc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
               init_queues   0x001a00    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-      init_timer1_lthread   0x003072    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
-           init_uart_recv   0x003192    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
-                isTouched   0x002d20    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
-                  isdigit   0x0031be    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                     jEnd   0x002be8    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x002bb0    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x002b42    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x002b7c    program     static C:\MCC18\src\extended\stdclib\strcpy.asm
-                    jLoop   0x002ba6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x002b26    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x002bd0    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                   jMatch   0x0031de    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x0031e0    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                     loop   0x003232    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x002436    program     static C:\MCC18\src\extended\math\div32u.asm
-                     loop   0x003268    program     static                          
-                     loop   0x0023ba    program     static C:\MCC18\src\extended\math\div16u.asm
-                   loop_h   0x003210    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_l   0x00321a    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-           low_int_active   0x0027be    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                     main   0x001fd8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-                   memcpy   0x002afe    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+      init_timer1_lthread   0x00310a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
+           init_uart_recv   0x00322a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+                isTouched   0x002db8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                  isdigit   0x003256    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                     jEnd   0x002c6c    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x002c34    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x002bc6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x002c00    program     static C:\MCC18\src\extended\stdclib\strcpy.asm
+                    jLoop   0x002c2a    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x002baa    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x002c54    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                   jMatch   0x003276    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x003278    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                     loop   0x0032ca    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x002704    program     static C:\MCC18\src\extended\math\div32u.asm
+                     loop   0x003300    program     static                          
+                     loop   0x002688    program     static C:\MCC18\src\extended\math\div16u.asm
+                   loop_h   0x0032a8    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_l   0x0032b2    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+           low_int_active   0x002842    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                     main   0x002034    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+                   memcpy   0x002b82    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
            printSPIHeader   0x00104e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                   printf   0x002ef8    program     extern C:\MCC18\src\extended\stdclib\printf.c
-                     putc   0x002e92    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                  readADC   0x00254c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                 readADC2   0x0025fe    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-               readADC_CH   0x002592    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                   printf   0x002f90    program     extern C:\MCC18\src\extended\stdclib\printf.c
+                     putc   0x002f2a    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                  readADC   0x002372    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                 readADC2   0x002424    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+               readADC_CH   0x0023b8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
                   readLCD   0x001300    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                  recv_msg   0x00175e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                 s_digits   0x0032ba    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+                 s_digits   0x003352    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
             s_put_n_chars   0x00005c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-             selectOption   0x001ec6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+             selectOption   0x001eee    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
                  send_msg   0x00166a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
                    setPos   0x0011a4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
              setStartLine   0x0012cc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
@@ -403,20 +404,20 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                  setYAddr   0x00112a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
                     spird   0x001196    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
     start_i2c_slave_reply   0x0008a8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-                   strcpy   0x002b54    program     extern C:\MCC18\src\extended\stdclib\strcpy.asm
-                   strlen   0x002b96    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x002bb2    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     test   0x002d84    program     static                          
-       timer0_int_handler   0x002620    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-           timer0_lthread   0x00323e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer0_thread.c
-       timer1_int_handler   0x002756    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-           timer1_lthread   0x003090    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
-             uart_lthread   0x002f5c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
-    uart_recv_int_handler   0x003190    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+                   strcpy   0x002bd8    program     extern C:\MCC18\src\extended\stdclib\strcpy.asm
+                   strlen   0x002c1a    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x002c36    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     test   0x002e1c    program     static                          
+       timer0_int_handler   0x002446    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+           timer0_lthread   0x0032d6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer0_thread.c
+       timer1_int_handler   0x00258c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+           timer1_lthread   0x003128    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
+             uart_lthread   0x002ff4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
+    uart_recv_int_handler   0x003228    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
                  vfprintf   0x00008e    program     extern C:\MCC18\src\extended\stdclib\vfprintf.c
                writePixel   0x001364    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
            writePixelByte   0x001276    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-               zero_block   0x003210    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+               zero_block   0x0032a8    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADCON0   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -532,7 +533,7 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
               DSWAKEHbits   0x000f4b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   DSWAKEL   0x000f4a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               DSWAKELbits   0x000f4a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-            DelayCounter1   0x0000ff       data     extern C:\MCC18\src\extended\delays\delayd1.asm
+            DelayCounter1   0x00003d       data     extern C:\MCC18\src\extended\delays\delayd1.asm
                   ECCP1AS   0x000fbe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               ECCP1ASbits   0x000fbe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  ECCP1CON   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -590,9 +591,9 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                  LATBbits   0x000f8a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      LATC   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  LATCbits   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               LCD_INVERT   0x000039       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-              LCD_WRITING   0x00003a       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                 LOC_FLAG   0x00003b       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+               LCD_INVERT   0x00003b       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+              LCD_WRITING   0x00003c       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+                 LOC_FLAG   0x000037       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
  MQ_Main_Willing_to_block   0x000036       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
                    ODCON1   0x000f42       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ODCON1bits   0x000f42       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -808,6 +809,7 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                   TBLPTRH   0x000ff7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   TBLPTRL   0x000ff6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   TBLPTRU   0x000ff8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             TIMER0_COUNT   0x000038       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
                     TMR0H   0x000fd7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR0L   0x000fd6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR1H   0x000fcf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -847,38 +849,39 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                    WDTCON   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                WDTCONbits   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      WREG   0x000fe8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                __RETVAL0   0x0000f5       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL1   0x0000f6       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL2   0x0000f7       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL3   0x0000f8       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                    acctL   0x000060       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
+                __RETVAL0   0x0000f6       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL1   0x0000f7       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL2   0x0000f8       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL3   0x0000f9       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
                     acctL   0x000e00       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
-               chosenName   0x0000e2       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-              chosenState   0x0000e3       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                curr_byte   0x0000e7       data     static C:\MCC18\src\extended\startup\c018i_e.c
-               curr_entry   0x0000e9       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                 data_ptr   0x0000eb       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                   ic_ptr   0x0000fb       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
+                    acctL   0x000060       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
+               chosenName   0x0000e3       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+              chosenState   0x0000e4       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                curr_byte   0x0000e8       data     static C:\MCC18\src\extended\startup\c018i_e.c
+               curr_entry   0x0000ea       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                 data_ptr   0x0000ec       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                   ic_ptr   0x0000fc       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
                   lastOpt   0x0000e0       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
                 menuDepth   0x0000e1       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
                      optL   0x0000a0       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
                      optL   0x000e40       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
-                     prom   0x0000e4       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                   stdout   0x000037       data     extern C:\MCC18\src\extended\stdclib\stdout.c
-                storeList   0x0000fd       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                   uc_ptr   0x0000f9       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+                     prom   0x0000e5       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                 selected   0x0000e2       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                   stdout   0x000039       data     extern C:\MCC18\src\extended\stdclib\stdout.c
+                storeList   0x0000fe       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                   uc_ptr   0x0000fa       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
 
 
 
@@ -965,192 +968,194 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
           displayAccounts   0x001b9c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
            displayOptions   0x001d4a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
              displayDebug   0x001df4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-             highlightOpt   0x001eb4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-             selectOption   0x001ec6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                     main   0x001fd8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-                 SETUPSTK   0x0022fc    program     static C:\MCC18\src\extended\math\div16s.asm
-                 __div16s   0x002314    program     extern C:\MCC18\src\extended\math\div16s.asm
-                 __mod16s   0x00231a    program     extern C:\MCC18\src\extended\math\div16s.asm
-                  SETSIGN   0x00231c    program     static C:\MCC18\src\extended\math\div16s.asm
-                  DA1616S   0x00232e    program     static C:\MCC18\src\extended\math\div16s.asm
-                   D1616S   0x00233e    program     static C:\MCC18\src\extended\math\div16s.asm
-                 D1616SOK   0x002348    program     static C:\MCC18\src\extended\math\div16s.asm
-                D1616SNEG   0x00234c    program     static C:\MCC18\src\extended\math\div16s.asm
-                D1616SPOS   0x00235c    program     static C:\MCC18\src\extended\math\div16s.asm
-              RETQUOTIENT   0x00236c    program     static C:\MCC18\src\extended\math\div16s.asm
-                  RESTORE   0x002374    program     static C:\MCC18\src\extended\math\div16s.asm
-                  D1616SX   0x002382    program     static C:\MCC18\src\extended\math\div16s.asm
-                 SETUPSTK   0x00238c    program     static C:\MCC18\src\extended\math\div16u.asm
-                 __div16u   0x0023a4    program     extern C:\MCC18\src\extended\math\div16u.asm
-                 __mod16u   0x0023aa    program     extern C:\MCC18\src\extended\math\div16u.asm
-            _early16uexit   0x0023ae    program     extern C:\MCC18\src\extended\math\div16u.asm
-                divmod16u   0x0023b0    program     static C:\MCC18\src\extended\math\div16u.asm
-                     loop   0x0023ba    program     static C:\MCC18\src\extended\math\div16u.asm
-                  endloop   0x0023d6    program     static C:\MCC18\src\extended\math\div16u.asm
-              RETQUOTIENT   0x0023ee    program     static C:\MCC18\src\extended\math\div16u.asm
-                  RESTORE   0x0023f6    program     static C:\MCC18\src\extended\math\div16u.asm
-                 SETUPSTK   0x002404    program     static C:\MCC18\src\extended\math\div32u.asm
-                 __div32u   0x00241c    program     extern C:\MCC18\src\extended\math\div32u.asm
-                 __mod32u   0x002422    program     extern C:\MCC18\src\extended\math\div32u.asm
-            _early32uexit   0x002426    program     extern C:\MCC18\src\extended\math\div32u.asm
-                divmod32u   0x002428    program     static C:\MCC18\src\extended\math\div32u.asm
-                     loop   0x002436    program     static C:\MCC18\src\extended\math\div32u.asm
-                   _false   0x00246a    program     static C:\MCC18\src\extended\math\div32u.asm
-              RETQUOTIENT   0x00248a    program     static C:\MCC18\src\extended\math\div32u.asm
-                  RESTORE   0x00249a    program     static C:\MCC18\src\extended\math\div32u.asm
-                  __mul32   0x0024a8    program     extern C:\MCC18\src\extended\math\mul32.asm
-                  initADC   0x00254a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                  readADC   0x00254c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-               readADC_CH   0x002592    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                 readADC2   0x0025fe    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-       timer0_int_handler   0x002620    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-       timer1_int_handler   0x002756    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-        enable_interrupts   0x002794    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-              in_high_int   0x00279c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-           low_int_active   0x0027be    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-               in_low_int   0x0027e0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  in_main   0x002814    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-     InterruptHandlerHigh   0x00284c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-      InterruptHandlerLow   0x0028fc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-        FONT6x8_capLetter   0x0029c6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
-           FONT6x8_letter   0x002a62    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
-                   memcpy   0x002afe    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x002b26    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-              _4jContinue   0x002b32    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x002b3c    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                     jEnd   0x002b42    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   strcpy   0x002b54    program     extern C:\MCC18\src\extended\stdclib\strcpy.asm
-                    jLoop   0x002b7c    program     static C:\MCC18\src\extended\stdclib\strcpy.asm
-                   strlen   0x002b96    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x002ba6    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x002bb0    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x002bb2    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                    jLoop   0x002bd0    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                   _2jEnd   0x002be6    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x002be8    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-              __string_13   0x002bfc    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_12   0x002c29    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_11   0x002c55    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-              __string_10   0x002c65    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-               __string_9   0x002c69    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-               __string_8   0x002c85    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-               __string_0   0x002cb3    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
-                  getYLoc   0x002cc4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
-                isTouched   0x002d20    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
-                _do_cinit   0x002d6a    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     test   0x002d84    program     static                          
-                copy_loop   0x002ddc    program     static                          
-            copy_one_byte   0x002de2    program     static                          
-             done_copying   0x002df0    program     static                          
-       ___return_lbl00002   0x002e06    program     static                          
-                     done   0x002e06    program     static                          
-                  OpenADC   0x002e08    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-                     putc   0x002e92    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                   printf   0x002ef8    program     extern C:\MCC18\src\extended\stdclib\printf.c
-             uart_lthread   0x002f5c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
-                 OpenSPI1   0x002fba    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
-                WriteSPI1   0x003002    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
-               OpenTimer0   0x00303c    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
-      init_timer1_lthread   0x003072    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
-           timer1_lthread   0x003090    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
-              WriteTimer1   0x0030a2    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-               ReadTimer1   0x0030d2    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
-              WriteTimer0   0x003102    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-               SetChanADC   0x003132    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
-                 ReadSPI1   0x003162    program     extern C:\MCC18\src\pmc_common\SPI\spi1read.c
-    uart_recv_int_handler   0x003190    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
-           init_uart_recv   0x003192    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
-                  isdigit   0x0031be    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                   jMatch   0x0031de    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x0031e0    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-              Delay1KTCYx   0x0031e2    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x0031ee    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                    D1K_1   0x0031f0    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0012   0x0031f4    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x0031fa    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-            __zero_memory   0x003202    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               zero_block   0x003210    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_h   0x003210    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                compare_l   0x003218    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   loop_l   0x00321a    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
-              _usart_putc   0x003222    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x003232    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-           timer0_lthread   0x00323e    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer0_thread.c
-                 _startup   0x00325a    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     loop   0x003268    program     static                          
-       ___return_lbl00001   0x003272    program     static                          
-                  initSPI   0x003274    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_spi.c
-                  ReadADC   0x00328c    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-              Delay10TCYx   0x0032a4    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
-                     D10x   0x0032ac    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000A   0x0032ae    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x0032b0    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x0032b2    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                    D10_1   0x0032b4    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                 s_digits   0x0032ba    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-               ConvertADC   0x0032cc    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                   __init   0x0032d0    program     extern C:\MCC18\src\extended\stdclib\__init.c
+             highlightOpt   0x001edc    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+             selectOption   0x001eee    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                     main   0x002034    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+                  initADC   0x002370    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                  readADC   0x002372    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+               readADC_CH   0x0023b8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                 readADC2   0x002424    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+       timer0_int_handler   0x002446    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+       timer1_int_handler   0x00258c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                 SETUPSTK   0x0025ca    program     static C:\MCC18\src\extended\math\div16s.asm
+                 __div16s   0x0025e2    program     extern C:\MCC18\src\extended\math\div16s.asm
+                 __mod16s   0x0025e8    program     extern C:\MCC18\src\extended\math\div16s.asm
+                  SETSIGN   0x0025ea    program     static C:\MCC18\src\extended\math\div16s.asm
+                  DA1616S   0x0025fc    program     static C:\MCC18\src\extended\math\div16s.asm
+                   D1616S   0x00260c    program     static C:\MCC18\src\extended\math\div16s.asm
+                 D1616SOK   0x002616    program     static C:\MCC18\src\extended\math\div16s.asm
+                D1616SNEG   0x00261a    program     static C:\MCC18\src\extended\math\div16s.asm
+                D1616SPOS   0x00262a    program     static C:\MCC18\src\extended\math\div16s.asm
+              RETQUOTIENT   0x00263a    program     static C:\MCC18\src\extended\math\div16s.asm
+                  RESTORE   0x002642    program     static C:\MCC18\src\extended\math\div16s.asm
+                  D1616SX   0x002650    program     static C:\MCC18\src\extended\math\div16s.asm
+                 SETUPSTK   0x00265a    program     static C:\MCC18\src\extended\math\div16u.asm
+                 __div16u   0x002672    program     extern C:\MCC18\src\extended\math\div16u.asm
+                 __mod16u   0x002678    program     extern C:\MCC18\src\extended\math\div16u.asm
+            _early16uexit   0x00267c    program     extern C:\MCC18\src\extended\math\div16u.asm
+                divmod16u   0x00267e    program     static C:\MCC18\src\extended\math\div16u.asm
+                     loop   0x002688    program     static C:\MCC18\src\extended\math\div16u.asm
+                  endloop   0x0026a4    program     static C:\MCC18\src\extended\math\div16u.asm
+              RETQUOTIENT   0x0026bc    program     static C:\MCC18\src\extended\math\div16u.asm
+                  RESTORE   0x0026c4    program     static C:\MCC18\src\extended\math\div16u.asm
+                 SETUPSTK   0x0026d2    program     static C:\MCC18\src\extended\math\div32u.asm
+                 __div32u   0x0026ea    program     extern C:\MCC18\src\extended\math\div32u.asm
+                 __mod32u   0x0026f0    program     extern C:\MCC18\src\extended\math\div32u.asm
+            _early32uexit   0x0026f4    program     extern C:\MCC18\src\extended\math\div32u.asm
+                divmod32u   0x0026f6    program     static C:\MCC18\src\extended\math\div32u.asm
+                     loop   0x002704    program     static C:\MCC18\src\extended\math\div32u.asm
+                   _false   0x002738    program     static C:\MCC18\src\extended\math\div32u.asm
+              RETQUOTIENT   0x002758    program     static C:\MCC18\src\extended\math\div32u.asm
+                  RESTORE   0x002768    program     static C:\MCC18\src\extended\math\div32u.asm
+                  __mul32   0x002776    program     extern C:\MCC18\src\extended\math\mul32.asm
+        enable_interrupts   0x002818    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+              in_high_int   0x002820    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+           low_int_active   0x002842    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+               in_low_int   0x002864    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  in_main   0x002898    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+     InterruptHandlerHigh   0x0028d0    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+      InterruptHandlerLow   0x002980    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+        FONT6x8_capLetter   0x002a4a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
+           FONT6x8_letter   0x002ae6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_fonts.h
+                   memcpy   0x002b82    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x002baa    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+              _4jContinue   0x002bb6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x002bc0    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                     jEnd   0x002bc6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   strcpy   0x002bd8    program     extern C:\MCC18\src\extended\stdclib\strcpy.asm
+                    jLoop   0x002c00    program     static C:\MCC18\src\extended\stdclib\strcpy.asm
+                   strlen   0x002c1a    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x002c2a    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x002c34    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x002c36    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                    jLoop   0x002c54    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                   _2jEnd   0x002c6a    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x002c6c    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+              __string_13   0x002c80    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_12   0x002cad    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_11   0x002cd9    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+              __string_10   0x002ce9    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+               __string_9   0x002ced    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+               __string_8   0x002d09    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+               __string_0   0x002d37    program     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
+                  getYLoc   0x002d48    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                isTouched   0x002db8    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                _do_cinit   0x002e02    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     test   0x002e1c    program     static                          
+                copy_loop   0x002e74    program     static                          
+            copy_one_byte   0x002e7a    program     static                          
+             done_copying   0x002e88    program     static                          
+       ___return_lbl00002   0x002e9e    program     static                          
+                     done   0x002e9e    program     static                          
+                  OpenADC   0x002ea0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+                     putc   0x002f2a    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                   printf   0x002f90    program     extern C:\MCC18\src\extended\stdclib\printf.c
+             uart_lthread   0x002ff4    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\uart_thread.c
+                 OpenSPI1   0x003052    program     extern C:\MCC18\src\pmc_common\SPI\spi1open.c
+                WriteSPI1   0x00309a    program     extern C:\MCC18\src\pmc_common\SPI\spi1writ.c
+               OpenTimer0   0x0030d4    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
+      init_timer1_lthread   0x00310a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
+           timer1_lthread   0x003128    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer1_thread.c
+              WriteTimer1   0x00313a    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+               ReadTimer1   0x00316a    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+              WriteTimer0   0x00319a    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+               SetChanADC   0x0031ca    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+                 ReadSPI1   0x0031fa    program     extern C:\MCC18\src\pmc_common\SPI\spi1read.c
+    uart_recv_int_handler   0x003228    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+           init_uart_recv   0x00322a    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+                  isdigit   0x003256    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                   jMatch   0x003276    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x003278    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+              Delay1KTCYx   0x00327a    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x003286    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                    D1K_1   0x003288    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0012   0x00328c    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x003292    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+            __zero_memory   0x00329a    program     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               zero_block   0x0032a8    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_h   0x0032a8    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                compare_l   0x0032b0    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   loop_l   0x0032b2    program     static C:\MCC18\src\extended\proc\p18LF27J13.asm
+              _usart_putc   0x0032ba    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x0032ca    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+           timer0_lthread   0x0032d6    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\timer0_thread.c
+                 _startup   0x0032f2    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     loop   0x003300    program     static                          
+       ___return_lbl00001   0x00330a    program     static                          
+                  initSPI   0x00330c    program     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_spi.c
+                  ReadADC   0x003324    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+              Delay10TCYx   0x00333c    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
+                     D10x   0x003344    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x003346    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x003348    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x00334a    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                    D10_1   0x00334c    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                 s_digits   0x003352    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+               ConvertADC   0x003364    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                   __init   0x003368    program     extern C:\MCC18\src\extended\stdclib\__init.c
           FromMainHigh_MQ   0x000000       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
  MQ_Main_Willing_to_block   0x000036       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                   stdout   0x000037       data     extern C:\MCC18\src\extended\stdclib\stdout.c
-               LCD_INVERT   0x000039       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-              LCD_WRITING   0x00003a       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                 LOC_FLAG   0x00003b       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                 LOC_FLAG   0x000037       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+             TIMER0_COUNT   0x000038       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                   stdout   0x000039       data     extern C:\MCC18\src\extended\stdclib\stdout.c
+               LCD_INVERT   0x00003b       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+              LCD_WRITING   0x00003c       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+            DelayCounter1   0x00003d       data     extern C:\MCC18\src\extended\delays\delayd1.asm
                     acctL   0x000060       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
                      optL   0x0000a0       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
                   lastOpt   0x0000e0       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
                 menuDepth   0x0000e1       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-               chosenName   0x0000e2       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-              chosenState   0x0000e3       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                     prom   0x0000e4       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                curr_byte   0x0000e7       data     static C:\MCC18\src\extended\startup\c018i_e.c
-               curr_entry   0x0000e9       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                 data_ptr   0x0000eb       data     static C:\MCC18\src\extended\startup\c018i_e.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
-                  __tmp_0   0x0000ee       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-                  __tmp_0   0x0000ee       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
-                __RETVAL0   0x0000f5       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL1   0x0000f6       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL2   0x0000f7       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                __RETVAL3   0x0000f8       data     extern C:\MCC18\src\extended\math\cmath18.asm
-                   uc_ptr   0x0000f9       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
-                   ic_ptr   0x0000fb       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
-                storeList   0x0000fd       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
-            DelayCounter1   0x0000ff       data     extern C:\MCC18\src\extended\delays\delayd1.asm
+                 selected   0x0000e2       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+               chosenName   0x0000e3       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+              chosenState   0x0000e4       data     extern C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                     prom   0x0000e5       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                curr_byte   0x0000e8       data     static C:\MCC18\src\extended\startup\c018i_e.c
+               curr_entry   0x0000ea       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                 data_ptr   0x0000ec       data     static C:\MCC18\src\extended\startup\c018i_e.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcopen.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcread.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\pmc_common\ADC\adcsetch.c
+                  __tmp_0   0x0000ef       data     static C:\MCC18\src\extended\stdclib\vfprintf.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\main.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_touch.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_lcd.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\interrupts.c
+                  __tmp_0   0x0000ef       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\user_interrupts.c
+                __RETVAL0   0x0000f6       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL1   0x0000f7       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL2   0x0000f8       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                __RETVAL3   0x0000f9       data     extern C:\MCC18\src\extended\math\cmath18.asm
+                   uc_ptr   0x0000fa       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_uart.c
+                   ic_ptr   0x0000fc       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\my_i2c.c
+                storeList   0x0000fe       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\menus.c
            FromMainLow_MQ   0x000100       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
             ToMainHigh_MQ   0x000136       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
              ToMainLow_MQ   0x00016c       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\messages.c
                     acctL   0x000e00       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
                      optL   0x000e40       data     static C:\Users\TheGathering\Desktop\embeddedgroup5\PIC_LCD\debug_strings.h
-              ADCTRIGbits   0x000eb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   ADCTRIG   0x000eb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              ADCTRIGbits   0x000eb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                PMDIS0bits   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    PMDIS0   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  PD0bits   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                       PD0   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   PMDIS1   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  PD1bits   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  PD0bits   0x000eb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                       PD1   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  PD1bits   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   PMDIS1   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                PMDIS1bits   0x000eba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  PD2bits   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                       PD2   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   PMDIS2   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  PD2bits   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                PMDIS2bits   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   PMDIS2   0x000ebb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                      PD3   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  PD3bits   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    PMDIS3   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                PMDIS3bits   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  PD3bits   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                      PD3   0x000ebc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               PPSCONbits   0x000ebf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    PPSCON   0x000ebf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               PPSCONbits   0x000ebf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     RPOR0   0x000ec0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     RPOR1   0x000ec1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     RPOR2   0x000ec2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1192,12 +1197,12 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                  CCP10CON   0x000f00       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CCPR10L   0x000f01       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CCPR10H   0x000f02       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              CCP9CONbits   0x000f03       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CCP9CON   0x000f03       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              CCP9CONbits   0x000f03       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR9L   0x000f04       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR9H   0x000f05       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  CCP8CON   0x000f06       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               CCP8CONbits   0x000f06       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  CCP8CON   0x000f06       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR8L   0x000f07       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR8H   0x000f08       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               CCP7CONbits   0x000f09       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1212,8 +1217,8 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
               CCP5CONbits   0x000f0f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR5L   0x000f10       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR5H   0x000f11       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  CCP4CON   0x000f12       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               CCP4CONbits   0x000f12       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  CCP4CON   0x000f12       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR4L   0x000f13       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR4H   0x000f14       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               CCP3CONbits   0x000f15       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1226,8 +1231,8 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
               ECCP3ASbits   0x000f19       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PSTR3CON   0x000f1a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              PSTR3CONbits   0x000f1a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                T8CONbits   0x000f1b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     T8CON   0x000f1b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                T8CONbits   0x000f1b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                       PR8   0x000f1c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      TMR8   0x000f1d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     T6CON   0x000f1e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1236,20 +1241,20 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                      TMR6   0x000f20       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                T5GCONbits   0x000f21       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    T5GCON   0x000f21       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                T5CONbits   0x000f22       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     T5CON   0x000f22       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                T5CONbits   0x000f22       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR5L   0x000f23       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR5H   0x000f24       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                CM3CONbits   0x000f25       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CM3CON   0x000f25       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   RTCVALL   0x000f3a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   RTCVALH   0x000f3b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  PADCFG1   0x000f3c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               PADCFG1bits   0x000f3c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  PADCFG1   0x000f3c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   REFOCON   0x000f3d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               REFOCONbits   0x000f3d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               RTCCALbits   0x000f3e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    RTCCAL   0x000f3e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               RTCCALbits   0x000f3e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    RTCCFG   0x000f3f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                RTCCFGbits   0x000f3f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ODCON3   0x000f40       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1268,8 +1273,8 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                    ANCON0   0x000f48       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ANCON1   0x000f49       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ANCON1bits   0x000f49       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              DSWAKELbits   0x000f4a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   DSWAKEL   0x000f4a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              DSWAKELbits   0x000f4a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               DSWAKEHbits   0x000f4b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   DSWAKEH   0x000f4b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                DSCONLbits   0x000f4c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1280,33 +1285,33 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                    DSGPR1   0x000f4f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              CCPTMRS2bits   0x000f50       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  CCPTMRS2   0x000f50       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             CCPTMRS1bits   0x000f51       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  CCPTMRS1   0x000f51       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             CCPTMRS0bits   0x000f52       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             CCPTMRS1bits   0x000f51       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  CCPTMRS0   0x000f52       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             CCPTMRS0bits   0x000f52       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CVRCON   0x000f53       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                CVRCONbits   0x000f53       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   DMABCH   0x000f66       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                DMABCHbits   0x000f66       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   DMABCH   0x000f66       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    DMABCL   0x000f67       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               RXADDRHbits   0x000f68       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   RXADDRH   0x000f68       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   RXADDRL   0x000f69       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              TXADDRHbits   0x000f6a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   TXADDRH   0x000f6a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              TXADDRHbits   0x000f6a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   TXADDRL   0x000f6b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   CMSTAT   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 CMSTATUS   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              CMSTATUSbits   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                CMSTATbits   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   CMSTAT   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 CMSTATUS   0x000f70       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  SSP2CON2   0x000f71       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              SSP2CON2bits   0x000f71       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  SSP2CON1   0x000f72       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              SSP2CON1bits   0x000f72       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             SSP2STATbits   0x000f73       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  SSP2STAT   0x000f73       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              SSP2ADDbits   0x000f74       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             SSP2STATbits   0x000f73       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSP2ADD   0x000f74       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              SSP2ADDbits   0x000f74       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSP2BUF   0x000f75       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     T4CON   0x000f76       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 T4CONbits   0x000f76       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1316,113 +1321,113 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                 T3CONbits   0x000f79       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR3L   0x000f7a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR3H   0x000f7b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             BAUDCON2bits   0x000f7c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  BAUDCON2   0x000f7c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             BAUDCON2bits   0x000f7c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SPBRGH2   0x000f7d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               BAUDCTLbits   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  BAUDCON   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 BAUDCON1   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              BAUDCONbits   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             BAUDCON1bits   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   BAUDCTL   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             BAUDCON1bits   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              BAUDCONbits   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 BAUDCON1   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  BAUDCON   0x000f7e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SPBRGH1   0x000f7f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    SPBRGH   0x000f7f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                    PORTA   0x000f80       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 PORTAbits   0x000f80       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                PORTBbits   0x000f81       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     PORTB   0x000f81       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                PORTCbits   0x000f82       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     PORTC   0x000f82       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   HLVDCON   0x000f85       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               HLVDCONbits   0x000f85       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               DMACON2bits   0x000f86       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   DMACON2   0x000f86       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  OSCCON2   0x000f87       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               OSCCON2bits   0x000f87       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  OSCCON2   0x000f87       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               DMACON1bits   0x000f88       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   DMACON1   0x000f88       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  LATAbits   0x000f89       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      LATA   0x000f89       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     LATB   0x000f8a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  LATBbits   0x000f8a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     LATC   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  LATCbits   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIE4   0x000f8e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIE4bits   0x000f8e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIE4   0x000f8e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIR4bits   0x000f8f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      PIR4   0x000f8f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 IPR4bits   0x000f90       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      IPR4   0x000f90       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIE5   0x000f91       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 IPR4bits   0x000f90       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIE5bits   0x000f91       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                TRISAbits   0x000f92       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIE5   0x000f91       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TRISA   0x000f92       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 TRISBbits   0x000f93       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TRISB   0x000f93       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                TRISCbits   0x000f94       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TRISC   0x000f94       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    T3GCON   0x000f97       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                T3GCONbits   0x000f97       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIR5   0x000f98       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIR5bits   0x000f98       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIR5   0x000f98       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      IPR5   0x000f99       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  IPR5bits   0x000f99       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    T1GCON   0x000f9a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                T1GCONbits   0x000f9a       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   OSCTUNE   0x000f9b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               OSCTUNEbits   0x000f9b       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               RCSTA2bits   0x000f9c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    RCSTA2   0x000f9c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIE1   0x000f9d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               RCSTA2bits   0x000f9c       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIE1bits   0x000f9d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      PIR1   0x000f9e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIR1bits   0x000f9e       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      IPR1   0x000f9f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIE2bits   0x000fa0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      PIE2   0x000fa0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIR2   0x000fa1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIR2bits   0x000fa1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      IPR2   0x000fa2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  IPR2bits   0x000fa2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 PIE3bits   0x000fa3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      PIE3   0x000fa3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PIR3   0x000fa4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 PIE3bits   0x000fa3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PIR3bits   0x000fa4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     IPR3   0x000fa5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PIR3   0x000fa4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  IPR3bits   0x000fa5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     IPR3   0x000fa5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                EECON1bits   0x000fa6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    EECON1   0x000fa6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    EECON2   0x000fa7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   TXSTA2   0x000fa8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                TXSTA2bits   0x000fa8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   TXSTA2   0x000fa8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    TXREG2   0x000fa9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    RCREG2   0x000faa       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    SPBRG2   0x000fab       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   RCSTA1   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               RCSTA1bits   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 RCSTAbits   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               RCSTA1bits   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   RCSTA1   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     RCSTA   0x000fac       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                TXSTAbits   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TXSTA   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    TXSTA1   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                TXSTA1bits   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                TXSTAbits   0x000fad       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   TXREG1   0x000fae       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TXREG   0x000fae       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   TXREG1   0x000fae       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     RCREG   0x000faf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    RCREG1   0x000faf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   SPBRG1   0x000fb0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     SPBRG   0x000fb0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 CTMUICON   0x000fb1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   SPBRG1   0x000fb0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              CTMUICONbits   0x000fb1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 CTMUICON   0x000fb1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              CTMUCONLbits   0x000fb2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  CTMUCONL   0x000fb2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 CTMUCONH   0x000fb3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              CTMUCONHbits   0x000fb3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              CCP2CONbits   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 CTMUCONH   0x000fb3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CCP2CON   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 ECCP2CON   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              ECCP2CONbits   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 ECCP2CON   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              CCP2CONbits   0x000fb4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR2L   0x000fb5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     CCPR2   0x000fb5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR2H   0x000fb6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1434,50 +1439,50 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                   ECCP2AS   0x000fb8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PSTR2CON   0x000fb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              PSTR2CONbits   0x000fb9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             ECCP1CONbits   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  ECCP1CON   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              CCP1CONbits   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             ECCP1CONbits   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CCP1CON   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                    CCPR1   0x000fbb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              CCP1CONbits   0x000fba       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR1L   0x000fbb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                    CCPR1   0x000fbb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CCPR1H   0x000fbc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 ECCP1DEL   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             ECCP1DELbits   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              PWM1CONbits   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   PWM1CON   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              ECCP1ASbits   0x000fbe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              PWM1CONbits   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             ECCP1DELbits   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 ECCP1DEL   0x000fbd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   ECCP1AS   0x000fbe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              ECCP1ASbits   0x000fbe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  PSTR1CON   0x000fbf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              PSTR1CONbits   0x000fbf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               WDTCONbits   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    WDTCON   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   ADCON1   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               WDTCONbits   0x000fc0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ADCON1bits   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   ADCON0   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   ADCON0   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     ADRES   0x000fc3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADRESL   0x000fc3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    ADRESH   0x000fc4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  SSP1CON2   0x000fc5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              SSP1CON2bits   0x000fc5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSPCON2   0x000fc5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                 SSP1CON1   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+             SSP1CON1bits   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSPCON1   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               SSPCON1bits   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-             SSP1CON1bits   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                 SSP1CON1   0x000fc6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSPSTAT   0x000fc7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
              SSP1STATbits   0x000fc7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  SSP1STAT   0x000fc7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               SSPADDbits   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   SSPADD   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               SSP1ADDbits   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSP1ADD   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               SSPADDbits   0x000fc8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   SSP1BUF   0x000fc9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                    T2CON   0x000fca       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 T2CONbits   0x000fca       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                       PR2   0x000fcb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      TMR2   0x000fcc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     T1CON   0x000fcd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1486,22 +1491,22 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                     TMR1H   0x000fcf       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  RCONbits   0x000fd0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      RCON   0x000fd0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   CM2CON   0x000fd1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   CM2CON1   0x000fd1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   CM2CON   0x000fd1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               CM2CON1bits   0x000fd1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                CM2CONbits   0x000fd1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-               CM1CONbits   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-              CM1CON1bits   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  CM1CON1   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    CM1CON   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  CM1CON1   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+              CM1CON1bits   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+               CM1CONbits   0x000fd2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    OSCCON   0x000fd3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                OSCCONbits   0x000fd3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                    T0CON   0x000fd5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                 T0CONbits   0x000fd5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR0L   0x000fd6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     TMR0H   0x000fd7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                   STATUS   0x000fd8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                STATUSbits   0x000fd8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      FSR2   0x000fd9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     FSR2L   0x000fd9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     FSR2H   0x000fda       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1520,22 +1525,22 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                  POSTINC1   0x000fe6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     INDF1   0x000fe7       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      WREG   0x000fe8       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                    FSR0L   0x000fe9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      FSR0   0x000fe9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     FSR0H   0x000fea       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    PLUSW0   0x000feb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   PREINC0   0x000fec       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  POSTDEC0   0x000fed       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                  POSTINC0   0x000fee       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     INDF0   0x000fef       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  INTCON3   0x000ff0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               INTCON3bits   0x000ff0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                  INTCON2   0x000ff1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
               INTCON2bits   0x000ff1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    INTCON   0x000ff2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                INTCONbits   0x000ff2       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                     PROD   0x000ff3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     PRODL   0x000ff3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                     PRODH   0x000ff4       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    TABLAT   0x000ff5       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                   TBLPTRL   0x000ff6       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
@@ -1548,8 +1553,8 @@ Linker Map File - Created Wed Nov 17 20:48:53 2010
                    PCLATU   0x000ffb       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                STKPTRbits   0x000ffc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                    STKPTR   0x000ffc       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
-                      TOS   0x000ffd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      TOSL   0x000ffd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      TOSH   0x000ffe       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
                      TOSU   0x000fff       data     extern C:\MCC18\src\extended\proc\p18LF27J13.asm
 

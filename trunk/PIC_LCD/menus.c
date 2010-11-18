@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <spi.h>
+#include "messages.h"
 #include "debug_strings.h"
-unsigned char lastOpt=0, menuDepth=0, chosenName=0, chosenState=0;
+unsigned char lastOpt=0, menuDepth=0, selected=0,chosenName=0, chosenState=0;
 static accounts *storeList;
 void displayInitScreen(void)
 {
@@ -60,6 +61,9 @@ void displayOptions(unsigned char highlightLine)
 void displayDebug(void)
 {
 	char printUser[]="User  ", printOpt[]="Opt   ", blank[]=" ";
+	unsigned char buffer[3]={MSGT_USER_CHOICE,chosenName,chosenState};
+	
+	ToMainHigh_sendmsg(3,MSGT_USER_CHOICE,(void *) buffer);
 	setPos(0,0);
 	setStartLine(0);
 	printUser[5]=(char)chosenName+0x40;
@@ -85,22 +89,18 @@ void selectOption(unsigned char menuOpt)
 	{
 		if(menuOpt!=lastOpt)
 		{	
-			if(menuDepth==0 ) //highlight option
+			if(menuDepth==0 &&selected>0) //highlight option
 			{
 				displayAccounts(storeList, menuOpt);	
 		//	menuDepth=1;
 			}
-			else if(menuDepth==1)
+			else if(menuDepth==1&&selected>0)
 			{
 				//redraw menu options
 				displayOptions(menuOpt);
 			//	menuDepth=2;
 			}
-			else if(lastOpt==0)		
-			{
-				//do nothing
-			}
-				lastOpt=menuOpt;
+			lastOpt=menuOpt;
 		}
 		else if(lastOpt>0&&menuOpt>0)
 		{
@@ -109,25 +109,43 @@ void selectOption(unsigned char menuOpt)
 				case 0:
 				{
 					//draw menu options
-					chosenName=menuOpt;
-					displayOptions(0);
-					menuDepth=1;
-					lastOpt=0;
+					if(selected>0)
+					{
+						chosenName=menuOpt;
+						displayOptions(0);
+						menuDepth=1;
+						lastOpt=0;
+						selected=0;
+					}
+					else
+					{
+						selected=1;
+					}
 					break;
 				};
 				case 1:
 				{
+					if(selected>0)
+					{
 					//display choices
 					chosenState=menuOpt;
 					menuDepth=2;
 					lastOpt=0;
+					selected=0;
+					}
+					else
+					{
+						selected=1;
+					}
 					break;
 				};
 				case 2://reset
 				{
 					displayDebug();
+					
 					menuDepth=0;
 					lastOpt=0;
+					selected=0;
 					break;
 				};
 				default:
