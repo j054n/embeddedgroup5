@@ -8,7 +8,8 @@
 #include "my_touch.h"
 #include <adc.h>
 #include <delays.h>
-
+#include "my_lcd.h"
+unsigned char LOC_FLAG=0;
 void initADC()
 {
 }
@@ -42,7 +43,7 @@ void timer0_int_handler()
 	unsigned int val;
 	unsigned char buffer[2];
 	int	length, msgtype;
-	if(LOC_FLAG>0){
+	if(LOC_FLAG>0&&LCD_WRITING==0){
 		switch(getYLoc()){
 		case 1:
 				ToMainHigh_sendmsg(2,MSGT_LCD_AREA1,(void *) buffer);
@@ -57,13 +58,13 @@ void timer0_int_handler()
 				ToMainHigh_sendmsg(2,MSGT_LCD_AREA4,(void *) buffer);
 		break;
 		default:
-				ToMainHigh_sendmsg(2,MSGT_LCD_TOUCH,(void *) buffer);
+				ToMainHigh_sendmsg(2,MSGT_LCD_NOTOUCH,(void *) buffer);
 		break;
 		}
 		
-	}	else
+	}	else if(LCD_WRITING==0)
 	{
-		ToMainHigh_sendmsg(sizeof(val),MSGT_LCD_NOTOUCH,(void *) &val);
+		ToMainHigh_sendmsg(2,MSGT_LCD_NOTOUCH,(void *) buffer);
 	}
  	LOC_FLAG=isTouched();
 	// toggle an LED

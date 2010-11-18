@@ -3,11 +3,11 @@
 #include "my_fonts.h"
 #include <spi.h>
 #include <delays.h>
-unsigned char LCD_INVERT=0;
+unsigned char LCD_INVERT=0, LCD_WRITING=0;
 void initSPIHeader(void)
 {
 	RESET=0;
-	Delay10TCYx(50);
+	Delay10TCYx(5);
 	RESET=1;
 
 	initSPI();
@@ -63,7 +63,7 @@ void initSPIHeader(void)
 }
 void printSPIHeader(unsigned char lat, unsigned char data)
 {
-//	Delay1KTCYx(5);
+	Delay10TCYx(5);
 	
 	LCDCS=0;
 	WriteSPI1(OCMD);
@@ -85,32 +85,10 @@ void glcdInit(void)
 	setStartLine(0x3|RESET_OFF);
 	printSPIHeader(GPIOB,0b00111111); //turn display ON
 	glcdStrobe(0x3);
-	printSPIHeader(GPIOB,0xff); //Set data high, ready to wait for status byte
-
-	
-	//temp=spird();
-	//temp=readLCD();
-	//if(temp>0)
-	//	LATCbits.LATC0=1;
+	//printSPIHeader(GPIOB,0xff); //Set data high, ready to wait for status byte
 	setStartLine(0);
 	clearScreen();
 	
-	//writePixel(10,10,0x1);
-//	drawChar('H',LARGE_FONT, CS1);
-//	drawChar('E',LARGE_FONT, CS1);
-	
-//	drawString(toWrite3,11,1);
-	//setPos(0,1);
-//	drawString(toWrite,11,2);
-	//setPos(0,0);
-//	drawString(toWrite2,9,3);
-//	drawString(toWrite4,11,4);
-//	drawString(
-//	drawSquare(5,5,10,10);
-//	printSPIHeader(OLATB,0b00111111); //turn display ON
-//	glcdStrobe(0x3);
-//	printSPIHeader(OLATB,0b11000000);
-//	glcdStrobe(CS_BOTH);
 }
 void setXAddr(unsigned char xaddr, unsigned char cs)
 {
@@ -136,9 +114,9 @@ void setYAddr(unsigned char yaddr)
 }
 void glcdStrobe(unsigned char cs)
 {
-
+	//Delay10TCYx(2 );
 	printSPIHeader(GPIOA,RESET_OFF|LCD_ENABLE|cs); //high, enable
-	Delay10TCYx(5 );
+	Delay10TCYx(2 );
 	printSPIHeader(GPIOA,RESET_OFF|LCD_DISABLE|cs);//low, disable
 }
 
@@ -189,7 +167,9 @@ void clearScreen()
 //writes a byte out to the LCD screen at whatever current location
 void writePixelByte(unsigned char bp, unsigned char cs)
 {
-	unsigned char cs_r=cs&0b00000011;
+	unsigned char cs_r=cs&0b00000011, tempStat;
+//	tempStat=readLCD(); //check LCD status byte
+		
 	printSPIHeader(GPIOA,RESET_OFF|RS_ON| cs_r); // write command
 	//Delay10TCYx(5);
 	if(LCD_INVERT>0)
@@ -213,21 +193,18 @@ void setStartLine(unsigned char pos)
 unsigned char readLCD()
 {
 	unsigned char toSend=0;
-	LCDCS=0;
-	WriteSPI1(OCMD);
-	WriteSPI1(IODIRB);
-	WriteSPI1(0xff); //set all IO B pins to inputs
-	LCDCS=1;
+	printSPIHeader(IODIRB,0xff);
 //	printSPIHeader(OLATA,RESET_OFF|RS_ON|RW_ON);  //tell LCD screen to read status
 //	glcdStrobe(0x3);
 	printSPIHeader(GPIOA,RESET_OFF|RS_OFF|RW_ON);  //tell LCD screen to read status
-	glcdStrobe(0x3|RS_OFF|RW_ON); //dummy strobe
-	glcdStrobe(0x3|RS_OFF|RW_ON); // real read
-	Delay10TCYx(10);
+	glcdStrobe(0x3|RESET_OFF|RS_OFF|RW_ON); //dummy strobe
+	//glcdStrobe(0x3|RESET_OFF|RS_OFF|RW_ON); // real read
+	//Delay10TCYx(10);
 
 	LCDCS=0;
 	WriteSPI1(OCMD|0x01); //read
 	WriteSPI1(GPIOB);
+
 	while(!DataRdySPI1());
 	toSend=ReadSPI1();
 	LCDCS=1;
@@ -267,6 +244,7 @@ void drawString(char *str, unsigned char line)
 {
 
 	unsigned char i=0, cs=CS1, valid=1;
+	LCD_WRITING=1;
 	if(line>0 && line <=4) 
 		setPos(0,(line-1)*2);
 	i=0;//breakpoint
@@ -293,14 +271,16 @@ void drawString(char *str, unsigned char line)
 			drawChar(' ',LARGE_FONT,cs);//clear out the remainder of the line	
 		}
 	}
+	LCD_WRITING=0;
 }
 void drawChar(char toDraw, unsigned char size, unsigned char cs)
 {
-	unsigned char i=0, charIndex=0;
+	unsigned char i=0, charIndex=0, temps;
 //	unsigned char **font;
 	
 	if((toDraw>='A' && toDraw <='Z'))
 	{
+//	temps=readLCD();
 	//	if(size==LARGE_FONT)
 	//	{
 	//		font=FONT6x8_capLetter;

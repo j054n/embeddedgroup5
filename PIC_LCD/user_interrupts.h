@@ -8,7 +8,7 @@
 
 //int adcVVV=0;
 //My example program uses these two timer interrupts
-static int LOC_FLAG;
+extern unsigned char LOC_FLAG;
 void timer0_int_handler(void);
 
 void timer1_int_handler(void);
