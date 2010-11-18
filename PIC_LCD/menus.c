@@ -89,17 +89,6 @@ void selectOption(unsigned char menuOpt)
 	{
 		if(menuOpt!=lastOpt)
 		{	
-			if(menuDepth==0 &&selected>0) //highlight option
-			{
-				displayAccounts(storeList, menuOpt);	
-		//	menuDepth=1;
-			}
-			else if(menuDepth==1&&selected>0)
-			{
-				//redraw menu options
-				displayOptions(menuOpt);
-			//	menuDepth=2;
-			}
 			lastOpt=menuOpt;
 		}
 		else if(lastOpt>0&&menuOpt>0)
@@ -119,6 +108,7 @@ void selectOption(unsigned char menuOpt)
 					}
 					else
 					{
+						displayAccounts(storeList, menuOpt);
 						selected=1;
 					}
 					break;
@@ -135,6 +125,8 @@ void selectOption(unsigned char menuOpt)
 					}
 					else
 					{
+						
+						displayOptions(menuOpt);
 						selected=1;
 					}
 					break;
@@ -155,7 +147,6 @@ void selectOption(unsigned char menuOpt)
 					break;
 				};	
 			}
-		
 		}
 	}
 	else 
