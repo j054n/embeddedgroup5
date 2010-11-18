@@ -9,7 +9,7 @@
 #include <adc.h>
 #include <delays.h>
 #include "my_lcd.h"
-unsigned char LOC_FLAG=0;
+unsigned char LOC_FLAG=0, TIMER0_COUNT=0;
 void initADC()
 {
 }
@@ -62,10 +62,12 @@ void timer0_int_handler()
 		break;
 		}
 		
-	}	else if(LCD_WRITING==0)
+	}	else if(LCD_WRITING==0&&TIMER0_COUNT>=3) //refresh every 3rd trigger
 	{
 		ToMainHigh_sendmsg(2,MSGT_LCD_NOTOUCH,(void *) buffer);
+		TIMER0_COUNT=0;
 	}
+	TIMER0_COUNT++;
  	LOC_FLAG=isTouched();
 	// toggle an LED
     //LATBbits.LATB0 = !LATBbits.LATB0; 

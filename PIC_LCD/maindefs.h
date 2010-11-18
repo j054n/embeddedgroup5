@@ -27,6 +27,6 @@
 #define DEBUG_LED3			LATCbits.LATC2
 #define MSGT_PHOTO_READ_1 60
 #define MSGT_PHOTO_READ_2 61
-
+#define MSGT_USER_CHOICE 70
 #endif
 
