@@ -11,8 +11,8 @@ typedef struct accounts {
 //extern unsigned char LCD_INVERT;
 
 void displayInitScreen(void);
-void displayAccounts(accounts *acctList);
-void displayOptions(void);
+void displayAccounts(accounts *acctList, unsigned char highlightLine);
+void displayOptions(unsigned char highlightLine);
 void selectOption(unsigned char menuOpt);
 
 #endif

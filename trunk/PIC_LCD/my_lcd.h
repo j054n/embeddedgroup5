@@ -41,7 +41,7 @@
 #define GPPUA 0x06
 #define LARGE_FONT 0x1
 #define SMALL_FONT 0x2
-extern unsigned char LCD_INVERT;
+extern unsigned char LCD_INVERT, LCD_WRITING;
 void glcdStrobe(unsigned char cs);
 void glcdInit(void);
 void initSPIHeader(void);

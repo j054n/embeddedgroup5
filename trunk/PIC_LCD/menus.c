@@ -16,7 +16,7 @@ void displayInitScreen(void)
 	drawString(init_msg,1);
 //	CloseSPI1();
 }
-void displayAccounts(accounts *acctList)
+void displayAccounts(accounts *acctList, unsigned char highlightLine)
 {
 	
 	char init_msg[16];
@@ -33,9 +33,16 @@ void displayAccounts(accounts *acctList)
 	drawString(init_msg,3);
 	strcpy(init_msg,acctList->acctL[3]);
 	drawString(init_msg,4);
+	if(highlightLine>0 && highlightLine <=4)
+	{
+		LCD_INVERT=1;
+		strcpy(init_msg,acctList->acctL[highlightLine-1]);
+		drawString(init_msg,highlightLine);	
+		LCD_INVERT=0;	
+	}
 //	CloseSPI1();
 }
-void displayOptions(void)
+void displayOptions(unsigned char highlightLine)
 {
 	setPos(0,0);
 	setStartLine(0);
@@ -43,6 +50,12 @@ void displayOptions(void)
 	drawString(optL[1],2);
 	drawString(optL[2],3);
 	drawString(optL[3],4);
+	if(highlightLine>0 && highlightLine <=4)
+	{
+		LCD_INVERT=1;
+		drawString(optL[highlightLine-1],highlightLine);	
+		LCD_INVERT=0;	
+	}
 }
 void displayDebug(void)
 {
@@ -56,42 +69,36 @@ void displayDebug(void)
 	drawString(blank,3);
 	drawString(blank,4);
 }
+void highlightOpt(unsigned char lineNum)
+{
+	
+}
 void selectOption(unsigned char menuOpt)
 {
 	char init2_msg[16];
+	printSPIHeader(GPIOA,RESET_OFF|0x3); //choose both Chip Selects
+	printSPIHeader(GPIOB,0b00111111); //turn display ON
+	glcdStrobe(0x3);
 //	initSPI();
+	//clearScreen();
 	if(menuOpt>0)
 	{
 		if(menuOpt!=lastOpt)
 		{	
-			if(menuDepth==0 )
+			if(menuDepth==0 ) //highlight option
 			{
-				LCD_INVERT=1;
-				strcpy(init2_msg,storeList->acctL[menuOpt-1]);
-				drawString(init2_msg,menuOpt);
-				LCD_INVERT=0;
-				if(lastOpt>0)
-				{
-				strcpy(init2_msg,storeList->acctL[lastOpt-1]);
-				drawString(init2_msg,lastOpt);
-				}
-			//	menuDepth=1;
+				displayAccounts(storeList, menuOpt);	
+		//	menuDepth=1;
 			}
 			else if(menuDepth==1)
 			{
 				//redraw menu options
-				LCD_INVERT=1;
-				drawString(optL[menuOpt-1],menuOpt);
-				LCD_INVERT=0;
-				if(lastOpt>0)
-				{
-				drawString(optL[lastOpt-1],lastOpt);
-				}
+				displayOptions(menuOpt);
 			//	menuDepth=2;
 			}
 			else if(lastOpt==0)		
 			{
-			//	displayAccounts(storeList);
+				//do nothing
 			}
 				lastOpt=menuOpt;
 		}
@@ -103,8 +110,9 @@ void selectOption(unsigned char menuOpt)
 				{
 					//draw menu options
 					chosenName=menuOpt;
-					displayOptions();
+					displayOptions(0);
 					menuDepth=1;
+					lastOpt=0;
 					break;
 				};
 				case 1:
@@ -112,22 +120,39 @@ void selectOption(unsigned char menuOpt)
 					//display choices
 					chosenState=menuOpt;
 					menuDepth=2;
+					lastOpt=0;
 					break;
 				};
 				case 2://reset
 				{
 					displayDebug();
-					menuDepth=3;
+					menuDepth=0;
+					lastOpt=0;
 					break;
 				};
 				default:
 				{
-				displayAccounts(storeList);
-				menuDepth=0;
-				break;
+					displayAccounts(storeList,0);
+					menuDepth=0;
+					break;
 				};	
 			}
-			lastOpt=0;
+		
+		}
+	}
+	else 
+	{
+		lastOpt=0;
+		if(menuDepth==0)
+		{
+			displayAccounts(storeList,0);
+		}
+		else if(menuDepth==1)
+		{	
+			displayOptions(0);
+		}else if(menuDepth==2)
+		{
+			displayDebug();	
 		}
 	}
 

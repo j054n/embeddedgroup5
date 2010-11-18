@@ -40,12 +40,12 @@ unsigned char last_reg_recvd, action;
 unsigned char adbuffer[2];
 //accounts acctList;
 //unsigned char nameList[4][16]={"MARK JONES", "APPLE", "PAUL PLASSMAN"};
-uart_comm uc;
+//uart_comm uc;
 //i2c_comm ic;
 accounts *acctList;
 unsigned char msgbuffer[MSGLEN+1];
 unsigned char i;
-uart_thread_struct	uthread_data; // info for uart_lthread
+//uart_thread_struct	uthread_data; // info for uart_lthread
 timer1_thread_struct t1thread_data; // info for timer1_lthread
 timer0_thread_struct t0thread_data; // info for timer0_lthread
 unsigned char data;
@@ -68,7 +68,7 @@ strcpy(acctList->acctL[3],acctL[3]);
 //acctList.acct4="asdfasdfasdf";
 glcdInit();
 displayInitScreen();
-displayAccounts(acctList);
+displayAccounts(acctList,0);
 //list=&acctList;
 //acctListSize=4;
 	OSCCON = 0x6C; // 4 MHz
@@ -81,7 +81,7 @@ displayAccounts(acctList);
 //	init_i2c(&ic);
 
 	// init the timer1 lthread
-	init_timer1_lthread(&t1thread_data);
+	//init_timer1_lthread(&t1thread_data);
 
 	// initialize message queues before enabling any interrupts
 	init_queues();
@@ -101,7 +101,7 @@ displayAccounts(acctList);
 */
 //displayInitScreen();
 	// initialize Timers
-	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_16);
+	OpenTimer0( TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_4);
 //	OpenTimer1( TIMER_INT_ON & T1_PS_1_8 & T1_16BIT_RW  & T1_OSC1EN_OFF & T1_SYNC_EXT_OFF,0);
 	
 	// Peripheral interrupts can have their priority set to high or low
@@ -227,6 +227,7 @@ while(1)
 				case MSGT_LCD_AREA4:{
 //displayInitScreen();
 				selectOption(4);
+			//	initSPIHeader();
 				break;
 				};
 				case MSGT_LCD_TOUCH:{
@@ -263,13 +264,13 @@ while(1)
 					break;
 				};
 				case MSGT_OVERRUN:
-				case MSGT_UART_DATA: {
-					uart_lthread(&uthread_data,msgtype,length,msgbuffer);
-					break;
-				};
+			//	case MSGT_UART_DATA: {
+			//		uart_lthread(&uthread_data,msgtype,length,msgbuffer);
+			//		break;
+			//	};
 				default: {
-					printf("Error: Unexpected msg in queue, type = %x\r\n",
-						msgtype);
+			//		printf("Error: Unexpected msg in queue, type = %x\r\n",
+			//			msgtype);
 					break;
 				};
 			};
