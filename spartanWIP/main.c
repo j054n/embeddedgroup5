@@ -15,12 +15,12 @@
 
 #define BUTTON_Q_1 0x51
 #define LCD_Q_1 0x52
-#define LCD_Q_2 0x58
 #define I2C_STATUS_Q 0x53
 #define I2C_ISTATUS_Q 0x54
 #define I2C_RECV_Q 0x55
 #define I2C_INCOMING_Q 0x56
 #define CONTROLLER_Q_1 0x57
+#define DATA_Q_1 0x58
 
 // Define some message types
 #define BUTTON_MSG 0x01
@@ -141,55 +141,59 @@ void *button_thread(void *dptr)
 //  - It waits for a message and then prints that message
 ///////////////////////////////////////////
 typedef struct __LCD_Thread_Comm {
-	int	iic_recv_queue_id;
-	int user_recv_queue_id;
+	int	msg_recv_queue_id;
 	int msg_send_queue_id;
 } LCD_Thread_Comm;
 void *lcd_thread(void *dptr)
 {
 	LCD_Thread_Comm *cptr = (LCD_Thread_Comm *) dptr;
 	int	length;
-	//int length2;
-	int	count;
-	unsigned char iic_msg[MAX_IIC_MSGLEN];
-	//unsigned int user_data[USER_DATA_MSGLEN];
-	char str[20];
+	unsigned char msgbuf[MAX_IIC_MSGLEN];
 	unsigned char iic_send_msg[MAX_IIC_MSGLEN];
-	int avg1, avg2, avg3;
+
+	for (;;) {
+		length = msgrcv(cptr->msg_recv_queue_id,(void *) msgbuf,
+			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
+			
+		VTprintLCD(msgbuf,1);
+	}
+}
+
+///////////////////////////////////////////
+// Data processing thread
+//  - Waits for data from I2C, processes that data, 
+//     and sends the appropriate message over I2C to insteon
+///////////////////////////////////////////
+typedef struct __Data_Thread_Comm {
+	int	recv_msg_q_id;
+	int	send_iic_q_id;
+	int send_lcd_q_id;
+} Data_Thread_Comm;
+void *data_thread(void *dptr)
+{
+	Data_Thread_Comm *cptr = (Data_Thread_Comm *) dptr;
+	int	length;
+	unsigned char iic_msg[MAX_IIC_MSGLEN];
+	unsigned char str[20];
+	unsigned char iic_send_msg[MAX_IIC_MSGLEN];
+	int avg1, avg2, avg;
 	int diff, current;
 	unsigned int insteon_val;
 	unsigned int target;
 	unsigned int user[12] = {100,75,50,80,60,40,60,45,30,40,30,20};
 
-	count=0;
 	avg1=0;
 	avg2=0;
-	avg3=0;
+	avg=0;
 	current=0;
 	insteon_val=0xFF;
 	target=0x3FF;
-	//setLED(0x55);
 
 	for (;;) {
-		//setLED(0x55);
-		length = msgrcv(cptr->iic_recv_queue_id,(void *) iic_msg,
+		length = msgrcv(cptr->recv_msg_q_id,(void *) iic_msg,
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
-		//length2 = msgrcv(cptr->user_recv_queue_id,(void *) user_data,
-		//	sizeof(unsigned int)*USER_DATA_MSGLEN,0,IPC_NOWAIT);
-/*
-		switch (iic_msg[0]) {
-			case I2C_SEND_MSG: {
-				
-				break;
-			}
-			default: {
-				//VTprintLCD("Unknown MsgType",1);
-				break;
-			}
-		}*/
-		//if(length2 >= 0) { target = (user_data[0] * 0x3FF) / 100; }
-		//if(length2 >= 0) { target = user_data[0]; }
-		if(iic_msg[4] != current) { 
+
+		if(iic_msg[4] != current) { //target value has changed
 			target = (user[iic_msg[4]] * 0x3FF)/100;
 			current = iic_msg[4];
 		}
@@ -203,52 +207,53 @@ void *lcd_thread(void *dptr)
 		unsigned int val3i = val3;
 		unsigned char val4 = iic_msg[3];
 		unsigned int val4i = val4;
-		//val1 = val1 << 1;
-		//val1 = val1 | (val2 >> 7);
+
 		if(val1i != 0xFF && val3i != 0xFF) {
 			val1i = (val2i + (val1i << 8));
 			val3i = (val4i + (val3i << 8));
-			avg3 = (val1i + val3i) / 2;
-			//diff = avg1 - avg3;
-			//avg3 += diff / CONVERGE;
-			//avg1 += diff / CONVERGE;
-			//diff = val3i - avg2;
-			//avg2 += diff / CONVERGE;
-			//avg3 = avg1;
-			//avg3 = (avg1 + avg2) / 2;
+			diff = val1i - avg1;
+			avg1 += diff / CONVERGE;
+			diff = val3i - avg2;
+			avg2 += diff / CONVERGE;
+			avg = (avg1 + avg2) / 2;
 			
-			if(avg3 < target) {
-				if(avg3 < target-120) {insteon_val = insteon_val<225 ? insteon_val+30 : 0xFF;}
-				else if(avg3 < target-80)  {insteon_val = insteon_val<235 ? insteon_val+20 : 0xFF;}
-				else if(avg3 < target-40)  {insteon_val = insteon_val<245 ? insteon_val+10 : 0xFF;}
-				else if(avg3 < target-20)  {insteon_val = insteon_val<250 ? insteon_val+ 5 : 0xFF;}
-				else if(avg3 < target-8)   {insteon_val = insteon_val<253 ? insteon_val+ 2 : 0xFF;}
+			if(avg < target) { //adjust up
+				if(avg < target-120) {insteon_val = insteon_val<225 ? insteon_val+30 : 0xFF;}
+				else if(avg < target-80)  {insteon_val = insteon_val<235 ? insteon_val+20 : 0xFF;}
+				else if(avg < target-40)  {insteon_val = insteon_val<245 ? insteon_val+10 : 0xFF;}
+				else if(avg < target-20)  {insteon_val = insteon_val<250 ? insteon_val+ 5 : 0xFF;}
+				else if(avg < target-8)   {insteon_val = insteon_val<253 ? insteon_val+ 2 : 0xFF;}
 			}
-			else if(avg3 > target) {
-				if(avg3 > target+120) {insteon_val = insteon_val>30 ? insteon_val-30 : 0;}
-				else if(avg3 > target+80)  {insteon_val = insteon_val>20 ? insteon_val-20 : 0;}
-				else if(avg3 > target+40)  {insteon_val = insteon_val>10 ? insteon_val-10 : 0;}
-				else if(avg3 > target+20)  {insteon_val = insteon_val>5  ? insteon_val- 5 : 0;}
-				else if(avg3 > target+8)   {insteon_val = insteon_val>2  ? insteon_val- 2 : 0;}
+			else if(avg > target) { //adjust down
+				if(avg > target+120) {insteon_val = insteon_val>30 ? insteon_val-30 : 0;}
+				else if(avg > target+80)  {insteon_val = insteon_val>20 ? insteon_val-20 : 0;}
+				else if(avg > target+40)  {insteon_val = insteon_val>10 ? insteon_val-10 : 0;}
+				else if(avg > target+20)  {insteon_val = insteon_val>5  ? insteon_val- 5 : 0;}
+				else if(avg > target+8)   {insteon_val = insteon_val>2  ? insteon_val- 2 : 0;}
 			}
 			
-			sprintf(str,"Val:  %03X/%03X",avg3,target);
-			VTprintLCD(str,1);
+			sprintf(str,"Val:  %03X/%03X",avg,target);
+			msgsnd(cptr->send_lcd_q_id,str,20*sizeof(unsigned char),0);
 			
 			iic_send_msg[0] = I2C_SEND_MSG;
-			iic_send_msg[1] = SENSOR_BRD_ADDR;
+			iic_send_msg[1] = INSTEON_ADDR;
 			iic_send_msg[2] = insteon_val;
 			
 			setLED(insteon_val);
 			
 		}
 		//iic_send_msg[3] = iic_msg[2];
-		msgsnd(cptr->msg_send_queue_id,iic_send_msg,3*sizeof(unsigned char),0);
+		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
+		iic_send_msg[1] = SENSOR_BRD_ADDR;
+		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
 	}
 }
 
-
-
+///////////////////////////////////////////
+// Controller thread
+// Sends requests for sensor data to the sensor
+// board on each timer interrupt
+///////////////////////////////////////////
 typedef struct __Controller_Thread_Comm {
 	int	recv_msg_q_id;
 	int	send_msg_q_id;
@@ -260,21 +265,12 @@ void *controller_thread(void *dptr)
 	unsigned	int	msg_buffer[MAXLEN];
 	int	length, i2c_length;
 	unsigned char	i2c_msg_buffer[MAXLEN];
-	int	count;
-	unsigned int iic_msg[MAX_IIC_MSGLEN];
 
-	i2c_msg_buffer[0] = I2C_SEND_MSG;
-	i2c_msg_buffer[1] = SENSOR_BRD_ADDR;
-	i2c_msg_buffer[2] = 0x14;
-	i2c_length = 3*sizeof(unsigned char);
-	//msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0);
-	count = 0;
 	for ( ;; ) {
 	   length = msgrcv(cptr->recv_msg_q_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),
 			0,0);
-		if(length > 0) {
-			
+		if(length > 0) {	
 			switch(msg_buffer[0]) {
 				case TIMER_MSG: {
 					i2c_msg_buffer[0] = I2C_RECV_MSG;
@@ -288,8 +284,7 @@ void *controller_thread(void *dptr)
 				default: {
 					break;
 				}
-			}
-			
+			}	
 		}
 	}
 	
@@ -312,15 +307,16 @@ void *user_main()
 	LCD_Thread_Comm lcd_thread_comm;
 	Buttons_Thread_Comm buttons_thread_comm;
 	Controller_Thread_Comm controller_thread_comm;
+	Data_Thread_Comm data_thread_comm;
 	
 	pthread_t my_threadt, button_thread_t, lcd_thread_t,
-		i2c_thread_t, controller_thread_t;
+		i2c_thread_t, controller_thread_t, data_thread_t;
 	pthread_attr_t my_thread_attr_t, button_thread_attr_t,
 		lcd_thread_attr_t,
 		i2c_thread_attr_t,
-		controller_thread_attr_t;
+		controller_thread_attr_t, data_thread_attr_t;
 	struct sched_param my_thread_s_params, button_s_params,
-		lcd_s_params, i2c_s_params, controller_s_params;
+		lcd_s_params, i2c_s_params, controller_s_params, data_s_params;
 	int	policy;
 
 	// Return code variable for calls to Xilinx routines
@@ -339,10 +335,10 @@ void *user_main()
 	////////////////////////////////////////
 	// setup a msg queue for the LCD thread to receive messages on
 	////////////////////////////////////////
-	lcd_thread_comm.iic_recv_queue_id = msgget(LCD_Q_1,IPC_CREAT);
-	lcd_thread_comm.user_recv_queue_id = msgget(LCD_Q_2,IPC_CREAT);
+	lcd_thread_comm.msg_recv_queue_id = msgget(LCD_Q_1,IPC_CREAT);
 
 	controller_thread_comm.recv_msg_q_id = msgget(CONTROLLER_Q_1, IPC_CREAT);
+	data_thread_comm.recv_msg_q_id = msgget(DATA_Q_1, IPC_CREAT);
 	
 	////////////////////////////////////////
 	// initialize the button device, including its message queue
@@ -368,7 +364,7 @@ void *user_main()
 	i2c_comm.incoming_msg_queue_id = 
 		msgget(I2C_INCOMING_Q,IPC_CREAT);
 	i2c_comm.outgoing_msg_queue_id = 
-		lcd_thread_comm.iic_recv_queue_id;
+		data_thread_comm.recv_msg_q_id;
 	i2c_comm.out_status_queue_id = 
 		msgget(I2C_STATUS_Q,IPC_CREAT);
 	i2c_comm.internal_status_queue_id = 
@@ -396,11 +392,13 @@ void *user_main()
 	////////////////////////////////////////
 	buttons_thread_comm.recv_msg_q_id = buttons_comm.send_msg_q_id;
 	buttons_thread_comm.send_msg_q_id = 
-		lcd_thread_comm.user_recv_queue_id;
+		lcd_thread_comm.msg_recv_queue_id;
 	buttons_thread_comm.button_device = &buttons_comm;
 
 
     controller_thread_comm.send_msg_q_id = i2c_comm.incoming_msg_queue_id;
+	data_thread_comm.send_iic_q_id = i2c_comm.incoming_msg_queue_id;
+	data_thread_comm.send_lcd_q_id = lcd_thread_comm.msg_recv_queue_id;
 
 	////////////////////////////////////////
 	// Code for examining the priority of this thread
@@ -434,7 +432,7 @@ void *user_main()
 	// End of LCD Thread setup
 	////////////////////////////////////////
 	
-		////////////////////////////////////////
+	////////////////////////////////////////
 	// Code for setting up the Controller Thread
 	////////////////////////////////////////
 	// set up an attribute structure for this thread
@@ -453,6 +451,24 @@ void *user_main()
 	// End of Controller Thread setup
 	////////////////////////////////////////
 	
+	////////////////////////////////////////
+	// Code for setting up the Data Thread
+	////////////////////////////////////////
+	// set up an attribute structure for this thread
+	status = pthread_attr_init(&data_thread_attr_t);
+	// get the current scheduling parameters for this thread
+	pthread_attr_getschedparam(&data_thread_attr_t,&data_s_params);
+		data_s_params.sched_priority = 0x5;
+	pthread_attr_setschedparam(&data_thread_attr_t,&data_s_params);
+	// create the thread -- it is runnable after this call
+	status = pthread_create(&data_thread_t,&data_thread_attr_t,
+		data_thread,&data_thread_comm);
+	if (status != XST_SUCCESS) {
+		return;
+	}
+	////////////////////////////////////////
+	// End of Data Thread setup
+	////////////////////////////////////////
 
 	////////////////////////////////////////
 	// Code for setting up the Button Thread
