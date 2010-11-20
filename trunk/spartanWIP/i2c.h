@@ -31,8 +31,8 @@ typedef struct __I2C_Comm {
 // Types of Status messages
 #define I2C_SEND_MSG 0x01
 #define I2C_RECV_MSG 0x02
-#define SENSOR_BRD_ADDR 0x45
-#define INSTEON_ADDR 0x46
+#define SENSOR_BRD_ADDR 0x46
+#define INSTEON_ADDR 0x45
 
 // Types of Internal messages
 #define MSGTYPE_I2C_STATUS 0x10
