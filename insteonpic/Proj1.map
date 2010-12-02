@@ -1,5 +1,5 @@
 MPLINK 4.37, Linker
-Linker Map File - Created Thu Nov 18 18:02:21 2010
+Linker Map File - Created Wed Dec 01 19:09:08 2010
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -13,105 +13,105 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
          .code_vfprintf.o       code   0x00002c    program   0x000816
            .code_my_i2c.o       code   0x000842    program   0x0006ca
          .code_messages.o       code   0x000f0c    program   0x000566
-             .code_main.o       code   0x001472    program   0x0003de
-       .code_interrupts.o       code   0x001850    program   0x00020a
-                     PROG       code   0x001a5a    program   0x000146
-          .code_my_uart.o       code   0x001ba0    program   0x00012c
-             .stringtable    romdata   0x001ccc    program   0x0000e2
-                   STRING       code   0x001dae    program   0x0000bc
-  .code_user_interrupts.o       code   0x001e6a    program   0x0000aa
-               _cinit_scn       code   0x001f14    program   0x00009e
-            .code_my_ad.o       code   0x001fb2    program   0x000094
-            .code_uopen.o       code   0x002046    program   0x000082
-             .code_putc.o       code   0x0020c8    program   0x000066
-           .code_printf.o       code   0x00212e    program   0x000064
-          .code_adcopen.o       code   0x002192    program   0x000064
-      .code_uart_thread.o       code   0x0021f6    program   0x00005c
-    .code_timer0_thread.o       code   0x002252    program   0x00004c
-           .code_t1open.o       code   0x00229e    program   0x000040
-            .code_uread.o       code   0x0022de    program   0x00003e
-             D10KTCYXCODE       code   0x00231c    program   0x000036
-           .code_t0open.o       code   0x002352    program   0x000036
-    .code_timer1_thread.o       code   0x002388    program   0x000030
-          .code_t1write.o       code   0x0023b8    program   0x000030
-           .code_t1read.o       code   0x0023e8    program   0x000030
-          .code_t0write.o       code   0x002418    program   0x000030
-         .code_adcsetch.o       code   0x002448    program   0x000030
-           .code_uwrite.o       code   0x002478    program   0x00002e
-                    CTYPE       code   0x0024a6    program   0x000024
-              D1KTCYXCODE       code   0x0024ca    program   0x000020
-                    .code       code   0x0024ea    program   0x000020
-                    STDIO       code   0x00250a    program   0x00001c
-             _startup_scn       code   0x002526    program   0x00001a
-          .code_adcread.o       code   0x002540    program   0x000018
-              D10TCYXCODE       code   0x002558    program   0x000016
-      .romdata_vfprintf.o    romdata   0x00256e    program   0x000011
-    .romdata__user_putc.o    romdata   0x00257f    program   0x000000
-        .romdata_t1read.o    romdata   0x00257f    program   0x000000
-    .idata__user_putc.o_i    romdata   0x00257f    program   0x000000
-          .romdata_putc.o    romdata   0x00257f    program   0x000000
-         .idata_uread.o_i    romdata   0x00257f    program   0x000000
-         .romdata_uread.o    romdata   0x00257f    program   0x000000
-          .idata_putc.o_i    romdata   0x00257f    program   0x000000
-      .idata_adcsetch.o_i    romdata   0x00257f    program   0x000000
-      .idata_vfprintf.o_i    romdata   0x00257f    program   0x000000
-      .romdata_adcsetch.o    romdata   0x00257f    program   0x000000
-        .romdata_stdout.o    romdata   0x00257f    program   0x000000
-        .romdata_printf.o    romdata   0x00257f    program   0x000000
-         .idata_udefs.o_i    romdata   0x00257f    program   0x000000
-         .romdata_udefs.o    romdata   0x00257f    program   0x000000
-        .idata_printf.o_i    romdata   0x00257f    program   0x000000
-        .romdata___init.o    romdata   0x00257f    program   0x000000
-       .idata_t0write.o_i    romdata   0x00257f    program   0x000000
-       .romdata_t0write.o    romdata   0x00257f    program   0x000000
-        .idata___init.o_i    romdata   0x00257f    program   0x000000
-        .romdata_uwrite.o    romdata   0x00257f    program   0x000000
-       .idata_t1write.o_i    romdata   0x00257f    program   0x000000
-       .romdata_t1write.o    romdata   0x00257f    program   0x000000
-        .idata_uwrite.o_i    romdata   0x00257f    program   0x000000
-        .idata_my_i2c.o_i    romdata   0x00257f    program   0x000000
- .romdata_timer0_thread.o    romdata   0x00257f    program   0x000000
- .idata_timer0_thread.o_i    romdata   0x00257f    program   0x000000
- .romdata_timer1_thread.o    romdata   0x00257f    program   0x000000
- .idata_timer1_thread.o_i    romdata   0x00257f    program   0x000000
-   .romdata_uart_thread.o    romdata   0x00257f    program   0x000000
-   .idata_uart_thread.o_i    romdata   0x00257f    program   0x000000
-       .romdata_my_uart.o    romdata   0x00257f    program   0x000000
-       .idata_my_uart.o_i    romdata   0x00257f    program   0x000000
-.romdata_user_interrupts.o    romdata   0x00257f    program   0x000000
-.idata_user_interrupts.o_i    romdata   0x00257f    program   0x000000
-    .romdata_interrupts.o    romdata   0x00257f    program   0x000000
-    .idata_interrupts.o_i    romdata   0x00257f    program   0x000000
-      .romdata_messages.o    romdata   0x00257f    program   0x000000
-      .idata_messages.o_i    romdata   0x00257f    program   0x000000
-          .romdata_main.o    romdata   0x00257f    program   0x000000
-          .idata_main.o_i    romdata   0x00257f    program   0x000000
-       .romdata_c018i_e.o    romdata   0x00257f    program   0x000000
-       .idata_c018i_e.o_i    romdata   0x00257f    program   0x000000
-        .idata_t1read.o_i    romdata   0x00257f    program   0x000000
-       .romdata_adcread.o    romdata   0x00257f    program   0x000000
-       .idata_adcread.o_i    romdata   0x00257f    program   0x000000
-         .romdata_uopen.o    romdata   0x00257f    program   0x000000
-         .idata_uopen.o_i    romdata   0x00257f    program   0x000000
-        .romdata_t1open.o    romdata   0x00257f    program   0x000000
-        .idata_t1open.o_i    romdata   0x00257f    program   0x000000
-        .romdata_t0open.o    romdata   0x00257f    program   0x000000
-        .idata_t0open.o_i    romdata   0x00257f    program   0x000000
-       .romdata_adcopen.o    romdata   0x00257f    program   0x000000
-       .idata_adcopen.o_i    romdata   0x00257f    program   0x000000
-       .romdata_adcconv.o    romdata   0x00257f    program   0x000000
-       .idata_adcconv.o_i    romdata   0x00257f    program   0x000000
-       .romdata_adcbusy.o    romdata   0x00257f    program   0x000000
-       .idata_adcbusy.o_i    romdata   0x00257f    program   0x000000
-         .romdata_my_ad.o    romdata   0x00257f    program   0x000000
-         .idata_my_ad.o_i    romdata   0x00257f    program   0x000000
-        .romdata_my_i2c.o    romdata   0x00257f    program   0x000000
-           .code_stdout.o       code   0x002580    program   0x000000
-            .code_udefs.o       code   0x002580    program   0x000000
-          .code_adcconv.o       code   0x002580    program   0x000004
-          .code_c018i_e.o       code   0x002580    program   0x000000
-           .code___init.o       code   0x002584    program   0x000002
-        .idata_stdout.o_i    romdata   0x002586    program   0x000002
+             .code_main.o       code   0x001472    program   0x0003ec
+       .code_interrupts.o       code   0x00185e    program   0x00020a
+                     PROG       code   0x001a68    program   0x000146
+          .code_my_uart.o       code   0x001bae    program   0x00012c
+             .stringtable    romdata   0x001cda    program   0x0000e2
+                   STRING       code   0x001dbc    program   0x0000bc
+  .code_user_interrupts.o       code   0x001e78    program   0x0000aa
+               _cinit_scn       code   0x001f22    program   0x00009e
+            .code_my_ad.o       code   0x001fc0    program   0x000094
+            .code_uopen.o       code   0x002054    program   0x000082
+             .code_putc.o       code   0x0020d6    program   0x000066
+           .code_printf.o       code   0x00213c    program   0x000064
+          .code_adcopen.o       code   0x0021a0    program   0x000064
+      .code_uart_thread.o       code   0x002204    program   0x00005c
+    .code_timer0_thread.o       code   0x002260    program   0x00004c
+           .code_t1open.o       code   0x0022ac    program   0x000040
+            .code_uread.o       code   0x0022ec    program   0x00003e
+             D10KTCYXCODE       code   0x00232a    program   0x000036
+           .code_t0open.o       code   0x002360    program   0x000036
+    .code_timer1_thread.o       code   0x002396    program   0x000030
+          .code_t1write.o       code   0x0023c6    program   0x000030
+           .code_t1read.o       code   0x0023f6    program   0x000030
+          .code_t0write.o       code   0x002426    program   0x000030
+         .code_adcsetch.o       code   0x002456    program   0x000030
+           .code_uwrite.o       code   0x002486    program   0x00002e
+                    CTYPE       code   0x0024b4    program   0x000024
+              D1KTCYXCODE       code   0x0024d8    program   0x000020
+                    .code       code   0x0024f8    program   0x000020
+                    STDIO       code   0x002518    program   0x00001c
+             _startup_scn       code   0x002534    program   0x00001a
+          .code_adcread.o       code   0x00254e    program   0x000018
+              D10TCYXCODE       code   0x002566    program   0x000016
+      .romdata_vfprintf.o    romdata   0x00257c    program   0x000011
+    .romdata__user_putc.o    romdata   0x00258d    program   0x000000
+        .romdata_t1read.o    romdata   0x00258d    program   0x000000
+    .idata__user_putc.o_i    romdata   0x00258d    program   0x000000
+          .romdata_putc.o    romdata   0x00258d    program   0x000000
+         .idata_uread.o_i    romdata   0x00258d    program   0x000000
+         .romdata_uread.o    romdata   0x00258d    program   0x000000
+          .idata_putc.o_i    romdata   0x00258d    program   0x000000
+      .idata_adcsetch.o_i    romdata   0x00258d    program   0x000000
+      .idata_vfprintf.o_i    romdata   0x00258d    program   0x000000
+      .romdata_adcsetch.o    romdata   0x00258d    program   0x000000
+        .romdata_stdout.o    romdata   0x00258d    program   0x000000
+        .romdata_printf.o    romdata   0x00258d    program   0x000000
+         .idata_udefs.o_i    romdata   0x00258d    program   0x000000
+         .romdata_udefs.o    romdata   0x00258d    program   0x000000
+        .idata_printf.o_i    romdata   0x00258d    program   0x000000
+        .romdata___init.o    romdata   0x00258d    program   0x000000
+       .idata_t0write.o_i    romdata   0x00258d    program   0x000000
+       .romdata_t0write.o    romdata   0x00258d    program   0x000000
+        .idata___init.o_i    romdata   0x00258d    program   0x000000
+        .romdata_uwrite.o    romdata   0x00258d    program   0x000000
+       .idata_t1write.o_i    romdata   0x00258d    program   0x000000
+       .romdata_t1write.o    romdata   0x00258d    program   0x000000
+        .idata_uwrite.o_i    romdata   0x00258d    program   0x000000
+        .idata_my_i2c.o_i    romdata   0x00258d    program   0x000000
+ .romdata_timer0_thread.o    romdata   0x00258d    program   0x000000
+ .idata_timer0_thread.o_i    romdata   0x00258d    program   0x000000
+ .romdata_timer1_thread.o    romdata   0x00258d    program   0x000000
+ .idata_timer1_thread.o_i    romdata   0x00258d    program   0x000000
+   .romdata_uart_thread.o    romdata   0x00258d    program   0x000000
+   .idata_uart_thread.o_i    romdata   0x00258d    program   0x000000
+       .romdata_my_uart.o    romdata   0x00258d    program   0x000000
+       .idata_my_uart.o_i    romdata   0x00258d    program   0x000000
+.romdata_user_interrupts.o    romdata   0x00258d    program   0x000000
+.idata_user_interrupts.o_i    romdata   0x00258d    program   0x000000
+    .romdata_interrupts.o    romdata   0x00258d    program   0x000000
+    .idata_interrupts.o_i    romdata   0x00258d    program   0x000000
+      .romdata_messages.o    romdata   0x00258d    program   0x000000
+      .idata_messages.o_i    romdata   0x00258d    program   0x000000
+          .romdata_main.o    romdata   0x00258d    program   0x000000
+          .idata_main.o_i    romdata   0x00258d    program   0x000000
+       .romdata_c018i_e.o    romdata   0x00258d    program   0x000000
+       .idata_c018i_e.o_i    romdata   0x00258d    program   0x000000
+        .idata_t1read.o_i    romdata   0x00258d    program   0x000000
+       .romdata_adcread.o    romdata   0x00258d    program   0x000000
+       .idata_adcread.o_i    romdata   0x00258d    program   0x000000
+         .romdata_uopen.o    romdata   0x00258d    program   0x000000
+         .idata_uopen.o_i    romdata   0x00258d    program   0x000000
+        .romdata_t1open.o    romdata   0x00258d    program   0x000000
+        .idata_t1open.o_i    romdata   0x00258d    program   0x000000
+        .romdata_t0open.o    romdata   0x00258d    program   0x000000
+        .idata_t0open.o_i    romdata   0x00258d    program   0x000000
+       .romdata_adcopen.o    romdata   0x00258d    program   0x000000
+       .idata_adcopen.o_i    romdata   0x00258d    program   0x000000
+       .romdata_adcconv.o    romdata   0x00258d    program   0x000000
+       .idata_adcconv.o_i    romdata   0x00258d    program   0x000000
+       .romdata_adcbusy.o    romdata   0x00258d    program   0x000000
+       .idata_adcbusy.o_i    romdata   0x00258d    program   0x000000
+         .romdata_my_ad.o    romdata   0x00258d    program   0x000000
+         .idata_my_ad.o_i    romdata   0x00258d    program   0x000000
+        .romdata_my_i2c.o    romdata   0x00258d    program   0x000000
+           .code_stdout.o       code   0x00258e    program   0x000000
+            .code_udefs.o       code   0x00258e    program   0x000000
+          .code_adcconv.o       code   0x00258e    program   0x000004
+          .code_c018i_e.o       code   0x00258e    program   0x000000
+           .code___init.o       code   0x002592    program   0x000002
+        .idata_stdout.o_i    romdata   0x002594    program   0x000002
     .config_300003_main.o    romdata   0x300003    program   0x000001
                 msgqueue5      udata   0x000000       data   0x00004b
                 msgqueue4      udata   0x00004b       data   0x00004a
@@ -206,10 +206,10 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x00257e      
-                            0x002580    0x002587      
+                            0x000000    0x00258c      
+                            0x00258e    0x002595      
                             0x300003    0x300003      
-            9608 out of 66584 program addresses used, program memory utilization is 14%
+            9622 out of 66584 program addresses used, program memory utilization is 14%
 
 
 
@@ -219,65 +219,65 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
           ADQueue_recvmsg   0x001306    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
           ADQueue_sendmsg   0x0012d8    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
                   BusyADC   0x00000e    program     extern C:\MCC18\src\pmc_common\ADC\adcbusy.c
-               ConvertADC   0x002580    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                   D10K_1   0x00232c    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-                    D10Kl   0x00233a    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-                    D10Kx   0x002328    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-                    D10_1   0x002568    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                     D10x   0x002560    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                    D1K_1   0x0024d8    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x0024d6    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-             Delay10KTCYx   0x00231c    program     extern C:\MCC18\src\extended\delays\d10ktcyx.asm
-              Delay10TCYx   0x002558    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
-              Delay1KTCYx   0x0024ca    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+               ConvertADC   0x00258e    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                   D10K_1   0x00233a    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+                    D10Kl   0x002348    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+                    D10Kx   0x002336    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+                    D10_1   0x002576    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                     D10x   0x00256e    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                    D1K_1   0x0024e6    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x0024e4    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+             Delay10KTCYx   0x00232a    program     extern C:\MCC18\src\extended\delays\d10ktcyx.asm
+              Delay10TCYx   0x002566    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
+              Delay1KTCYx   0x0024d8    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
      FromMainHigh_recvmsg   0x0012a6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
      FromMainHigh_sendmsg   0x001278    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
       FromMainLow_recvmsg   0x001246    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
       FromMainLow_sendmsg   0x001218    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
-     InterruptHandlerHigh   0x0018d6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-      InterruptHandlerLow   0x001990    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+     InterruptHandlerHigh   0x0018e4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+      InterruptHandlerLow   0x00199e    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
       InterruptVectorHigh   0x000008    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
        InterruptVectorLow   0x000018    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-                  OpenADC   0x002192    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-               OpenTimer0   0x002352    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
-               OpenTimer1   0x00229e    program     extern C:\MCC18\src\pmc_common\Timers\t1open.c
-                OpenUSART   0x002046    program     extern C:\MCC18\src\pmc_common\USART\uopen.c
-                  RESTORE   0x001af0    program     static C:\MCC18\src\extended\math\div32u.asm
-              RETQUOTIENT   0x001ae0    program     static C:\MCC18\src\extended\math\div32u.asm
-                  ReadADC   0x002540    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-               ReadTimer1   0x0023e8    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
-                ReadUSART   0x0022de    program     extern C:\MCC18\src\pmc_common\USART\uread.c
-                 SETUPSTK   0x001a5a    program     static C:\MCC18\src\extended\math\div32u.asm
-               SetChanADC   0x002448    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+                  OpenADC   0x0021a0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+               OpenTimer0   0x002360    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
+               OpenTimer1   0x0022ac    program     extern C:\MCC18\src\pmc_common\Timers\t1open.c
+                OpenUSART   0x002054    program     extern C:\MCC18\src\pmc_common\USART\uopen.c
+                  RESTORE   0x001afe    program     static C:\MCC18\src\extended\math\div32u.asm
+              RETQUOTIENT   0x001aee    program     static C:\MCC18\src\extended\math\div32u.asm
+                  ReadADC   0x00254e    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+               ReadTimer1   0x0023f6    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+                ReadUSART   0x0022ec    program     extern C:\MCC18\src\pmc_common\USART\uread.c
+                 SETUPSTK   0x001a68    program     static C:\MCC18\src\extended\math\div32u.asm
+               SetChanADC   0x002456    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
               SleepIfOkay   0x0013ba    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
        ToMainHigh_recvmsg   0x0011e6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
        ToMainHigh_sendmsg   0x0011b8    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
         ToMainLow_recvmsg   0x001186    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
         ToMainLow_sendmsg   0x001158    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
-              WriteTimer0   0x002418    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-              WriteTimer1   0x0023b8    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-               WriteUSART   0x002478    program     extern C:\MCC18\src\pmc_common\USART\uwrite.c
-                   _2jEnd   0x001e54    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-              _4jContinue   0x001de2    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x001dec    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-       _D10KTCYXCODE_0014   0x002330    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0022   0x00233e    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-        _D10TCYXCODE_000A   0x002562    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x002564    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x002566    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D1KTCYXCODE_0012   0x0024dc    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x0024e2    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+              WriteTimer0   0x002426    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+              WriteTimer1   0x0023c6    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+               WriteUSART   0x002486    program     extern C:\MCC18\src\pmc_common\USART\uwrite.c
+                   _2jEnd   0x001e62    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+              _4jContinue   0x001df0    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x001dfa    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+       _D10KTCYXCODE_0014   0x00233e    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0022   0x00234c    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+        _D10TCYXCODE_000A   0x002570    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x002572    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x002574    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D1KTCYXCODE_0012   0x0024ea    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x0024f0    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00253e    program     static                          
-       ___return_lbl00002   0x001fb0    program     static                          
+       ___return_lbl00001   0x00254c    program     static                          
+       ___return_lbl00002   0x001fbe    program     static                          
        ___return_lbl00012   0x00001c    program     static                          
        ___return_lbl00013   0x00000c    program     static                          
        ___return_lbl00021   0x001372    program     static                          
                __config_0   0x300003    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-                 __div32u   0x001a72    program     extern C:\MCC18\src\extended\math\div32u.asm
-                   __init   0x002584    program     extern C:\MCC18\src\extended\stdclib\__init.c
-                 __mod32u   0x001a78    program     extern C:\MCC18\src\extended\math\div32u.asm
-                  __mul32   0x001afe    program     extern C:\MCC18\src\extended\math\mul32.asm
+                 __div32u   0x001a80    program     extern C:\MCC18\src\extended\math\div32u.asm
+                   __init   0x002592    program     extern C:\MCC18\src\extended\stdclib\__init.c
+                 __mod32u   0x001a86    program     extern C:\MCC18\src\extended\math\div32u.asm
+                  __mul32   0x001b0c    program     extern C:\MCC18\src\extended\math\mul32.asm
                    __pa_0   0x0006ee    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_1   0x0006fc    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                   __pa_10   0x00078a    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
@@ -302,32 +302,32 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
                    __pa_7   0x000760    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_8   0x00076c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                    __pa_9   0x00077e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-               __string_0   0x001d8b    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
-               __string_0   0x001d83    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_0   0x001d9b    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
-               __string_1   0x001d55    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_2   0x001d39    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_3   0x001d35    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_4   0x001d25    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_5   0x001cf9    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_6   0x001ccc    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-            __zero_memory   0x0024ea    program     extern C:\MCC18\src\extended\proc\p18F2680.asm
-                _do_cinit   0x001f14    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-            _early32uexit   0x001a7c    program     extern C:\MCC18\src\extended\math\div32u.asm
+               __string_0   0x001d99    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
+               __string_0   0x001d91    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_0   0x001da9    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
+               __string_1   0x001d63    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_2   0x001d47    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_3   0x001d43    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_4   0x001d33    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_5   0x001d07    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_6   0x001cda    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+            __zero_memory   0x0024f8    program     extern C:\MCC18\src\extended\proc\p18F2680.asm
+                _do_cinit   0x001f22    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+            _early32uexit   0x001a8a    program     extern C:\MCC18\src\extended\math\div32u.asm
                    _entry   0x000000    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                   _false   0x001ac0    program     static C:\MCC18\src\extended\math\div32u.asm
-                 _startup   0x002526    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-              _usart_putc   0x00250a    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                   _false   0x001ace    program     static C:\MCC18\src\extended\math\div32u.asm
+                 _startup   0x002534    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+              _usart_putc   0x002518    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
                _user_putc   0x000006    program     extern C:\MCC18\src\extended\stdclib\_user_putc.c
     block_on_To_msgqueues   0x001416    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
                 check_msg   0x001374    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
-                compare_l   0x002500    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-                copy_loop   0x001f86    program     static                          
-            copy_one_byte   0x001f8c    program     static                          
-                divmod32u   0x001a7e    program     static C:\MCC18\src\extended\math\div32u.asm
-                     done   0x001fb0    program     static                          
-             done_copying   0x001f9a    program     static                          
-        enable_interrupts   0x001850    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+                compare_l   0x00250e    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+                copy_loop   0x001f94    program     static                          
+            copy_one_byte   0x001f9a    program     static                          
+                divmod32u   0x001a8c    program     static C:\MCC18\src\extended\math\div32u.asm
+                     done   0x001fbe    program     static                          
+             done_copying   0x001fa8    program     static                          
+        enable_interrupts   0x00185e    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
          enter_sleep_mode   0x00136e    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
              handle_start   0x00094a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
      i2c_configure_master   0x000842    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
@@ -335,53 +335,53 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
           i2c_int_handler   0x000a04    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
           i2c_master_recv   0x000866    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
           i2c_master_send   0x000854    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
-              in_high_int   0x001858    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-               in_low_int   0x001898    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-                  in_main   0x0018b0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-                  initADC   0x001fb2    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
+              in_high_int   0x001866    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+               in_low_int   0x0018a6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+                  in_main   0x0018be    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+                  initADC   0x001fc0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
                  init_i2c   0x000e7a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
-             init_insteon   0x001746    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+             init_insteon   0x001784    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
                init_queue   0x000f0c    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
               init_queues   0x001338    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
-      init_timer1_lthread   0x002388    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
-           init_uart_recv   0x001c4a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
-                  isdigit   0x0024a6    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                     jEnd   0x001e1e    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x001e56    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x001df2    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x001e3e    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                    jLoop   0x001e14    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x001dd6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   jMatch   0x0024c6    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x0024c8    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                     loop   0x00251a    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x002534    program     static                          
-                     loop   0x001a8c    program     static C:\MCC18\src\extended\math\div32u.asm
-                   loop_h   0x0024f8    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-                   loop_l   0x002502    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-           low_int_active   0x001878    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+      init_timer1_lthread   0x002396    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
+           init_uart_recv   0x001c58    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+                  isdigit   0x0024b4    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                     jEnd   0x001e2c    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x001e64    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x001e00    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x001e4c    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                    jLoop   0x001e22    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x001de4    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   jMatch   0x0024d4    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x0024d6    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                     loop   0x002528    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x002542    program     static                          
+                     loop   0x001a9a    program     static C:\MCC18\src\extended\math\div32u.asm
+                   loop_h   0x002506    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+                   loop_l   0x002510    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+           low_int_active   0x001886    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
                      main   0x001472    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-                   memcpy   0x001dae    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
-                   printf   0x00212e    program     extern C:\MCC18\src\extended\stdclib\printf.c
-                     putc   0x0020c8    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                  readADC   0x001fda    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
+                   memcpy   0x001dbc    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+                   printf   0x00213c    program     extern C:\MCC18\src\extended\stdclib\printf.c
+                     putc   0x0020d6    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                  readADC   0x001fe8    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
                  recv_msg   0x001052    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
-                 s_digits   0x00256e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+                 s_digits   0x00257c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
             s_put_n_chars   0x00002c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
                  send_msg   0x000f6a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
     start_i2c_slave_reply   0x000878    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_i2c.c
-                   strlen   0x001e04    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x001e20    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     test   0x001f2e    program     static                          
-       timer0_int_handler   0x001e6a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
-           timer0_lthread   0x002252    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
-       timer1_int_handler   0x001ed6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
-           timer1_lthread   0x0023a6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
-             uart_lthread   0x0021f6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
-    uart_recv_int_handler   0x001ba0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
-                uart_send   0x001c76    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+                   strlen   0x001e12    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x001e2e    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     test   0x001f3c    program     static                          
+       timer0_int_handler   0x001e78    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
+           timer0_lthread   0x002260    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
+       timer1_int_handler   0x001ee4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
+           timer1_lthread   0x0023b4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
+             uart_lthread   0x002204    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
+    uart_recv_int_handler   0x001bae    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+                uart_send   0x001c84    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
                  vfprintf   0x00005e    program     extern C:\MCC18\src\extended\stdclib\vfprintf.c
-               zero_block   0x0024f8    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+               zero_block   0x002506    program     static C:\MCC18\src\extended\proc\p18F2680.asm
                    ADCON0   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18F2680.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\extended\proc\p18F2680.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\src\extended\proc\p18F2680.asm
@@ -1191,109 +1191,109 @@ Linker Map File - Created Thu Nov 18 18:02:21 2010
               SleepIfOkay   0x0013ba    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
     block_on_To_msgqueues   0x001416    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
                      main   0x001472    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-             init_insteon   0x001746    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-        enable_interrupts   0x001850    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-              in_high_int   0x001858    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-           low_int_active   0x001878    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-               in_low_int   0x001898    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-                  in_main   0x0018b0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-     InterruptHandlerHigh   0x0018d6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-      InterruptHandlerLow   0x001990    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
-                 SETUPSTK   0x001a5a    program     static C:\MCC18\src\extended\math\div32u.asm
-                 __div32u   0x001a72    program     extern C:\MCC18\src\extended\math\div32u.asm
-                 __mod32u   0x001a78    program     extern C:\MCC18\src\extended\math\div32u.asm
-            _early32uexit   0x001a7c    program     extern C:\MCC18\src\extended\math\div32u.asm
-                divmod32u   0x001a7e    program     static C:\MCC18\src\extended\math\div32u.asm
-                     loop   0x001a8c    program     static C:\MCC18\src\extended\math\div32u.asm
-                   _false   0x001ac0    program     static C:\MCC18\src\extended\math\div32u.asm
-              RETQUOTIENT   0x001ae0    program     static C:\MCC18\src\extended\math\div32u.asm
-                  RESTORE   0x001af0    program     static C:\MCC18\src\extended\math\div32u.asm
-                  __mul32   0x001afe    program     extern C:\MCC18\src\extended\math\mul32.asm
-    uart_recv_int_handler   0x001ba0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
-           init_uart_recv   0x001c4a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
-                uart_send   0x001c76    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
-               __string_6   0x001ccc    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_5   0x001cf9    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_4   0x001d25    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_3   0x001d35    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_2   0x001d39    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_1   0x001d55    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_0   0x001d83    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
-               __string_0   0x001d8b    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
-               __string_0   0x001d9b    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
-                   memcpy   0x001dae    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
-                    jLoop   0x001dd6    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-              _4jContinue   0x001de2    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   _5jEnd   0x001dec    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                     jEnd   0x001df2    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
-                   strlen   0x001e04    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
-                    jLoop   0x001e14    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                     jEnd   0x001e1e    program     static C:\MCC18\src\extended\stdclib\strlen.asm
-                strlenpgm   0x001e20    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
-                    jLoop   0x001e3e    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                   _2jEnd   0x001e54    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-                     jEnd   0x001e56    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
-       timer0_int_handler   0x001e6a    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
-       timer1_int_handler   0x001ed6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
-                _do_cinit   0x001f14    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     test   0x001f2e    program     static                          
-                copy_loop   0x001f86    program     static                          
-            copy_one_byte   0x001f8c    program     static                          
-             done_copying   0x001f9a    program     static                          
-                     done   0x001fb0    program     static                          
-       ___return_lbl00002   0x001fb0    program     static                          
-                  initADC   0x001fb2    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
-                  readADC   0x001fda    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
-                OpenUSART   0x002046    program     extern C:\MCC18\src\pmc_common\USART\uopen.c
-                     putc   0x0020c8    program     extern C:\MCC18\src\extended\stdclib\putc.c
-                   printf   0x00212e    program     extern C:\MCC18\src\extended\stdclib\printf.c
-                  OpenADC   0x002192    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
-             uart_lthread   0x0021f6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
-           timer0_lthread   0x002252    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
-               OpenTimer1   0x00229e    program     extern C:\MCC18\src\pmc_common\Timers\t1open.c
-                ReadUSART   0x0022de    program     extern C:\MCC18\src\pmc_common\USART\uread.c
-             Delay10KTCYx   0x00231c    program     extern C:\MCC18\src\extended\delays\d10ktcyx.asm
-                    D10Kx   0x002328    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-                   D10K_1   0x00232c    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0014   0x002330    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-                    D10Kl   0x00233a    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0022   0x00233e    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
-               OpenTimer0   0x002352    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
-      init_timer1_lthread   0x002388    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
-           timer1_lthread   0x0023a6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
-              WriteTimer1   0x0023b8    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
-               ReadTimer1   0x0023e8    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
-              WriteTimer0   0x002418    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
-               SetChanADC   0x002448    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
-               WriteUSART   0x002478    program     extern C:\MCC18\src\pmc_common\USART\uwrite.c
-                  isdigit   0x0024a6    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
-                   jMatch   0x0024c6    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-                 jNoMatch   0x0024c8    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
-              Delay1KTCYx   0x0024ca    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
-                     D1Kx   0x0024d6    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-                    D1K_1   0x0024d8    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0012   0x0024dc    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0018   0x0024e2    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
-            __zero_memory   0x0024ea    program     extern C:\MCC18\src\extended\proc\p18F2680.asm
-               zero_block   0x0024f8    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-                   loop_h   0x0024f8    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-                compare_l   0x002500    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-                   loop_l   0x002502    program     static C:\MCC18\src\extended\proc\p18F2680.asm
-              _usart_putc   0x00250a    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                     loop   0x00251a    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
-                 _startup   0x002526    program     extern C:\MCC18\src\extended\startup\c018i_e.c
-                     loop   0x002534    program     static                          
-       ___return_lbl00001   0x00253e    program     static                          
-                  ReadADC   0x002540    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
-              Delay10TCYx   0x002558    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
-                     D10x   0x002560    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000A   0x002562    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x002564    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x002566    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                    D10_1   0x002568    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
-                 s_digits   0x00256e    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
-               ConvertADC   0x002580    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
-                   __init   0x002584    program     extern C:\MCC18\src\extended\stdclib\__init.c
+             init_insteon   0x001784    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+        enable_interrupts   0x00185e    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+              in_high_int   0x001866    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+           low_int_active   0x001886    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+               in_low_int   0x0018a6    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+                  in_main   0x0018be    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+     InterruptHandlerHigh   0x0018e4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+      InterruptHandlerLow   0x00199e    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\interrupts.c
+                 SETUPSTK   0x001a68    program     static C:\MCC18\src\extended\math\div32u.asm
+                 __div32u   0x001a80    program     extern C:\MCC18\src\extended\math\div32u.asm
+                 __mod32u   0x001a86    program     extern C:\MCC18\src\extended\math\div32u.asm
+            _early32uexit   0x001a8a    program     extern C:\MCC18\src\extended\math\div32u.asm
+                divmod32u   0x001a8c    program     static C:\MCC18\src\extended\math\div32u.asm
+                     loop   0x001a9a    program     static C:\MCC18\src\extended\math\div32u.asm
+                   _false   0x001ace    program     static C:\MCC18\src\extended\math\div32u.asm
+              RETQUOTIENT   0x001aee    program     static C:\MCC18\src\extended\math\div32u.asm
+                  RESTORE   0x001afe    program     static C:\MCC18\src\extended\math\div32u.asm
+                  __mul32   0x001b0c    program     extern C:\MCC18\src\extended\math\mul32.asm
+    uart_recv_int_handler   0x001bae    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+           init_uart_recv   0x001c58    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+                uart_send   0x001c84    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_uart.c
+               __string_6   0x001cda    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_5   0x001d07    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_4   0x001d33    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_3   0x001d43    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_2   0x001d47    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_1   0x001d63    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_0   0x001d91    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
+               __string_0   0x001d99    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
+               __string_0   0x001da9    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
+                   memcpy   0x001dbc    program     extern C:\MCC18\src\extended\stdclib\memcpy.asm
+                    jLoop   0x001de4    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+              _4jContinue   0x001df0    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   _5jEnd   0x001dfa    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                     jEnd   0x001e00    program     static C:\MCC18\src\extended\stdclib\memcpy.asm
+                   strlen   0x001e12    program     extern C:\MCC18\src\extended\stdclib\strlen.asm
+                    jLoop   0x001e22    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                     jEnd   0x001e2c    program     static C:\MCC18\src\extended\stdclib\strlen.asm
+                strlenpgm   0x001e2e    program     extern C:\MCC18\src\extended\stdclib\slenpgm.asm
+                    jLoop   0x001e4c    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                   _2jEnd   0x001e62    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+                     jEnd   0x001e64    program     static C:\MCC18\src\extended\stdclib\slenpgm.asm
+       timer0_int_handler   0x001e78    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
+       timer1_int_handler   0x001ee4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\user_interrupts.c
+                _do_cinit   0x001f22    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     test   0x001f3c    program     static                          
+                copy_loop   0x001f94    program     static                          
+            copy_one_byte   0x001f9a    program     static                          
+             done_copying   0x001fa8    program     static                          
+                     done   0x001fbe    program     static                          
+       ___return_lbl00002   0x001fbe    program     static                          
+                  initADC   0x001fc0    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
+                  readADC   0x001fe8    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\my_ad.c
+                OpenUSART   0x002054    program     extern C:\MCC18\src\pmc_common\USART\uopen.c
+                     putc   0x0020d6    program     extern C:\MCC18\src\extended\stdclib\putc.c
+                   printf   0x00213c    program     extern C:\MCC18\src\extended\stdclib\printf.c
+                  OpenADC   0x0021a0    program     extern C:\MCC18\src\pmc_common\ADC\adcopen.c
+             uart_lthread   0x002204    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\uart_thread.c
+           timer0_lthread   0x002260    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer0_thread.c
+               OpenTimer1   0x0022ac    program     extern C:\MCC18\src\pmc_common\Timers\t1open.c
+                ReadUSART   0x0022ec    program     extern C:\MCC18\src\pmc_common\USART\uread.c
+             Delay10KTCYx   0x00232a    program     extern C:\MCC18\src\extended\delays\d10ktcyx.asm
+                    D10Kx   0x002336    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+                   D10K_1   0x00233a    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0014   0x00233e    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+                    D10Kl   0x002348    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0022   0x00234c    program     static C:\MCC18\src\extended\delays\d10ktcyx.asm
+               OpenTimer0   0x002360    program     extern C:\MCC18\src\pmc_common\Timers\t0open.c
+      init_timer1_lthread   0x002396    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
+           timer1_lthread   0x0023b4    program     extern C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\timer1_thread.c
+              WriteTimer1   0x0023c6    program     extern C:\MCC18\src\pmc_common\Timers\t1write.c
+               ReadTimer1   0x0023f6    program     extern C:\MCC18\src\pmc_common\Timers\t1read.c
+              WriteTimer0   0x002426    program     extern C:\MCC18\src\pmc_common\Timers\t0write.c
+               SetChanADC   0x002456    program     extern C:\MCC18\src\pmc_common\ADC\adcsetch.c
+               WriteUSART   0x002486    program     extern C:\MCC18\src\pmc_common\USART\uwrite.c
+                  isdigit   0x0024b4    program     extern C:\MCC18\src\extended\stdclib\isdigit.asm
+                   jMatch   0x0024d4    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+                 jNoMatch   0x0024d6    program     static C:\MCC18\src\extended\stdclib\isdigit.asm
+              Delay1KTCYx   0x0024d8    program     extern C:\MCC18\src\extended\delays\d1ktcyx.asm
+                     D1Kx   0x0024e4    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+                    D1K_1   0x0024e6    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0012   0x0024ea    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0018   0x0024f0    program     static C:\MCC18\src\extended\delays\d1ktcyx.asm
+            __zero_memory   0x0024f8    program     extern C:\MCC18\src\extended\proc\p18F2680.asm
+               zero_block   0x002506    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+                   loop_h   0x002506    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+                compare_l   0x00250e    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+                   loop_l   0x002510    program     static C:\MCC18\src\extended\proc\p18F2680.asm
+              _usart_putc   0x002518    program     extern C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                     loop   0x002528    program     static C:\MCC18\src\pmc_common\USART\_usartpc.asm
+                 _startup   0x002534    program     extern C:\MCC18\src\extended\startup\c018i_e.c
+                     loop   0x002542    program     static                          
+       ___return_lbl00001   0x00254c    program     static                          
+                  ReadADC   0x00254e    program     extern C:\MCC18\src\pmc_common\ADC\adcread.c
+              Delay10TCYx   0x002566    program     extern C:\MCC18\src\extended\delays\d10tcyx.asm
+                     D10x   0x00256e    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x002570    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x002572    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x002574    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                    D10_1   0x002576    program     static C:\MCC18\src\extended\delays\d10tcyx.asm
+                 s_digits   0x00257c    program     static C:\MCC18\src\extended\stdclib\vfprintf.c
+               ConvertADC   0x00258e    program     extern C:\MCC18\src\pmc_common\ADC\adcconv.c
+                   __init   0x002592    program     extern C:\MCC18\src\extended\stdclib\__init.c
                __config_0   0x300003    program     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\main.c
               adReadQueue   0x000000       data     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c
  MQ_Main_Willing_to_block   0x00004a       data     static C:\Users\Ty\Documents\S1\embedded\embeddedgroup5\insteonpic\messages.c

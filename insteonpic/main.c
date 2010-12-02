@@ -142,14 +142,16 @@ _endasm;
 				};
 				case MSGT_I2C_DATA: {
 					LATBbits.LATB1 = !LATBbits.LATB1;
-					/*if(msgbuffer[2] != expected[ind]) {
-						LATBbits.LATB3 = !LATBbits.LATB3; //toggle on every error
-						LATBbits.LATB4 = 1; //indicate any error has occurred in the test process
+					insteonbuf[7]=msgbuffer[2]; //on-value for insteon
+					for(i=0;i<INSTLAMPS;i++) {
+						insteonbuf[2] = (i==0) ? LAMP1_ADD1 : 
+										(i==1) ? LAMP2_ADD1 : 0;
+						insteonbuf[3] = (i==0) ? LAMP1_ADD2 : 
+										(i==1) ? LAMP2_ADD2 : 0;
+						insteonbuf[4] = (i==0) ? LAMP1_ADD3 : 
+										(i==1) ? LAMP2_ADD3 : 0;
+						uart_send(INSTEONLEN, insteonbuf);
 					}
-					ind++;
-					if(ind==32) ind=0;*/
-					insteonbuf[7]=msgbuffer[2];
-					uart_send(INSTEONLEN, insteonbuf);
 					break;
 				};
 				case MSGT_I2C_DBG: {
@@ -163,12 +165,6 @@ _endasm;
 					printf("I2C Slave Req\r\n");
 					length=5;
 					LATBbits.LATB0 = !LATBbits.LATB0;
-					/*msgbuffer[0]=ad11[ind];
-					msgbuffer[1]=ad12[ind];
-					msgbuffer[2]=ad21[ind];
-					msgbuffer[3]=ad22[ind];
-					msgbuffer[4]=user[ind];
-					start_i2c_slave_reply(length,msgbuffer);*/
 					break;
 				};
 				
@@ -255,9 +251,9 @@ void init_insteon(unsigned char* insteonbuf) {
 	
 	//setup for the rest of execution...
 	insteonbuf[1]=0x62;	//insteon standard message
-	insteonbuf[2]=LAMP_ADD1;
+	/*insteonbuf[2]=LAMP_ADD1;
 	insteonbuf[3]=LAMP_ADD2;
-	insteonbuf[4]=LAMP_ADD3;
+	insteonbuf[4]=LAMP_ADD3;*/
 	insteonbuf[5]=0x00; //flags
 	insteonbuf[6]=0x11; //turn ON
 }
