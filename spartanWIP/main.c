@@ -27,7 +27,7 @@
 #define TIMER_MSG 0x02
 
 #define setLED(n)  XGpio_mWriteReg(XPAR_LEDS_8BIT_BASEADDR,1,n);
-#define CONVERGE 5
+#define CONVERGE 2
 
 // entry point into the program
 int main(void)
@@ -138,7 +138,7 @@ void *button_thread(void *dptr)
 
 ///////////////////////////////////////////
 // the lcd thread
-//  - It waits for a message and then prints that message
+//  - Waits for a message and then prints that message
 ///////////////////////////////////////////
 typedef struct __LCD_Thread_Comm {
 	int	msg_recv_queue_id;
@@ -162,7 +162,7 @@ void *lcd_thread(void *dptr)
 ///////////////////////////////////////////
 // Data processing thread
 //  - Waits for data from I2C, processes that data, 
-//     and sends the appropriate message over I2C to insteon
+//     and sends the appropriate on-value over I2C to insteon
 ///////////////////////////////////////////
 typedef struct __Data_Thread_Comm {
 	int	recv_msg_q_id;
@@ -176,29 +176,25 @@ void *data_thread(void *dptr)
 	unsigned char iic_msg[MAX_IIC_MSGLEN];
 	unsigned char str[20];
 	unsigned char iic_send_msg[MAX_IIC_MSGLEN];
+	unsigned char user_val, current;
 	int avg1, avg2, avg;
-	int diff, current;
+	int diff;
+	unsigned int flags;
 	unsigned int insteon_val;
 	unsigned int target;
-	unsigned int user[12] = {100,75,50,80,60,40,60,45,30,40,30,20};
+	unsigned int user[17] = {100,75,50,25,80,60,40,20,60,45,30,15,40,30,20,10,100}; //activities are hardcoded for now
 
 	avg1=0;
 	avg2=0;
 	avg=0;
-	current=0;
+	current=16;
 	insteon_val=0xFF;
 	target=0x3FF;
 
 	for (;;) {
-		length = msgrcv(cptr->recv_msg_q_id,(void *) iic_msg,
+		length = msgrcv(cptr->recv_msg_q_id,(void *) iic_msg,	//wait for a message from I2C
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
-
-		if(iic_msg[4] != current) { //target value has changed
-			target = (user[iic_msg[4]] * 0x3FF)/100;
-			current = iic_msg[4];
-		}
 		
-		//setLED(target);
 		unsigned char val1 = iic_msg[0];
 		unsigned int val1i = val1;
 		unsigned char val2 = iic_msg[1];
@@ -207,12 +203,22 @@ void *data_thread(void *dptr)
 		unsigned int val3i = val3;
 		unsigned char val4 = iic_msg[3];
 		unsigned int val4i = val4;
+		
+		user_val = ((iic_msg[4]&0x3)<<2)|(iic_msg[5]&0x3);
+		flags = ((iic_msg[4]&0xFC)<<6)|(iic_msg[5]&0xFC); //outside system status flags
+		
+		if(flags&0x40 == 0x40) user_val = 16; //user/activity not yet selected
+		if(user_val != current) { //target value has changed
+			target = (user[user_val] * 0x3FF)/100;
+			current = user_val;
+		}
 
-		if(val1i != 0xFF && val3i != 0xFF) {
-			val1i = (val2i + (val1i << 8));
+		if((val1i&0xF0) != 0xF0 && (val3i&0xF0) != 0xF0) { //valid data arrived from the sensors
+			val1i = (val2i + (val1i << 8)); //assemble 12-bit A/D values
 			val3i = (val4i + (val3i << 8));
-			diff = val1i - avg1;
-			avg1 += diff / CONVERGE;
+			
+			diff = val1i - avg1;		//converge over time to the current sensor value
+			avg1 += diff / CONVERGE;	//rate of convergence determined by CONVERGE
 			diff = val3i - avg2;
 			avg2 += diff / CONVERGE;
 			avg = (avg1 + avg2) / 2;
@@ -233,19 +239,18 @@ void *data_thread(void *dptr)
 			}
 			
 			sprintf(str,"Val:  %03X/%03X",avg,target);
-			msgsnd(cptr->send_lcd_q_id,str,20*sizeof(unsigned char),0);
+			msgsnd(cptr->send_lcd_q_id,str,20*sizeof(unsigned char),0); //send message off to be printed on LCD
 			
 			iic_send_msg[0] = I2C_SEND_MSG;
 			iic_send_msg[1] = INSTEON_ADDR;
 			iic_send_msg[2] = insteon_val;
 			
-			setLED(insteon_val);
-			
+			setLED(insteon_val); //set the on-value to the LEDs for debug purposes
 		}
-		//iic_send_msg[3] = iic_msg[2];
-		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
-		iic_send_msg[1] = SENSOR_BRD_ADDR;
-		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
+
+		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0); //send on-value to Insteon PIC
+		//iic_send_msg[1] = SENSOR_BRD_ADDR;
+		//msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
 	}
 }
 
@@ -275,10 +280,10 @@ void *controller_thread(void *dptr)
 				case TIMER_MSG: {
 					i2c_msg_buffer[0] = I2C_RECV_MSG;
 					i2c_msg_buffer[1] = SENSOR_BRD_ADDR;
-					i2c_msg_buffer[2] = 5;						//size of message expected back
+					i2c_msg_buffer[2] = 6;	//size of message expected back
 					i2c_length = 3*sizeof(unsigned char);
 
-					msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0);
+					msgsnd(cptr->send_msg_q_id,i2c_msg_buffer,i2c_length,0); //request data packet from PIC
 					break;
 				}
 				default: {
