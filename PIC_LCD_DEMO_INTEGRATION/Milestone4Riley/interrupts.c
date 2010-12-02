@@ -18,6 +18,9 @@ void enable_interrupts()
 	RCONbits.IPEN = 1;
 	INTCONbits.GIEH = 1;
 	INTCONbits.GIEL = 1;
+	INTCONbits.PEIE=1;
+	PIR1bits.ADIF=0;//clear ad interrupt flag
+	PIE1bits.ADIE=1;
 }
 
 int	in_high_int() {
