@@ -17,9 +17,13 @@
 #define MSGT_I2C_MASTER_RECV_COMPLETE 45
 #define MSGT_I2C_MASTER_RECV_FAILED 46
 
-#define LAMP_ADD1 0x12
-#define LAMP_ADD2 0x0A
-#define LAMP_ADD3 0xC6
+#define LAMP1_ADD1 0x12
+#define LAMP1_ADD2 0x0A
+#define LAMP1_ADD3 0xC6
+#define LAMP2_ADD1 0x12
+#define LAMP2_ADD2 0x0A
+#define LAMP2_ADD3 0xC6
+#define INSTLAMPS 1
 #define INSTLINKGRP 0xFF // Insteon group used for linking
 #define INSTDEVCAT 0x01 // Insteon device category used by PIC
 #define INSTSUBCAT 0x01 // Insteon device subcategory
