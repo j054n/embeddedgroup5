@@ -44,8 +44,7 @@
 
 BYTE myChannel = 20;
   
-   
-
+ 
 #if defined(__18CXX)
 void main(void)
 #else
@@ -66,7 +65,8 @@ int main(void)
 	unsigned char last_reg_recvd, action;
 	unsigned char mwbuffer[1];
 unsigned int counter=0,curval=0;
-
+ struct menu *head, *options, *acct1, *acct2, *acct3, *acct4,*opt1, *opt2, *opt3, *opt4;
+ 
 //char toWrite[]={'a','b','c','\0'}, toWrite2[]="OVERW", toWrite3[]="APPLE", toWrite4[]="ADDA";
 
 //signed char	length, adlength;
@@ -77,26 +77,32 @@ unsigned int counter=0,curval=0;
 //unsigned char nameList[4][16]={"MARK JONES", "APPLE", "PAUL PLASSMAN"};
 //uart_comm uc;
 //i2c_comm ic;
-accounts *acctList;
+//accounts *acctList;
+
 unsigned char msgbuffer[MSGLEN+1];
 //unsigned char i;
 //uart_thread_struct	uthread_data; // info for uart_lthread
 //timer1_thread_struct t1thread_data; // info for timer1_lthread
 timer0_thread_struct t0thread_data; // info for timer0_lthread
 unsigned char data;
+
 TRISB = 0b00000011;
-TRISA = 0b00100000;
+TRISA = 0b00100011;
 TRISC=0b00010000;
 MIWICS=1;
+setHeadOpts(head,options);
+//head->numOptions=4;
 
-strcpy(acctList->acctL[0],acctL[0]);
-strcpy(acctList->acctL[1],acctL[1]);
-strcpy(acctList->acctL[2],acctL[2]);
-strcpy(acctList->acctL[3],acctL[3]);
+/*strcpy(head->next[0]->string,acctL[0]);
+
+strcpy(head->next[1]->string,acctL[1]);
+strcpy(head->next[2]->string,acctL[2]);
+strcpy(head->next[3]->string,acctL[3]);*/
+
 
 	glcdInit();
 	displayInitScreen();
-
+	buildDebugGraph(acct1,acct2,acct3,acct4,opt1,opt2,opt3,opt4);
     
     /*******************************************************************/
     // Initialize the system
@@ -126,7 +132,7 @@ strcpy(acctList->acctL[3],acctL[3]);
     // should be restored. In this simple example, we assume that the 
     // network starts from scratch.
     /*******************************************************************/
-    MiApp_ProtocolInit(FALSE);
+    //MiApp_ProtocolInit(FALSE);
 
     // Set default channel
   //  MiApp_SetChannel(myChannel);
@@ -179,7 +185,7 @@ strcpy(acctList->acctL[3],acctL[3]);
 	// Peripheral interrupts can have their priority set to high or low
 	// enable high-priority interrupts and low-priority interrupts
 //	enable_interrupts();
-	displayAccounts(acctList,0);
+	displayAccounts(0);
 	while(1)
     {
 
@@ -300,6 +306,7 @@ strcpy(acctList->acctL[3],acctL[3]);
 				break;
 				};
 				case MSGT_USER_CHOICE:{	
+				 displayDebug(msgbuffer[0],msgbuffer[1]);
 				 MWQueue_sendmsg(3, MSGT_USER_CHOICE,(void *)msgbuffer);
 				break;
 				};

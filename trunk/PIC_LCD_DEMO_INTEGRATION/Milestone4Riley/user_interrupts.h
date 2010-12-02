@@ -8,7 +8,7 @@
 
 //int adcVVV=0;
 //My example program uses these two timer interrupts
-extern unsigned char LOC_FLAG;
+extern unsigned char LOC_FLAG, AD_DATA_FLAG;
 void timer0_int_handler(void);
 
 void timer1_int_handler(void);
@@ -16,7 +16,7 @@ void readADC(int *value);
 void readADC2(int *value);
 void readADC_CH(int *value, unsigned char channel);
 void initADC(void);
-	
+void ad_int_handler(void);
 // include the handler from my uart code
 #include "my_uart.h"
 

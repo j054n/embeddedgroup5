@@ -9,7 +9,9 @@
 #include <adc.h>
 #include <delays.h>
 #include "my_lcd.h"
-unsigned char LOC_FLAG=0, TIMER0_COUNT=0;
+unsigned char LOC_FLAG=0, TIMER0_COUNT=0, AD_DATA_FLAG;
+unsigned int AD_DATA;
+
 void initADC()
 {
 }
@@ -22,14 +24,18 @@ void readADC(int *value) //function reads from the ADC and returns a value 0x0 t
 }
 void readADC_CH(int *value, unsigned char ADC_CH) //function reads from the ADC and returns a value 0x0 to 0x03FF
 {
+	ADRESL=0;
+	ADRESH=0;
 	OpenADC(ADC_FOSC_16 & ADC_RIGHT_JUST & ADC_0_TAD,
 		ADC_CH &  
 		ADC_INT_OFF & ADC_REF_VDD_VSS, ADC_TRIG_CCP2,0xff);
 	SetChanADC(ADC_CH);
 	ConvertADC(); // Start conversion
-	while( BusyADC() ); // Wait for ADC conversion
-	(*value) = ReadADC(); // Read result and put in temp
-	Delay1KTCYx(1);  // wait a bit...
+	while( !AD_DATA_FLAG ); // Wait for ADC conversion
+	(*value) = AD_DATA; // Read result and put in temp
+//	while( BusyADC() ); // Wait for ADC conversion
+//	(*value) = ReadADC(); // Read result and put in temp
+//	Delay1KTCYx(1);  // wait a bit...
 
 }
 void readADC2(int *value)
@@ -43,6 +49,7 @@ void timer0_int_handler()
 	unsigned int val;
 	unsigned char buffer[2];
 	int	length, msgtype;
+	AD_DATA_FLAG=0;
 	if(LOC_FLAG>0&&LCD_WRITING==0){
 		switch(getYLoc()){
 		case 1:
@@ -98,4 +105,20 @@ void timer1_int_handler()
 	
 	// reset the timer
 	WriteTimer1(0);
+}
+void ad_int_handler()
+{
+	unsigned int result=0, test=0;
+	test= ADRESH;
+	result = (test<<8)|ADRESL;
+	AD_DATA=result;
+	AD_DATA_FLAG=1;
+//result += ADRESL;
+  
+ //test=result;
+	//do something
+}
+unsigned int getADData()
+{
+	return AD_DATA;
 }
