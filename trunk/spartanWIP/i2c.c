@@ -8,6 +8,7 @@
 #include "xgpio.h"
 #include "i2c.h"
 #include "VTio.h"
+#include "my_debug.h"
 
 #define setLED(n)  XGpio_mWriteReg(XPAR_LEDS_8BIT_BASEADDR,1,n);
 
@@ -21,17 +22,22 @@ void i2c_status_handler(void *dptr,XStatus s_event)
 	int	msg_buffer[MAXLEN];
 	char str[20];
 
+	DBG_LOG_ENTRY_INTR("IICStatus:Event",s_event);
 	if (s_event == XII_MASTER_WRITE_EVENT) {
 		status = XIic_SlaveRecv(&(cptr->instance),cptr->iic_recv_msg,
 				sizeof(Xuint8)*IIC_MSGLEN);
+		DBG_LOG_ENTRY_INTR("IICStatus:SlaRecv",status);
 		if (status != XST_SUCCESS) {
 			VTprintLCD("i2c error       ",2);
+			DBG_LOG_ENTRY_INTR("IICStatus:BadSRecv",status);
 		}
 	} else if (s_event == XII_BUS_NOT_BUSY_EVENT) {
+		DBG_LOG_ENTRY_INTR("IICStatus:BusNotBusy",status);
 		//sprintf(str,"Status: %X",status);
 		//VTprintLCD(str,2);
 	}
 	// send a message to the i2c thread
+	DBG_LOG_ENTRY_INTR("IICStatus:MsgSnd",s_event);
 	msg_buffer[0] = MSGTYPE_I2C_STATUS;
 	msg_buffer[1] = s_event;
 	msgsnd(cptr->internal_status_queue_id,msg_buffer,sizeof(int)*2,IPC_NOWAIT);
@@ -45,7 +51,7 @@ void i2c_send_handler(void *dptr,int bytecount)
 	int	msg_buffer[MAXLEN];
 	int	length;
 
-
+	DBG_LOG_ENTRY_INTR("IIC_Send",bytecount);
 	msg_buffer[0] = MSGTYPE_I2C_SEND_COMPLETE;
 	msg_buffer[1] = bytecount;
 	msgsnd(cptr->internal_status_queue_id,msg_buffer,sizeof(int)*2,IPC_NOWAIT);
@@ -58,7 +64,7 @@ void i2c_recv_handler(void *dptr,int bytecount)
 	const	int	MAXLEN = 10;
 	int	msg_buffer[MAXLEN];
 
-
+	DBG_LOG_ENTRY_INTR("IIC_Recv",bytecount);
 	// send a message to a receiver
 	msg_ptr = (void *) cptr->iic_recv_msg;
 	msgsnd(cptr->outgoing_msg_queue_id,msg_ptr,IIC_MSGLEN-bytecount,IPC_NOWAIT);
@@ -161,6 +167,8 @@ void *i2c_thread(void *dptr)
 	
 		length = msgrcv(cptr->incoming_msg_queue_id,(void *) msg_buffer,
 			sizeof(unsigned char)*MAXLEN,0,0);
+			
+		DBG_LOG_ENTRY("I2C thread:Begin",0);
 		// start a message send
 		// Note: This could return something other than success (e.g., 
 		// it could indicate that the i2c bus is busy).  This routine 
@@ -224,5 +232,7 @@ void *i2c_thread(void *dptr)
 		// send a status message to the outgoing status queue
 		msgsnd(cptr->out_status_queue_id,(void *) &status,
 			sizeof(XStatus),0);
+			
+		DBG_LOG_ENTRY("I2C thread:End",0);
 	}
 }

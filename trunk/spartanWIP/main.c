@@ -10,6 +10,7 @@
 #include "timer.h"
 #include "i2c.h"
 #include "VTio.h"
+#include "my_debug.h"
 
 #define USER_DATA_MSGLEN 1
 
@@ -68,13 +69,15 @@ void *button_thread(void *dptr)
 	
 	flag = 0;
 	
-	sprintf(str,"Select User");
-	VTprintLCD(str,1);
+	//sprintf(str,"Select User");
+	//VTprintLCD(str,1);
 
 	for (;;) {
 		length = msgrcv(cptr->recv_msg_q_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),
 			0,0);
+			
+		DBG_LOG_ENTRY("Button thread:Begin",msg_buffer[1]);
 
 		// Need to mask out and shift to retrieve the button values
 		// that we want.
@@ -133,6 +136,8 @@ void *button_thread(void *dptr)
 				}
 			}*/
 		}
+		
+		DBG_LOG_ENTRY("Button thread:End",button_val);
 	}
 }
 
@@ -155,7 +160,9 @@ void *lcd_thread(void *dptr)
 		length = msgrcv(cptr->msg_recv_queue_id,(void *) msgbuf,
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
 			
+		DBG_LOG_ENTRY("LCD thread:Begin",0);
 		VTprintLCD(msgbuf,1);
+		DBG_LOG_ENTRY("LCD thread:End",0);
 	}
 }
 
@@ -194,6 +201,8 @@ void *data_thread(void *dptr)
 	for (;;) {
 		length = msgrcv(cptr->recv_msg_q_id,(void *) iic_msg,	//wait for a message from I2C
 			sizeof(Xuint8)*MAX_IIC_MSGLEN,0,0);
+			
+		DBG_LOG_ENTRY("Data thread:Begin",0);
 		
 		unsigned char val1 = iic_msg[0];
 		unsigned int val1i = val1;
@@ -251,6 +260,8 @@ void *data_thread(void *dptr)
 		msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0); //send on-value to Insteon PIC
 		//iic_send_msg[1] = SENSOR_BRD_ADDR;
 		//msgsnd(cptr->send_iic_q_id,iic_send_msg,3*sizeof(unsigned char),0);
+		
+		DBG_LOG_ENTRY("Data thread:End",0);
 	}
 }
 
@@ -275,6 +286,7 @@ void *controller_thread(void *dptr)
 	   length = msgrcv(cptr->recv_msg_q_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),
 			0,0);
+		DBG_LOG_ENTRY("Controller thread:Begin",0);
 		if(length > 0) {	
 			switch(msg_buffer[0]) {
 				case TIMER_MSG: {
@@ -291,6 +303,7 @@ void *controller_thread(void *dptr)
 				}
 			}	
 		}
+		DBG_LOG_ENTRY("Controller thread:End",0);
 	}
 	
 	}
@@ -301,7 +314,7 @@ void *controller_thread(void *dptr)
 //   -- In this program, it is responsible for initializing devices and threads
 ////////////////////////////////////////
 void *user_main()
-{
+{	
 	// Device-related structures
 	Buttons_Comm buttons_comm;
 	Tcomm_struct	debug_timer_data;
@@ -335,7 +348,15 @@ void *user_main()
 	int msgs_recieved = 0;
 	
 
-	
+	////////////////////////////////////////
+	// Initialize the debugging code
+	// -- It will use the 2nd timer (the OS uses the first timer)
+	////////////////////////////////////////
+	status = INIT_DEBUG(&debug_timer_data,XPAR_XPS_TIMER_2_DEVICE_ID,
+		XPAR_XPS_INTC_0_XPS_TIMER_2_INTERRUPT_INTR,0,50000000,2);
+	if (status != XST_SUCCESS) {
+		return;
+	}
 
 	////////////////////////////////////////
 	// setup a msg queue for the LCD thread to receive messages on
@@ -529,9 +550,12 @@ void *user_main()
 	for (;;) {
 		length = msgrcv(i2c_comm.out_status_queue_id,
 			(void *) msg_buffer,MAXLEN*sizeof(unsigned int),0,0);
+		DBG_LOG_ENTRY("Main thread:Begin",0);
 		if(msg_buffer[0] == XII_SLAVE_NO_ACK_EVENT) sprintf(str,"I2C disconnected");
 		else if(msg_buffer[0] == XST_IIC_BUS_BUSY) sprintf(str,"Reset PIC"); //PIC is holding IIC low...
 		else sprintf(str,"I2C status %x",msg_buffer[0]);
+		//msgsnd(lcd_thread_comm.msg_recv_queue_id,str,20*sizeof(unsigned char),0);
 		VTprintLCD(str,2);
+		DBG_LOG_ENTRY("Main thread:End",0);
 	}
 }
